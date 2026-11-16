@@ -367,43 +367,51 @@ function holdDaysFor(age: number | null): number {
   return 30;
 }
 
-/** The category's core action, in the words a farmer can follow. */
+/** The category's core action, in plain words a farmer can follow. Every branch names only
+ * what the category itself proves: a DEX swaps, a lender lends, a vault takes deposits. Where
+ * the snapshot cannot prove which product holds the TVL, the fallback says so instead of
+ * inventing a feature. */
 function actionFor(p: SnapshotProtocol, capital: number, chain: string): string {
   const c = (p.category ?? '').toLowerCase();
   const name = p.name;
-  if (c.includes('lend') || c.includes('cdp') || c.includes('collateral')) return `Supply $${capital} of USDC to ${name} on ${chain} and borrow a small amount against it, then repay the borrow.`;
-  if (c.includes('dex')) return `Provide $${capital} of liquidity to ${name}'s main pool on ${chain} in a narrow range and collect the trading fees.`;
-  if (c.includes('yield') || c.includes('leveraged farm')) return `Deposit $${capital} into ${name}'s highest-yield vault on ${chain} and let the yield compound.`;
-  if (c.includes('bridge') || c.includes('cross chain')) return `Bridge $${capital} of USDC to ${chain} through ${name} and use the bridged funds in its app.`;
-  if (c.includes('staking') || c.includes('restak')) return `Stake $${capital} of the chain's staking asset through ${name} and keep the receipt token.`;
-  if (c.includes('perpetual') || c.includes('derivative')) return `Deposit $${capital} of USDC as margin on ${name} and open one small hedged trade.`;
-  if (c.includes('prediction')) return `Fund $${capital} and place one market position on ${name} on an outcome you have researched.`;
+  if (c.includes('lend') || c.includes('cdp') || c.includes('collateral')) return `Supply $${capital} of USDC to ${name} on ${chain} and leave it earning interest.`;
+  if (c.includes('dex') || c.includes('liquidity manager')) return `Provide $${capital} of liquidity to ${name}'s main pool on ${chain} and leave it earning trading fees.`;
+  if (c.includes('yield') || c.includes('leveraged farm')) return `Deposit $${capital} into ${name}'s main vault on ${chain} and leave it to compound.`;
+  if (c.includes('bridge') || c.includes('cross chain')) return `Bridge $${capital} of USDC to ${chain} through ${name}, then use the bridged funds in the app on the other side.`;
+  if (c.includes('staking') || c.includes('restak')) return `Stake $${capital} of the chain's staking asset through ${name} on ${chain} and keep the receipt token.`;
+  if (c.includes('perpetual') || c.includes('derivative')) return `Deposit $${capital} of USDC as margin on ${name} and open one small trade.`;
+  if (c.includes('prediction')) return `Fund $${capital} and place one position on ${name} on an outcome you have actually researched.`;
   if (c.includes('curator') || c.includes('allocator') || c.includes('onchain capital')) return `Deposit $${capital} into a ${name} vault on ${chain} and keep the vault shares.`;
-  if (c.includes('stable')) return `Mint or deposit $${capital} of the stable asset through ${name} on ${chain} and hold it.`;
-  if (c.includes('rwa')) return `Mint $${capital} of the protocol's yield-bearing asset on ${chain} and hold it for the yield.`;
+  if (c.includes('stable')) return `Hold $${capital} of the stablecoin ${name} issues on ${chain}.`;
+  if (c.includes('rwa')) return `Put $${capital} into the yield-bearing asset ${name} offers on ${chain} and hold it.`;
   if (c.includes('insurance')) return `Buy $${capital} of cover from ${name} on ${chain} and keep the policy active.`;
-  if (c.includes('basis')) return `Deposit $${capital} into ${name}'s basis vault on ${chain} and hold the position through one funding cycle.`;
-  if (c.includes('liquid')) return `Deposit $${capital} of the liquid asset into ${name} on ${chain} and use the receipt in a second protocol.`;
-  return `Deposit $${capital} of USDC into ${name} on ${chain} and keep the position open.`;
+  if (c.includes('basis')) return `Deposit $${capital} into ${name}'s basis vault on ${chain} and hold the position.`;
+  if (c.includes('liquid')) return `Deposit $${capital} of the staking asset into ${name} on ${chain} and hold the receipt token.`;
+  return `Put $${capital} into ${name}'s main product on ${chain} — check its own page to see which product holds the TVL — and leave the position open.`;
 }
 
-/** A second, different qualifying action for the same category, so the plan is not one action repeated. */
-function secondActionFor(p: SnapshotProtocol, capital: number, chain: string): string {
+/** The weekly habit: a second, different interaction for the same category, so the plan is not
+ * one action repeated — and never an invented feature. Anything the category cannot prove exists
+ * (a swap page, a vote, a referral program) is replaced by the honest fallback: top the position up. */
+function weeklyActionFor(p: SnapshotProtocol, capital: number, chain: string): string {
   const c = (p.category ?? '').toLowerCase();
   const name = p.name;
-  if (c.includes('lend') || c.includes('cdp')) return `Use ${name} on ${chain} a second time with a different collateral asset, so the activity is not a single deposit.`;
-  if (c.includes('dex')) return `Swap a small amount through ${name} on ${chain} once a week, in addition to the liquidity position.`;
-  if (c.includes('bridge') || c.includes('cross chain')) return `Bridge a second, smaller amount back through ${name} so the record shows activity in both directions.`;
-  if (c.includes('staking') || c.includes('restak')) return `Restake the receipt token once, or delegate a small part of it, to show a second staking action.`;
-  if (c.includes('perpetual') || c.includes('derivative')) return `Close the first trade on ${name} and open a second one in the opposite direction with the same margin.`;
-  if (c.includes('prediction')) return `Settle one position on ${name} and open a second market position the following week.`;
-  return `Use one more feature of ${name} on ${chain}, such as its swap, vote or referral page, once a week.`;
+  if (c.includes('lend') || c.includes('cdp')) return `Lend a second, smaller amount on ${name} the following week, using a different asset as collateral, so the record shows more than one deposit.`;
+  if (c.includes('dex') || c.includes('liquidity manager')) return `Swap a small amount through ${name} on ${chain} once a week, on top of the liquidity position.`;
+  if (c.includes('bridge') || c.includes('cross chain')) return `Bridge a second, smaller amount back through ${name}, so the record shows movement in both directions.`;
+  if (c.includes('staking') || c.includes('restak')) return `Add a small amount to the stake the following week, so the record shows more than one staking action.`;
+  if (c.includes('perpetual') || c.includes('derivative')) return `Close the first trade and open a second, smaller one the following week.`;
+  if (c.includes('prediction')) return `Settle the first position, then open a second one the following week on a different outcome.`;
+  return `Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one.`;
 }
 
 /**
  * A protocol's farm plan: seven steps, each an action with a cost and a time. The plan is derived
  * from the protocol's own record (category, chains, TVL, age), never from a hand-written list of
- * names. Step 7 is the exit rule: when to stop, so the plan is a complete trade, not an open loop.
+ * names — and never from a feature the snapshot cannot prove exists. Each step does a different
+ * job: 1) a clean wallet, 2) the first real position, 3) the weekly habit, 4) the hold, 5) what
+ * to watch, 6) the safety check before any claim, 7) the exit rule. Step 7 is the exit rule:
+ * when to stop, so the plan is a complete trade, not an open loop.
  */
 export function farmSteps(p: SnapshotProtocol, age: number | null): FarmStep[] {
   const chain = chainOf(p);
@@ -413,7 +421,7 @@ export function farmSteps(p: SnapshotProtocol, age: number | null): FarmStep[] {
   const gas = capital >= 150 ? 8 : 4;
   return [
     {
-      text: `Use a fresh wallet that holds only the funds you plan to farm, and keep its seed phrase offline.`,
+      text: `Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else.`,
       cost: 'under $3 of gas for the first transaction',
       time: '5 minutes',
     },
@@ -423,27 +431,27 @@ export function farmSteps(p: SnapshotProtocol, age: number | null): FarmStep[] {
       time: '15 minutes to set up',
     },
     {
-      text: secondActionFor(p, capital, chain),
+      text: weeklyActionFor(p, capital, chain),
       cost: `about $${Math.max(2, Math.round(gas / 2))} of gas a week`,
       time: '10 minutes a week',
     },
     {
-      text: `Make one qualifying action each week, such as a deposit, a borrow, a swap or a vote.`,
-      cost: 'about $2 of gas a week',
-      time: '10 minutes a week',
-    },
-    {
-      text: `Hold the position for at least ${hold} days so the activity is counted in more than one snapshot.`,
-      cost: `the $${capital} stays in the position`,
+      text: `Hold the position for at least ${hold} days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon.`,
+      cost: `$${capital} locked in the position until you exit`,
       time: `${hold} days`,
     },
     {
-      text: `Before you withdraw, open the protocol's own points or rewards page and claim only from the link it publishes.`,
-      cost: 'no fee to check, and never pay to claim',
+      text: `Check ${p.name} once a week: its TVL trend, any token announcement on its own site or docs, and whether the team is talking about points. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more.`,
+      cost: 'no money, just your time',
+      time: '10 minutes a week',
+    },
+    {
+      text: `Before you claim anything, open ${p.name}'s own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained.`,
+      cost: 'nothing to check',
       time: '10 minutes',
     },
     {
-      text: `Stop farming when the token launches and the first claim is paid, or after ${hold + 30} days with no launch: withdraw the $${capital} and close the position.`,
+      text: `Stop when the token launches and the first claim is paid, or after ${hold + 30} days with no launch: withdraw the $${capital} and close the position.`,
       cost: 'about $3 of gas to exit',
       time: '10 minutes to exit',
     },
