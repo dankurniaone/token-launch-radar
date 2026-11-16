@@ -2,10 +2,11 @@
 // and renders the ranked board, a filterable table, a per-protocol detail drawer with the model's
 // own inputs and the protocol's farm plan. No network: every byte it shows is in data.js.
 //
-// Readability first: base type is 16px, table type 14.5px, numbers tabular, bright type
-// on a deep-ink canvas with gold + teal accents. Screenshots are taken at 1440x900,
-// 100% zoom, so the hero, the chart, the board's top rows, the detail drawer and the
-// filtered view all read clearly at full size.
+// Readability first: monospace type everywhere, 16px base, 14.5px table type,
+// near-monochrome ink with one teal accent and green/red reserved for 7d
+// change numbers. Screenshots are taken at 1440x900, 100% zoom, so the hero,
+// the stats strip, the board's top rows, the detail drawer and the filtered
+// view all read clearly at full size.
 (function () {
   'use strict';
 
@@ -66,21 +67,10 @@
     return node;
   }
 
-  // Category chips: an 8-colour palette of bright text on dark panels, assigned by a
-  // hash of the category name, so no category is special-cased and every chip reads on ink.
-  var CHIP_COLORS = [
-    ['#16233d', '#93c5fd'], ['#12303a', '#5eead4'], ['#2a1f45', '#d8b4fe'], ['#33230f', '#fcd34d'],
-    ['#3a1620', '#fda4af'], ['#14291a', '#86efac'], ['#232a4a', '#a5b4fc'], ['#331d12', '#fdba74']
-  ];
-  function catColor(cat) {
-    var h = 0;
-    var s = String(cat || 'Other');
-    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-    return CHIP_COLORS[h % CHIP_COLORS.length];
-  }
+  // Category chips are monochrome by design: one border, one muted tone, no
+  // per-category colour — the terminal-mono system keeps colour for signals only.
   function chip(cat) {
-    var c = catColor(cat);
-    return el('span', { class: 'chip', style: 'background:' + c[0] + ';color:' + c[1], text: cat || 'Other' });
+    return el('span', { class: 'chip', text: cat || 'Other' });
   }
 
   // The farm plan is the same derivation main.ts writes to board.json: category, chains, TVL and age
@@ -205,46 +195,88 @@
     );
   }
 
-  // HERO — an editorial opening, not a template lede: the headline, the rank-1 protocol
-  // as a giant gold number with the one-line reason it leads, the next two names, and a
-  // ticker of the four numbers that frame the whole radar. Compact on purpose, so the
-  // board's top rows still fit in a 900px screenshot.
+  // HERO — a sharp editorial header, not a gradient card: the headline in
+  // monospace with a terminal block cursor, the rank-1 protocol as the
+  // biggest number on the page in a flat bordered panel, then a six-cell
+  // stats strip and a 7d heat grid. Compact on purpose, so the board's top
+  // rows still fit in a 900px screenshot.
+  function medianOf(nums) {
+    var a = nums.slice().sort(function (x, y) { return x - y; });
+    return a.length ? a[Math.floor(a.length / 2)] : null;
+  }
   function hero() {
     var top1 = DATA.rows[0];
-    var second = DATA.rows[1];
-    var third = DATA.rows[2];
     var total = DATA.rows.reduce(function (a, r) { return a + r.implied_value_usd; }, 0);
-    var tick = function (big, label) {
-      return el('div', { class: 'tick' }, el('b', { text: big }), el('span', { text: label }));
+    var medPeer = medianOf(DATA.rows.map(function (r) { return r.peer_multiple; }).filter(function (x) { return x !== null && x !== undefined; }));
+    var withChange = DATA.rows.filter(function (r) { return r.change_7d !== null && r.change_7d !== undefined; });
+    var gainer = withChange.slice().sort(function (a, b) { return b.change_7d - a.change_7d; })[0];
+    var loser = withChange.slice().sort(function (a, b) { return a.change_7d - b.change_7d; })[0];
+    var tick = function (big, label, bigClass) {
+      return el('div', { class: 'tick' }, el('b', { class: bigClass || null, text: big }), el('span', { text: label }));
     };
+    var gauge = el('div', { class: 'gauge', 'aria-hidden': 'true' });
+    for (var i = 0; i < DATA.watchlist_size; i++) gauge.appendChild(el('i'));
+    var watchTick = el('div', { class: 'tick' },
+      el('b', { text: DATA.watchlist_size + ' / ' + DATA.watchlist_size }),
+      el('span', { text: 'watchlist covered' }),
+      gauge
+    );
     return el('div', null,
       el('section', { class: 'hero' },
         el('div', { class: 'hero-copy' },
-          el('p', { class: 'kicker', text: 'Pre-token radar · Snapshot ' + DATA.as_of + ' · ' + DATA.model_version + ' model' }),
-          el('h1', null, 'The next tokens, ', el('span', { class: 'gold', text: 'priced before they exist.' })),
+          el('p', { class: 'kicker', text: 'Pre-token radar · Snapshot ' + DATA.as_of }),
+          el('h1', null, 'The next tokens, priced before they exist.', el('span', { class: 'cursor', text: '█' })),
           el('p', null,
             el('b', { text: 'Every protocol with $50M+ of TVL and no token on record' }),
-            ' — plus ' + DATA.early_size + ' early names below the floor — scored by one model: TVL × peer multiple × growth × maturity × chains. No names hand-picked. No promises, just the arithmetic.')
+            '. No names hand-picked. No promises, just the arithmetic.')
         ),
         el('div', { class: 'hero-card', title: 'Open ' + top1.name + ' details', onclick: function () { openDetail(top1.slug); } },
-          el('div', { class: 'hero-card-inner' },
-            el('div', { class: 'label', text: '№ 1 · Implied value' }),
-            el('div', { class: 'hero-value', text: fmtUsd(top1.implied_value_usd) }),
-            el('div', { class: 'hero-name', text: top1.name }),
-            el('p', { class: 'hero-why', text: 'Why it leads — $' + (top1.tvl_usd / 1e9).toFixed(2) + 'B of TVL, the largest pre-token stack in the set, priced at ' + top1.peer_multiple.toFixed(2) + '×, the multiple the model applies to it. ' + top1.chains.length + ' chains. ' + top1.age_days + ' days with no token.' }),
-            el('div', { class: 'hero-next' },
-              el('b', { text: '2. ' + second.name + ' ' + fmtUsd(second.implied_value_usd) }),
-              '   ·   ',
-              el('b', { text: '3. ' + third.name + ' ' + fmtUsd(third.implied_value_usd) }))
-          )
+          el('div', { class: 'label', text: '№ 1 · Implied value' }),
+          el('div', { class: 'hero-value', text: fmtUsd(top1.implied_value_usd) }),
+          el('div', { class: 'hero-name', text: top1.name }),
+          el('p', { class: 'hero-why', text: 'Why it leads — $' + (top1.tvl_usd / 1e9).toFixed(2) + 'B TVL · ' + top1.peer_multiple.toFixed(2) + '× · ' + top1.chains.length + ' chains · ' + top1.age_days + ' days.' })
         )
       ),
       el('div', { class: 'ticker' },
-        tick(DATA.watchlist_size + ' / ' + DATA.watchlist_size, 'watchlist covered'),
+        watchTick,
         tick(String(DATA.board_size), 'protocols scored'),
         tick(fmtUsd(total), 'total implied value'),
-        tick(String(DATA.live_size), 'live-token names set aside')
-      )
+        tick(medPeer === null ? 'n/a' : medPeer.toFixed(2) + 'x', 'median peer multiple'),
+        tick(fmtPct(gainer.change_7d), '7D GAINER · ' + gainer.name.toUpperCase(), 'pos'),
+        tick(fmtPct(loser.change_7d), '7D LOSER · ' + loser.name.toUpperCase(), 'neg')
+      ),
+      heatStrip()
+    );
+  }
+
+  // 7D HEAT — median seven-day TVL change per category, top 12 by protocol
+  // count. The tint is the signal: green up, red down, stronger tint for a
+  // bigger move. All numbers come from the board; nothing is invented.
+  function heatStrip() {
+    var byCat = {};
+    DATA.rows.forEach(function (r) {
+      if (r.change_7d === null || r.change_7d === undefined) return;
+      (byCat[r.category] = byCat[r.category] || []).push(r.change_7d);
+    });
+    var cats = Object.keys(byCat).map(function (c) {
+      return { name: c, n: byCat[c].length, med: medianOf(byCat[c]) };
+    }).sort(function (a, b) { return b.n - a.n; }).slice(0, 12);
+    if (!cats.length) return null;
+    var cells = cats.map(function (c) {
+      var alpha = Math.min(0.5, 0.07 + Math.abs(c.med) / 18);
+      var bg = c.med >= 0 ? 'rgba(74,222,128,' + alpha.toFixed(2) + ')' : 'rgba(248,113,113,' + alpha.toFixed(2) + ')';
+      var cls = c.med >= 0 ? 'pos' : 'neg';
+      return el('div', { class: 'heat-cell', style: 'background:' + bg },
+        el('b', { text: c.name }),
+        el('span', { class: cls, text: fmtPct(c.med) })
+      );
+    });
+    return el('section', { class: 'panel heat-panel' },
+      el('div', { class: 'heat-head' },
+        el('h2', { text: '7D HEAT — MEDIAN CHANGE BY CATEGORY' }),
+        el('span', { text: 'Top 12 categories by protocol count · green up, red down' })
+      ),
+      el('div', { class: 'heat-grid' }, cells)
     );
   }
 
@@ -257,6 +289,7 @@
     if (list.length === 0) return null;
     var top = list.slice(0, 10);
     var max = top[0] ? top[0].implied_value_usd : 1;
+    var medTop = medianOf(top.map(function (r) { return r.implied_value_usd; }));
     var filtered = state.category !== 'all' || state.chain !== 'all' || state.q.trim() !== '';
     var bar = function (r) {
       var w = Math.max(4, Math.round((r.implied_value_usd / max) * 100));
@@ -269,12 +302,16 @@
     };
     return el('section', { class: 'panel chart-panel' },
       el('div', { class: 'chart-head' },
-        el('h2', null, 'Top 10 by ', el('span', { text: 'implied value' }), state.category !== 'all' ? ' · ' + state.category : ''),
+        el('h2', { text: 'Top 10 by implied value' + (state.category !== 'all' ? ' · ' + state.category : '') }),
         el('span', { class: 'sub', text: filtered ? 'The top 10 of the ' + list.length + ' row' + (list.length === 1 ? '' : 's') + ' in view, drawn to scale.' : 'The same rows as the board below, drawn to scale. Rank 1 is the longest bar.' })
       ),
       el('div', { class: 'chart' },
         el('div', { class: 'chart-col' }, top.slice(0, 5).map(bar)),
         el('div', { class: 'chart-col' }, top.slice(5, 10).map(bar))
+      ),
+      el('div', { class: 'chart-median' },
+        el('span', { text: '— — — MEDIAN TOP-10' }),
+        el('b', { text: medTop === null ? 'n/a' : fmtUsd(medTop) })
       )
     );
   }
@@ -290,10 +327,10 @@
       ['Chains', 'Reach adds up.', ' Every extra chain adds 3%, up to five — breadth is distribution.']
     ];
     return el('section', { class: 'panel rewards' },
-      el('h2', null, 'What the model ', el('span', { text: 'rewards' })),
-      el('div', { class: 'rewards-grid' }, items.map(function (it) {
+      el('h2', { text: 'What the model rewards' }),
+      el('div', { class: 'rewards-grid' }, items.map(function (it, idx) {
         return el('div', { class: 'reward' },
-          el('b', { text: it[0] }),
+          el('b', null, el('i', { text: '0' + (idx + 1) }), it[0]),
           el('span', null, el('em', { text: it[1] }), it[2]));
       }))
     );
@@ -302,7 +339,7 @@
   function controls() {
     var categories = Array.from(new Set(DATA.rows.map(function (r) { return r.category || 'Other'; }))).sort();
     var chains = Array.from(new Set(DATA.rows.reduce(function (acc, r) { return acc.concat(r.chains || []); }, []))).sort();
-    var search = el('input', { type: 'search', id: 'q', placeholder: 'Search name, category or chain', value: state.q, 'aria-label': 'Search the board' });
+    var search = el('input', { type: 'search', id: 'q', placeholder: 'Search name / category', value: state.q, 'aria-label': 'Search the board' });
     search.addEventListener('input', function () { state.q = search.value; writeHash(); render(); });
     var select = el('select', { id: 'category', 'aria-label': 'Filter by category' },
       el('option', { value: 'all', text: 'All categories' }),
@@ -374,7 +411,7 @@
         el('td', { class: 'num ' + growthClass, text: growth }),
         el('td', { class: 'num', text: fmtAge(r.age_days) }),
         el('td', null, el('div', { class: 'implied' },
-          el('div', { class: 'bar', 'aria-hidden': 'true' }, el('i', { style: 'width:' + Math.max(3, Math.round((r.implied_value_usd / max) * 100)) + '%' })),
+          el('div', { class: 'bar' + (r.rank === 1 ? ' r1' : ''), 'aria-hidden': 'true' }, el('i', { style: 'width:' + Math.max(3, Math.round((r.implied_value_usd / max) * 100)) + '%' })),
           el('span', { class: 'num', text: fmtUsd(r.implied_value_usd) })
         )),
         el('td', null, el('span', { class: 'status', text: 'no token' }))
@@ -440,7 +477,7 @@
       );
     });
     return el('section', { class: 'panel model' },
-      el('h2', null, 'How implied value is ', el('span', { text: 'computed' })),
+      el('h2', { text: 'How implied value is computed' }),
       el('p', { class: 'sub', text: 'Every row is scored by one function of the snapshot figures. No protocol name is special-cased, and no row is hand-picked.' }),
       el('div', { class: 'formula' },
         'implied = round( tvl_usd x peerMultiple x (1 + clamp(change_7d, ' + m.growth_floor + ', ' + m.growth_cap + ') / 100 x ' + m.growth_weight + ') x (' + m.maturity_floor + ' + min(age_days, ' + m.maturity_days + ') / ' + m.maturity_days + ' x ' + m.maturity_range + ') x (1 + 0.03 x min(chains - 1, 5)) )'
@@ -559,7 +596,7 @@
           el('div', null, el('span', { text: 'Implied value' }), el('b', { class: 'num', text: fmtUsd(row.implied_value_usd) }))
         ),
         el('p', { class: 'peer-note', text: peerNoteText }),
-        el('p', { class: 'sub', text: 'Model ' + DATA.model_version + ': the same function scores every protocol. The page recomputes this row as ' + fmtUsd(impliedOf(row, DATA.model)) + (impliedOf(row, DATA.model) === row.implied_value_usd ? ', the same number board.json carries.' : ', which differs from the board: the data would be stale.') + ' This is an estimate, not a price.' }),
+        el('p', { class: 'sub', text: 'Model ' + DATA.model_version + ': one function scores every protocol. Recomputed here as ' + fmtUsd(impliedOf(row, DATA.model)) + (impliedOf(row, DATA.model) === row.implied_value_usd ? ' — the same number board.json carries.' : ' — differs from the board; the data is stale.') + ' An estimate, not a price.' }),
         linkBox
       ),
       el('section', { class: 'detail-section' },
