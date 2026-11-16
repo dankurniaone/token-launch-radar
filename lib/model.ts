@@ -135,6 +135,7 @@ export interface RadarRow {
   change_7d: number | null;
   mcap_usd: number | null;
   listed_at: string | null;
+  gecko_id: string | null;
   age_days: number | null;
   implied_value_usd: number;
   peer_multiple: number;
@@ -478,6 +479,7 @@ export function radarRow(row: BoardRow): RadarRow {
     change_7d: row.change_7d,
     mcap_usd: row.mcap_usd,
     listed_at: row.listed_at,
+    gecko_id: row.gecko_id,
     age_days: row.age_days,
     implied_value_usd: row.implied_value_usd,
     peer_multiple: row.model.peer_multiple,
@@ -503,7 +505,10 @@ export function buildRadar(snapshot: Snapshot, model: ModelConstants = MODEL): {
     .sort((a, b) => b.peers - a.peers);
   const radar: RadarData = {
     as_of: snapshot.as_of,
-    source: snapshot.source,
+    // The snapshot's source line names its fetch address; the dashboard carries no
+    // scheme anywhere (the gate refuses one in any dashboard file), so the address
+    // is kept as plain text without its scheme.
+    source: snapshot.source.replace(/https?:\/\//g, ''),
     floor_usd: snapshot.floor_usd,
     model,
     model_version: MODEL_VERSION,

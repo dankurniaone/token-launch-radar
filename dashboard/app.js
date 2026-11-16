@@ -226,7 +226,7 @@
             el('b', { text: 'Every protocol with $50M+ of TVL and no token on record' }),
             ' — plus ' + DATA.early_size + ' early names below the floor — scored by one model: TVL × peer multiple × growth × maturity × chains. No names hand-picked. No promises, just the arithmetic.')
         ),
-        el('div', { class: 'hero-card' },
+        el('div', { class: 'hero-card', title: 'Open ' + top1.name + ' details', onclick: function () { openDetail(top1.slug); } },
           el('div', { class: 'hero-card-inner' },
             el('div', { class: 'label', text: '№ 1 · Implied value' }),
             el('div', { class: 'hero-value', text: fmtUsd(top1.implied_value_usd) }),
@@ -454,6 +454,33 @@
   var dialog = el('dialog', { class: 'detail', id: 'detail', 'aria-labelledby': 'detail-title' });
   dialog.addEventListener('close', function () { state.selected = null; writeHash(); });
 
+  // Copy plain text to the clipboard: the Clipboard API where it exists, a hidden
+  // textarea fallback where it does not (a file page in some browsers). The button
+  // shows the result, so the action is visible even when the clipboard cannot be read back.
+  function copyText(text, btn) {
+    function done() {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function () { btn.textContent = 'Copy link'; btn.classList.remove('copied'); }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) { /* clipboard unavailable */ }
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+
   function openDetail(slug) {
     var row = DATA.rows.filter(function (r) { return r.slug === slug; })[0];
     if (!row) return;
@@ -481,6 +508,28 @@
     }
     if (mult !== null && mult <= DATA.model.peer_floor + 1e-9) peerNoteText += ' It sits at the model floor of ' + DATA.model.peer_floor + 'x.';
     else if (mult !== null && mult >= DATA.model.peer_cap - 1e-9) peerNoteText += ' It sits at the model cap of ' + DATA.model.peer_cap + 'x.';
+    // Where this protocol lives on the web, as plain text the reader can copy: the
+    // snapshot carries no official website per protocol, so the honest page is the
+    // protocol's DefiLlama page, built from its slug. The address carries no scheme
+    // on purpose — a clickable web link is not allowed in this dashboard, so the
+    // copy button is the one-click way to the page: copy, paste into a browser.
+    var pageAddr = 'defillama.com/protocol/' + row.slug;
+    var geckoLine = row.gecko_id
+      ? 'CoinGecko id: ' + row.gecko_id
+      : 'No CoinGecko id recorded for this protocol.';
+    var copyBtn = el('button', { class: 'button copy-btn', type: 'button', text: 'Copy link' });
+    copyBtn.addEventListener('click', function () { copyText(pageAddr, copyBtn); });
+    var linkBox = el('div', { class: 'link-box' },
+      el('h3', { text: 'Open protocol page' }),
+      el('p', { class: 'sub', text: 'Paste into your browser to open its DefiLlama page.' }),
+      el('div', { class: 'link-row' },
+        // Break opportunities only after the slashes, so the address wraps cleanly
+        // instead of splitting mid-word.
+        el('code', { class: 'link-addr' }, 'defillama.com/', el('wbr'), 'protocol/', el('wbr'), row.slug),
+        copyBtn
+      ),
+      el('p', { class: 'sub', text: geckoLine })
+    );
     dialog.appendChild(el('div', { class: 'detail-head' },
       el('div', null,
         el('span', { class: 'brand-name', text: 'Rank ' + row.rank + ' of ' + DATA.board_size }),
@@ -510,7 +559,8 @@
           el('div', null, el('span', { text: 'Implied value' }), el('b', { class: 'num', text: fmtUsd(row.implied_value_usd) }))
         ),
         el('p', { class: 'peer-note', text: peerNoteText }),
-        el('p', { class: 'sub', text: 'Model ' + DATA.model_version + ': the same function scores every protocol. The page recomputes this row as ' + fmtUsd(impliedOf(row, DATA.model)) + (impliedOf(row, DATA.model) === row.implied_value_usd ? ', the same number board.json carries.' : ', which differs from the board: the data would be stale.') + ' This is an estimate, not a price.' })
+        el('p', { class: 'sub', text: 'Model ' + DATA.model_version + ': the same function scores every protocol. The page recomputes this row as ' + fmtUsd(impliedOf(row, DATA.model)) + (impliedOf(row, DATA.model) === row.implied_value_usd ? ', the same number board.json carries.' : ', which differs from the board: the data would be stale.') + ' This is an estimate, not a price.' }),
+        linkBox
       ),
       el('section', { class: 'detail-section' },
         el('h3', { text: 'Farm plan' }),
