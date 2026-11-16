@@ -378,15 +378,15 @@ function actionFor(p: SnapshotProtocol, capital: number, chain: string): string 
   if (c.includes('dex') || c.includes('liquidity manager')) return `Provide $${capital} of liquidity to ${name}'s main pool on ${chain} and leave it earning trading fees.`;
   if (c.includes('yield') || c.includes('leveraged farm')) return `Deposit $${capital} into ${name}'s main vault on ${chain} and leave it to compound.`;
   if (c.includes('bridge') || c.includes('cross chain')) return `Bridge $${capital} of USDC to ${chain} through ${name}, then use the bridged funds in the app on the other side.`;
-  if (c.includes('staking') || c.includes('restak')) return `Stake $${capital} of the chain's staking asset through ${name} on ${chain} and keep the receipt token.`;
+  if (c.includes('staking') || c.includes('restak')) return `Stake $${capital} of the chain's staking asset through ${name} on ${chain}.`;
   if (c.includes('perpetual') || c.includes('derivative')) return `Deposit $${capital} of USDC as margin on ${name} and open one small trade.`;
   if (c.includes('prediction')) return `Fund $${capital} and place one position on ${name} on an outcome you have actually researched.`;
   if (c.includes('curator') || c.includes('allocator') || c.includes('onchain capital')) return `Deposit $${capital} into a ${name} vault on ${chain} and keep the vault shares.`;
   if (c.includes('stable')) return `Hold $${capital} of the stablecoin ${name} issues on ${chain}.`;
-  if (c.includes('rwa')) return `Put $${capital} into the yield-bearing asset ${name} offers on ${chain} and hold it.`;
+  if (c.includes('rwa')) return `Put $${capital} into the tokenised asset ${name} offers on ${chain} and hold it.`;
   if (c.includes('insurance')) return `Buy $${capital} of cover from ${name} on ${chain} and keep the policy active.`;
-  if (c.includes('basis')) return `Deposit $${capital} into ${name}'s basis vault on ${chain} and hold the position.`;
-  if (c.includes('liquid')) return `Deposit $${capital} of the staking asset into ${name} on ${chain} and hold the receipt token.`;
+  if (c.includes('basis')) return `Put $${capital} into ${name}'s basis trade on ${chain} and hold the position.`;
+  if (c.includes('liquid')) return `Deposit $${capital} of the staking asset into ${name} on ${chain} and hold the position.`;
   return `Put $${capital} into ${name}'s main product on ${chain} — check its own page to see which product holds the TVL — and leave the position open.`;
 }
 
@@ -441,7 +441,7 @@ export function farmSteps(p: SnapshotProtocol, age: number | null): FarmStep[] {
       time: `${hold} days`,
     },
     {
-      text: `Check ${p.name} once a week: its TVL trend, any token announcement on its own site or docs, and whether the team is talking about points. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more.`,
+      text: `Check ${p.name} once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more.`,
       cost: 'no money, just your time',
       time: '10 minutes a week',
     },

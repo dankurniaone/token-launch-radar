@@ -99,15 +99,15 @@
     if (c.indexOf('dex') >= 0 || c.indexOf('liquidity manager') >= 0) return 'Provide $' + capital + ' of liquidity to ' + name + "'s main pool on " + chain + ' and leave it earning trading fees.';
     if (c.indexOf('yield') >= 0 || c.indexOf('leveraged farm') >= 0) return 'Deposit $' + capital + " into " + name + "'s main vault on " + chain + ' and leave it to compound.';
     if (c.indexOf('bridge') >= 0 || c.indexOf('cross chain') >= 0) return 'Bridge $' + capital + ' of USDC to ' + chain + ' through ' + name + ', then use the bridged funds in the app on the other side.';
-    if (c.indexOf('staking') >= 0 || c.indexOf('restak') >= 0) return "Stake $" + capital + " of the chain's staking asset through " + name + ' on ' + chain + ' and keep the receipt token.';
+    if (c.indexOf('staking') >= 0 || c.indexOf('restak') >= 0) return "Stake $" + capital + " of the chain's staking asset through " + name + ' on ' + chain + '.';
     if (c.indexOf('perpetual') >= 0 || c.indexOf('derivative') >= 0) return 'Deposit $' + capital + ' of USDC as margin on ' + name + ' and open one small trade.';
     if (c.indexOf('prediction') >= 0) return 'Fund $' + capital + ' and place one position on ' + name + ' on an outcome you have actually researched.';
     if (c.indexOf('curator') >= 0 || c.indexOf('allocator') >= 0 || c.indexOf('onchain capital') >= 0) return 'Deposit $' + capital + ' into a ' + name + ' vault on ' + chain + ' and keep the vault shares.';
     if (c.indexOf('stable') >= 0) return 'Hold $' + capital + ' of the stablecoin ' + name + ' issues on ' + chain + '.';
-    if (c.indexOf('rwa') >= 0) return 'Put $' + capital + ' into the yield-bearing asset ' + name + ' offers on ' + chain + ' and hold it.';
+    if (c.indexOf('rwa') >= 0) return 'Put $' + capital + ' into the tokenised asset ' + name + ' offers on ' + chain + ' and hold it.';
     if (c.indexOf('insurance') >= 0) return 'Buy $' + capital + ' of cover from ' + name + ' on ' + chain + ' and keep the policy active.';
-    if (c.indexOf('basis') >= 0) return 'Deposit $' + capital + " into " + name + "'s basis vault on " + chain + ' and hold the position.';
-    if (c.indexOf('liquid') >= 0) return 'Deposit $' + capital + ' of the staking asset into ' + name + ' on ' + chain + ' and hold the receipt token.';
+    if (c.indexOf('basis') >= 0) return 'Put $' + capital + " into " + name + "'s basis trade on " + chain + ' and hold the position.';
+    if (c.indexOf('liquid') >= 0) return 'Deposit $' + capital + ' of the staking asset into ' + name + ' on ' + chain + ' and hold the position.';
     return 'Put $' + capital + " into " + name + "'s main product on " + chain + ' — check its own page to see which product holds the TVL — and leave the position open.';
   }
   function weeklyActionFor(p, capital, chain) {
@@ -137,7 +137,7 @@
       { text: actionFor(p, capital, chain), cost: '$' + capital + ' of capital and about $' + gas + ' of gas', time: '15 minutes to set up' },
       { text: weeklyActionFor(p, capital, chain), cost: 'about $' + Math.max(2, Math.round(gas / 2)) + ' of gas a week', time: '10 minutes a week' },
       { text: 'Hold the position for at least ' + hold + ' days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon.', cost: '$' + capital + ' locked in the position until you exit', time: hold + ' days' },
-      { text: 'Check ' + p.name + ' once a week: its TVL trend, any token announcement on its own site or docs, and whether the team is talking about points. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more.', cost: 'no money, just your time', time: '10 minutes a week' },
+      { text: 'Check ' + p.name + ' once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more.', cost: 'no money, just your time', time: '10 minutes a week' },
       { text: 'Before you claim anything, open ' + p.name + "'s own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained.", cost: 'nothing to check', time: '10 minutes' },
       { text: 'Stop when the token launches and the first claim is paid, or after ' + (hold + 30) + ' days with no launch: withdraw the $' + capital + ' and close the position.', cost: 'about $3 of gas to exit', time: '10 minutes to exit' }
     ].map(stepText);
