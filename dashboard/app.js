@@ -65,6 +65,23 @@
     return node;
   }
 
+  // Category chips: a fixed 8-colour palette, assigned by a hash of the category name, so no
+  // category is special-cased and every row gets a readable coloured chip.
+  var CHIP_COLORS = [
+    ['#d9efe6', '#0b5c40'], ['#dbe9f7', '#1d4e89'], ['#ece4f8', '#5b2d8e'], ['#fdeeda', '#7a4a00'],
+    ['#fbdfe1', '#8c1d24'], ['#e3f2d9', '#2f5d0f'], ['#e0e7ff', '#3730a3'], ['#f0e4d8', '#6b3a1f']
+  ];
+  function catColor(cat) {
+    var h = 0;
+    var s = String(cat || 'Other');
+    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return CHIP_COLORS[h % CHIP_COLORS.length];
+  }
+  function chip(cat) {
+    var c = catColor(cat);
+    return el('span', { class: 'chip', style: 'background:' + c[0] + ';color:' + c[1], text: cat || 'Other' });
+  }
+
   // The farm plan is the same derivation main.ts writes to board.json: category, chains, TVL and age
   // decide the action, the capital, the hold and every cost and time. No name is special-cased.
   function chainOf(p) { return p.chains && p.chains.length > 0 ? p.chains[0] : 'its main chain'; }
@@ -190,6 +207,7 @@
   function lede() {
     return el('section', { class: 'lede' },
       el('div', null,
+        el('p', { class: 'kicker', text: 'Pre-token radar · ' + DATA.board_size + ' protocols scored · ' + DATA.watchlist_size + ' on the watchlist' }),
         el('h1', { text: DATA.watchlist_size + ' watchlist protocols, ranked by implied value' }),
         el('p', { text: 'The watchlist is the floor: every protocol with at least $' + Math.round(DATA.floor_usd / 1e6) + 'M of TVL and no token on record. The early radar adds ' + DATA.early_size + ' pre-token protocols below that floor. Implied value is a model, not a promise.' })
       ),
@@ -202,11 +220,15 @@
     );
   }
 
-  // Top-10 chart: plain HTML bars, drawn from the same rows the table shows. No image, no network,
-  // and no SVG namespace string in the source.
+  // Top-10 chart: plain HTML bars, drawn from the same rows the table shows — the rows currently
+  // in view, so the chart always follows the active search, category and chain filters. No image,
+  // no network, and no SVG namespace string in the source.
   function topChart() {
-    var top = DATA.rows.slice(0, 10);
+    var list = rows();
+    if (list.length === 0) return null;
+    var top = list.slice(0, 10);
     var max = top[0] ? top[0].implied_value_usd : 1;
+    var filtered = state.category !== 'all' || state.chain !== 'all' || state.q.trim() !== '';
     var bars = top.map(function (r) {
       var w = Math.max(4, Math.round((r.implied_value_usd / max) * 100));
       return el('div', { class: 'chart-row' },
@@ -216,8 +238,8 @@
       );
     });
     return el('section', { class: 'panel chart-panel' },
-      el('h2', { text: 'Top 10 by implied value' }),
-      el('p', { class: 'sub', text: 'The same rows as the board below, drawn to scale. Rank 1 is the longest bar.' }),
+      el('h2', { text: 'Top 10 by implied value' + (state.category !== 'all' ? ' · ' + state.category : '') }),
+      el('p', { class: 'sub', text: filtered ? 'The top 10 of the ' + list.length + ' row' + (list.length === 1 ? '' : 's') + ' in view, drawn to scale. Rank 1 is the longest bar.' : 'The same rows as the board below, drawn to scale. Rank 1 is the longest bar.' }),
       el('div', { class: 'chart' }, bars)
     );
   }
@@ -288,7 +310,10 @@
         el('td', { class: 'num rank ' + rankBadge(r.rank), text: String(r.rank) }),
         el('td', null, el('div', { class: 'name' },
           el('b', { text: r.name }),
-          el('span', { class: 'sub', text: (r.category || 'Other') + ' on ' + (r.chains && r.chains.length ? r.chains.slice(0, 2).join(', ') : 'an unnamed chain') })
+          el('div', { class: 'row-sub' },
+            chip(r.category),
+            el('span', { class: 'sub', text: 'on ' + (r.chains && r.chains.length ? r.chains.slice(0, 2).join(', ') : 'an unnamed chain') })
+          )
         )),
         el('td', { class: 'num', text: fmtUsd(r.tvl_usd) }),
         el('td', { class: 'num ' + growthClass, text: growth }),
@@ -325,7 +350,13 @@
     DATA.live.forEach(function (r) {
       tbody.appendChild(el('tr', null,
         el('td', { class: 'num', text: 'live' }),
-        el('td', null, el('div', { class: 'name' }, el('b', { text: r.name }), el('span', { class: 'sub', text: (r.category || 'Other') + ' on ' + (r.chains && r.chains.length ? r.chains.slice(0, 2).join(', ') : 'an unnamed chain') }))),
+        el('td', null, el('div', { class: 'name' },
+          el('b', { text: r.name }),
+          el('div', { class: 'row-sub' },
+            chip(r.category),
+            el('span', { class: 'sub', text: 'on ' + (r.chains && r.chains.length ? r.chains.slice(0, 2).join(', ') : 'an unnamed chain') })
+          )
+        )),
         el('td', { class: 'num', text: fmtUsd(r.tvl_usd) }),
         el('td', { class: 'num ' + (r.change_7d !== null && r.change_7d >= 0 ? 'pos' : 'neg'), text: fmtPct(r.change_7d) }),
         el('td', { class: 'num', text: fmtUsd(r.mcap_usd) }),
@@ -359,7 +390,7 @@
       el('div', { class: 'formula' },
         'implied = round( tvl_usd x peerMultiple x (1 + clamp(change_7d, ' + m.growth_floor + ', ' + m.growth_cap + ') / 100 x ' + m.growth_weight + ') x (' + m.maturity_floor + ' + min(age_days, ' + m.maturity_days + ') / ' + m.maturity_days + ' x ' + m.maturity_range + ') x (1 + 0.03 x min(chains - 1, 5)) )'
       ),
-      el('p', { class: 'sub', text: 'peerMultiple is the median market-cap / TVL of the tokened protocols in the same category, computed from this snapshot and clamped to ' + m.peer_floor + '–' + m.peer_cap + '. TVL and seven-day growth come from the snapshot. Age is the time since the protocol was first listed, the best record of how long it has run with no token; an unlisted age uses ' + m.unknown_age_days + ' days. The early radar is every pre-token protocol below the watchlist floor, ranked by implied value, and the live-token protocols are set aside with their market caps shown.' }),
+      el('p', { class: 'sub', text: 'peerMultiple is the median market-cap / TVL of the tokened protocols in the same category, computed from this snapshot and clamped to ' + m.peer_floor + '–' + m.peer_cap + '. When a category has fewer than ' + m.peer_min_peers + ' tokened peers, the global median across all tokened protocols is used instead. TVL and seven-day growth come from the snapshot. Age is the time since the protocol was first listed, the best record of how long it has run with no token; an unlisted age uses ' + m.unknown_age_days + ' days. The early radar is every pre-token protocol below the watchlist floor, ranked by implied value, and the live-token protocols are set aside with their market caps shown.' }),
       el('h3', { text: 'Peer multiples by category' }),
       el('div', { class: 'peers' }, peerRows)
     );
@@ -375,37 +406,66 @@
     writeHash();
     dialog.textContent = '';
     var steps = farmSteps(row);
+    // Peer comparison: the row's multiple is the category median when the category has enough
+    // tokened peers, otherwise the global median across every tokened protocol; a category with
+    // no tokened peer at all is not in the peer list, so it falls back the same way. Say which.
+    var peer = (DATA.peer_multiples || []).filter(function (p) { return p.category === row.category; })[0];
+    var peerTotal = (DATA.peer_multiples || []).reduce(function (a, p) { return a + p.peers; }, 0);
+    var mult = row.peer_multiple === null || row.peer_multiple === undefined ? null : row.peer_multiple;
+    var peerLabel = 'Peer multiple';
+    var peerNoteText;
+    if (peer && peer.peers >= DATA.model.peer_min_peers) {
+      peerLabel = 'Peer multiple · category median';
+      peerNoteText = 'Peer check: ' + row.category + ' has ' + peer.peers + ' tokened peers, median market-cap / TVL ' + peer.multiple.toFixed(2) + 'x. This row is scored with that multiple.';
+    } else if (peer) {
+      peerLabel = 'Peer multiple · global median';
+      peerNoteText = 'Peer check: ' + row.category + ' has only ' + peer.peers + ' tokened peer' + (peer.peers === 1 ? '' : 's') + ' — too few for a category median — so the model uses the global median of ' + (mult === null ? 'n/a' : mult.toFixed(2) + 'x') + ' across ' + peerTotal + ' tokened protocols.';
+    } else {
+      peerLabel = 'Peer multiple · global median';
+      peerNoteText = 'Peer check: no tokened peer in ' + row.category + ' yet, so the model uses the global median of ' + (mult === null ? 'n/a' : mult.toFixed(2) + 'x') + ' across ' + peerTotal + ' tokened protocols.';
+    }
+    if (mult !== null && mult <= DATA.model.peer_floor + 1e-9) peerNoteText += ' It sits at the model floor of ' + DATA.model.peer_floor + 'x.';
+    else if (mult !== null && mult >= DATA.model.peer_cap - 1e-9) peerNoteText += ' It sits at the model cap of ' + DATA.model.peer_cap + 'x.';
     dialog.appendChild(el('div', { class: 'detail-head' },
       el('div', null,
         el('span', { class: 'brand-name', text: 'Rank ' + row.rank + ' of ' + DATA.board_size }),
         el('h2', { id: 'detail-title', text: row.name }),
-        el('p', { class: 'sub', text: (row.category || 'Other') + ' on ' + (row.chains && row.chains.length ? row.chains.join(', ') : 'an unnamed chain') })
+        el('div', { class: 'row-sub' },
+          chip(row.category),
+          el('span', { class: 'sub', text: 'on ' + (row.chains && row.chains.length ? row.chains.join(', ') : 'an unnamed chain') })
+        )
       ),
       el('button', { class: 'close', type: 'button', 'aria-label': 'Close details', text: 'Close', onclick: function () { dialog.close(); } })
     ));
-    dialog.appendChild(el('section', { class: 'detail-section' },
-      el('h3', { text: 'Implied value' }),
-      el('div', { class: 'equation' },
-        el('div', null, el('span', { text: 'TVL' }), el('b', { class: 'num', text: fmtUsd(row.tvl_usd) })),
-        el('div', null, el('span', { text: 'Peer multiple (' + (row.category || 'Other') + ')' }), el('b', { class: 'num', text: (row.peer_multiple === null || row.peer_multiple === undefined ? 'n/a' : row.peer_multiple.toFixed(2) + 'x') })),
-        el('div', null, el('span', { text: 'Seven-day growth' }), el('b', { class: 'num', text: fmtPct(row.change_7d) })),
-        el('div', null, el('span', { text: 'Age with no token' }), el('b', { class: 'num', text: fmtAge(row.age_days) })),
-        el('div', null, el('span', { text: 'Chains' }), el('b', { class: 'num', text: String(row.chains ? row.chains.length : 0) })),
-        el('div', null, el('span', { text: 'Growth multiplier' }), el('b', { class: 'num', text: String(row.growth_multiplier) })),
-        el('div', null, el('span', { text: 'Maturity multiplier' }), el('b', { class: 'num', text: String(row.maturity_multiplier) })),
-        el('div', null, el('span', { text: 'Chains multiplier' }), el('b', { class: 'num', text: String(row.chains_multiplier) })),
-        el('div', null, el('span', { text: 'Implied value' }), el('b', { class: 'num', text: fmtUsd(row.implied_value_usd) }))
+    // Two columns, so the model and the whole farm plan fit in one 900px viewport: the implied
+    // value and its peer check on the left, all seven farm steps on the right.
+    dialog.appendChild(el('div', { class: 'detail-grid' },
+      el('section', { class: 'detail-section' },
+        el('h3', { text: 'Implied value' }),
+        el('div', { class: 'equation' },
+          el('div', null, el('span', { text: 'TVL' }), el('b', { class: 'num', text: fmtUsd(row.tvl_usd) })),
+          el('div', null, el('span', { text: peerLabel }), el('b', { class: 'num', text: (row.peer_multiple === null || row.peer_multiple === undefined ? 'n/a' : row.peer_multiple.toFixed(2) + 'x') })),
+          peer ? el('div', null, el('span', { text: 'Tokened peers in category' }), el('b', { class: 'num', text: String(peer.peers) })) : null,
+          el('div', null, el('span', { text: 'Seven-day growth' }), el('b', { class: 'num', text: fmtPct(row.change_7d) })),
+          el('div', null, el('span', { text: 'Age with no token' }), el('b', { class: 'num', text: fmtAge(row.age_days) })),
+          el('div', null, el('span', { text: 'Chains' }), el('b', { class: 'num', text: String(row.chains ? row.chains.length : 0) })),
+          el('div', null, el('span', { text: 'Growth multiplier' }), el('b', { class: 'num', text: String(row.growth_multiplier) })),
+          el('div', null, el('span', { text: 'Maturity multiplier' }), el('b', { class: 'num', text: String(row.maturity_multiplier) })),
+          el('div', null, el('span', { text: 'Chains multiplier' }), el('b', { class: 'num', text: String(row.chains_multiplier) })),
+          el('div', null, el('span', { text: 'Implied value' }), el('b', { class: 'num', text: fmtUsd(row.implied_value_usd) }))
+        ),
+        el('p', { class: 'peer-note', text: peerNoteText }),
+        el('p', { class: 'sub', text: 'Model ' + DATA.model_version + ': the same function scores every protocol. The page recomputes this row as ' + fmtUsd(impliedOf(row, DATA.model)) + (impliedOf(row, DATA.model) === row.implied_value_usd ? ', the same number board.json carries.' : ', which differs from the board: the data would be stale.') + ' This is an estimate, not a price.' })
       ),
-      el('p', { class: 'sub', text: 'Model ' + DATA.model_version + ': the same function scores every protocol. The page recomputes this row as ' + fmtUsd(impliedOf(row, DATA.model)) + (impliedOf(row, DATA.model) === row.implied_value_usd ? ', the same number board.json carries.' : ', which differs from the board: the data would be stale.') + ' This is an estimate, not a price.' })
-    ));
-    dialog.appendChild(el('section', { class: 'detail-section' },
-      el('h3', { text: 'Farm plan' }),
-      el('ol', { class: 'steps' }, steps.map(function (s) {
-        var at = s.indexOf(' Cost: ');
-        var action = at >= 0 ? s.slice(0, at) : s;
-        var tail = at >= 0 ? s.slice(at + 1) : '';
-        return el('li', null, el('b', { text: action }), el('span', { class: 'cost', text: tail }));
-      }))
+      el('section', { class: 'detail-section' },
+        el('h3', { text: 'Farm plan' }),
+        el('ol', { class: 'steps' }, steps.map(function (s) {
+          var at = s.indexOf(' Cost: ');
+          var action = at >= 0 ? s.slice(0, at) : s;
+          var tail = at >= 0 ? s.slice(at + 1) : '';
+          return el('li', null, el('b', { text: action }), el('span', { class: 'cost', text: tail }));
+        }))
+      )
     ));
     if (typeof dialog.showModal === 'function') {
       if (!dialog.open) dialog.showModal();
@@ -419,7 +479,10 @@
     var shell = el('div', { class: 'shell' });
     shell.appendChild(header());
     shell.appendChild(lede());
-    if (state.tab === 'pre-token') shell.appendChild(topChart());
+    if (state.tab === 'pre-token') {
+      var chart = topChart();
+      if (chart) shell.appendChild(chart);
+    }
     shell.appendChild(controls());
     shell.appendChild(state.tab === 'pre-token' ? boardTable() : liveTable());
     if (state.tab === 'pre-token') shell.appendChild(modelPanel());
