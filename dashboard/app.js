@@ -2,9 +2,10 @@
 // and renders the ranked board, a filterable table, a per-protocol detail drawer with the model's
 // own inputs and the protocol's farm plan. No network: every byte it shows is in data.js.
 //
-// Readability first: base type is 16px, table type 15px, numbers tabular, dark ink on a light
-// canvas with a single deep-teal accent. Screenshots are taken at 1440x900, 100% zoom, so the
-// board's top rows, the detail drawer and the filtered view all read clearly at full size.
+// Readability first: base type is 16px, table type 14.5px, numbers tabular, bright type
+// on a deep-ink canvas with gold + teal accents. Screenshots are taken at 1440x900,
+// 100% zoom, so the hero, the chart, the board's top rows, the detail drawer and the
+// filtered view all read clearly at full size.
 (function () {
   'use strict';
 
@@ -65,11 +66,11 @@
     return node;
   }
 
-  // Category chips: a fixed 8-colour palette, assigned by a hash of the category name, so no
-  // category is special-cased and every row gets a readable coloured chip.
+  // Category chips: an 8-colour palette of bright text on dark panels, assigned by a
+  // hash of the category name, so no category is special-cased and every chip reads on ink.
   var CHIP_COLORS = [
-    ['#d9efe6', '#0b5c40'], ['#dbe9f7', '#1d4e89'], ['#ece4f8', '#5b2d8e'], ['#fdeeda', '#7a4a00'],
-    ['#fbdfe1', '#8c1d24'], ['#e3f2d9', '#2f5d0f'], ['#e0e7ff', '#3730a3'], ['#f0e4d8', '#6b3a1f']
+    ['#16233d', '#93c5fd'], ['#12303a', '#5eead4'], ['#2a1f45', '#d8b4fe'], ['#33230f', '#fcd34d'],
+    ['#3a1620', '#fda4af'], ['#14291a', '#86efac'], ['#232a4a', '#a5b4fc'], ['#331d12', '#fdba74']
   ];
   function catColor(cat) {
     var h = 0;
@@ -204,43 +205,97 @@
     );
   }
 
-  function lede() {
-    return el('section', { class: 'lede' },
-      el('div', null,
-        el('p', { class: 'kicker', text: 'Pre-token radar · ' + DATA.board_size + ' protocols scored · ' + DATA.watchlist_size + ' on the watchlist' }),
-        el('h1', { text: DATA.watchlist_size + ' watchlist protocols, ranked by implied value' }),
-        el('p', { text: 'The watchlist is the floor: every protocol with at least $' + Math.round(DATA.floor_usd / 1e6) + 'M of TVL and no token on record. The early radar adds ' + DATA.early_size + ' pre-token protocols below that floor. Implied value is a model, not a promise.' })
+  // HERO — an editorial opening, not a template lede: the headline, the rank-1 protocol
+  // as a giant gold number with the one-line reason it leads, the next two names, and a
+  // ticker of the four numbers that frame the whole radar. Compact on purpose, so the
+  // board's top rows still fit in a 900px screenshot.
+  function hero() {
+    var top1 = DATA.rows[0];
+    var second = DATA.rows[1];
+    var third = DATA.rows[2];
+    var total = DATA.rows.reduce(function (a, r) { return a + r.implied_value_usd; }, 0);
+    var tick = function (big, label) {
+      return el('div', { class: 'tick' }, el('b', { text: big }), el('span', { text: label }));
+    };
+    return el('div', null,
+      el('section', { class: 'hero' },
+        el('div', { class: 'hero-copy' },
+          el('p', { class: 'kicker', text: 'Pre-token radar · Snapshot ' + DATA.as_of + ' · ' + DATA.model_version + ' model' }),
+          el('h1', null, 'The next tokens, ', el('span', { class: 'gold', text: 'priced before they exist.' })),
+          el('p', null,
+            el('b', { text: 'Every protocol with $50M+ of TVL and no token on record' }),
+            ' — plus ' + DATA.early_size + ' early names below the floor — scored by one model: TVL × peer multiple × growth × maturity × chains. No names hand-picked. No promises, just the arithmetic.')
+        ),
+        el('div', { class: 'hero-card' },
+          el('div', { class: 'hero-card-inner' },
+            el('div', { class: 'label', text: '№ 1 · Implied value' }),
+            el('div', { class: 'hero-value', text: fmtUsd(top1.implied_value_usd) }),
+            el('div', { class: 'hero-name', text: top1.name }),
+            el('p', { class: 'hero-why', text: 'Why it leads — $' + (top1.tvl_usd / 1e9).toFixed(2) + 'B of TVL, the largest pre-token stack in the set, priced at ' + top1.peer_multiple.toFixed(2) + '×, the multiple the model applies to it. ' + top1.chains.length + ' chains. ' + top1.age_days + ' days with no token.' }),
+            el('div', { class: 'hero-next' },
+              el('b', { text: '2. ' + second.name + ' ' + fmtUsd(second.implied_value_usd) }),
+              '   ·   ',
+              el('b', { text: '3. ' + third.name + ' ' + fmtUsd(third.implied_value_usd) }))
+          )
+        )
       ),
-      el('div', { class: 'facts' },
-        el('div', { class: 'fact' }, el('span', { text: 'Watchlist covered' }), el('b', { text: DATA.watchlist_size + ' / ' + DATA.watchlist_size })),
-        el('div', { class: 'fact' }, el('span', { text: 'Pre-token rows scored' }), el('b', { text: String(DATA.board_size) })),
-        el('div', { class: 'fact' }, el('span', { text: 'Early rows below the floor' }), el('b', { text: String(DATA.early_size) })),
-        el('div', { class: 'fact' }, el('span', { text: 'Live-token protocols set aside' }), el('b', { text: String(DATA.live_size) }))
+      el('div', { class: 'ticker' },
+        tick(DATA.watchlist_size + ' / ' + DATA.watchlist_size, 'watchlist covered'),
+        tick(String(DATA.board_size), 'protocols scored'),
+        tick(fmtUsd(total), 'total implied value'),
+        tick(String(DATA.live_size), 'live-token names set aside')
       )
     );
   }
 
   // Top-10 chart: plain HTML bars, drawn from the same rows the table shows — the rows currently
-  // in view, so the chart always follows the active search, category and chain filters. No image,
-  // no network, and no SVG namespace string in the source.
+  // in view, so the chart always follows the active search, category and chain filters. Two
+  // columns of five keep it short, so the board stays in view. No image, no network, and no
+  // SVG namespace string in the source.
   function topChart() {
     var list = rows();
     if (list.length === 0) return null;
     var top = list.slice(0, 10);
     var max = top[0] ? top[0].implied_value_usd : 1;
     var filtered = state.category !== 'all' || state.chain !== 'all' || state.q.trim() !== '';
-    var bars = top.map(function (r) {
+    var bar = function (r) {
       var w = Math.max(4, Math.round((r.implied_value_usd / max) * 100));
-      return el('div', { class: 'chart-row' },
+      var cls = 'chart-row' + (r.rank === 1 ? ' r1' : r.rank === 2 ? ' r2' : r.rank === 3 ? ' r3' : '');
+      return el('div', { class: cls },
         el('span', { class: 'chart-label', text: r.rank + '. ' + r.name }),
         el('div', { class: 'chart-track' }, el('i', { class: 'chart-fill', style: 'width:' + w + '%' })),
         el('span', { class: 'chart-value num', text: fmtUsd(r.implied_value_usd) })
       );
-    });
+    };
     return el('section', { class: 'panel chart-panel' },
-      el('h2', { text: 'Top 10 by implied value' + (state.category !== 'all' ? ' · ' + state.category : '') }),
-      el('p', { class: 'sub', text: filtered ? 'The top 10 of the ' + list.length + ' row' + (list.length === 1 ? '' : 's') + ' in view, drawn to scale. Rank 1 is the longest bar.' : 'The same rows as the board below, drawn to scale. Rank 1 is the longest bar.' }),
-      el('div', { class: 'chart' }, bars)
+      el('div', { class: 'chart-head' },
+        el('h2', null, 'Top 10 by ', el('span', { text: 'implied value' }), state.category !== 'all' ? ' · ' + state.category : ''),
+        el('span', { class: 'sub', text: filtered ? 'The top 10 of the ' + list.length + ' row' + (list.length === 1 ? '' : 's') + ' in view, drawn to scale.' : 'The same rows as the board below, drawn to scale. Rank 1 is the longest bar.' })
+      ),
+      el('div', { class: 'chart' },
+        el('div', { class: 'chart-col' }, top.slice(0, 5).map(bar)),
+        el('div', { class: 'chart-col' }, top.slice(5, 10).map(bar))
+      )
+    );
+  }
+
+  // What the model rewards, in plain words: five cards, one per factor. It sits below the
+  // board so it never pushes the top rows out of a screenshot.
+  function rewardsStrip() {
+    var items = [
+      ['TVL', 'Size is the base.', ' The bigger the locked value, the bigger the implied prize.'],
+      ['Peer multiple', 'Priced like its cousins.', ' Each category is valued at the median mcap / TVL of its tokened peers.'],
+      ['Growth', 'Momentum counts.', ' Seven-day TVL growth lifts the score — clamped, so one spike can’t rig it.'],
+      ['Maturity', 'Patience pays.', ' The longer a protocol runs with no token, the closer the launch feels.'],
+      ['Chains', 'Reach adds up.', ' Every extra chain adds 3%, up to five — breadth is distribution.']
+    ];
+    return el('section', { class: 'panel rewards' },
+      el('h2', null, 'What the model ', el('span', { text: 'rewards' })),
+      el('div', { class: 'rewards-grid' }, items.map(function (it) {
+        return el('div', { class: 'reward' },
+          el('b', { text: it[0] }),
+          el('span', null, el('em', { text: it[1] }), it[2]));
+      }))
     );
   }
 
@@ -385,7 +440,7 @@
       );
     });
     return el('section', { class: 'panel model' },
-      el('h2', { text: 'How implied value is computed' }),
+      el('h2', null, 'How implied value is ', el('span', { text: 'computed' })),
       el('p', { class: 'sub', text: 'Every row is scored by one function of the snapshot figures. No protocol name is special-cased, and no row is hand-picked.' }),
       el('div', { class: 'formula' },
         'implied = round( tvl_usd x peerMultiple x (1 + clamp(change_7d, ' + m.growth_floor + ', ' + m.growth_cap + ') / 100 x ' + m.growth_weight + ') x (' + m.maturity_floor + ' + min(age_days, ' + m.maturity_days + ') / ' + m.maturity_days + ' x ' + m.maturity_range + ') x (1 + 0.03 x min(chains - 1, 5)) )'
@@ -478,14 +533,18 @@
     app.textContent = '';
     var shell = el('div', { class: 'shell' });
     shell.appendChild(header());
-    shell.appendChild(lede());
-    if (state.tab === 'pre-token') {
-      var chart = topChart();
-      if (chart) shell.appendChild(chart);
-    }
+    shell.appendChild(hero());
     shell.appendChild(controls());
     shell.appendChild(state.tab === 'pre-token' ? boardTable() : liveTable());
-    if (state.tab === 'pre-token') shell.appendChild(modelPanel());
+    if (state.tab === 'pre-token') {
+      // The chart sits below the board, so the hero and the board's top rows share the
+      // first 900px viewport; it still renders from the filtered rows, so it follows
+      // the active search, category and chain filters.
+      var chart = topChart();
+      if (chart) shell.appendChild(chart);
+      shell.appendChild(rewardsStrip());
+      shell.appendChild(modelPanel());
+    }
     app.appendChild(shell);
     app.setAttribute('aria-busy', 'false');
     if (!dialog.isConnected) app.appendChild(dialog);
