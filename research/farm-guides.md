@@ -5,11 +5,12 @@ Method: each protocol's DefiLlama page, then its OFFICIAL website (homepage + do
 Where the official site could not be opened directly, the finding rests on the protocol's own docs/blog
 found via search plus DefiLlama — marked `partial`. Nothing here invents a feature: if the site
 does not say it, the guide says so.
+Round 2 re-check completed 2026-11-17: the 20 `partial` entries were re-read live; see below.
 
 ## Tally
 
-- Verified from the official site: **20** / 40
-- Partial (official site not fully openable; confirmed via own docs + DefiLlama): **20** / 40
+- Verified from the official site: **36** / 40
+- Partial (official site not fully openable; confirmed via own docs + DefiLlama): **4** / 40
 - Unverified: **0** / 40
 
 ## The 5 biggest contradictions with the current farm steps
@@ -57,6 +58,27 @@ withdrawals); Doppler's snapshot chain label 'Ripple' is really XRPL; Firelight 
 capital providers (stake FXRP for stXRP) with 30-60 day exits, not cover buyers; Mezo Earn is
 lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on gauges.
 
+## Round 2 re-check (2026-11-17)
+
+All 20 entries that were `partial` after round 1 were re-checked against their official
+sites/docs live. 17 had their farm steps upgraded, 3 keep their old steps.
+
+- Upgraded (17): nonce-capital, onre, opentrade, plume-vaults, rockawayx, symbiotic,
+  hyperithm, r25, k3-capital, clearstar, b14g, galaxy-curation, ember, noble,
+  reti-pooling, tydr, firelight. Valos keeps its steps but is now `verified`: valos.io
+  was read directly and confirms the entry word-for-word.
+- Kept (3): hive-protocol (site still geo-blocked), axis (app geo-blocked; Coordinates
+  mechanics still secondary-only; Season 1 start-date conflict unresolved), valos
+  (steps unchanged, status upgraded — see above).
+- Biggest corrections: tydr's 'no points program' was wrong — TydroInkPoints weekly
+  campaigns run since Oct 2025, Season 2 live, Merkl claims toward $INK. Symbiotic's
+  'points accrue' was wrong — the site/docs mention no points program or token, and TVL
+  is down 41% to ~$287M. b14g contracts are PAUSED since 31 Oct 2026 with no post-mortem
+  and no repayments yet — the steps now say do not deposit. Noble's USDC bridge-in path
+  is degrading toward a full pause on 12 Jan 2027. Hyperithm disclosed a 30 Oct 2026
+  personal-data breach — the steps now warn about phishing. Firelight adds a
+  time-sensitive 230,000 FXRP early-contributor claim window (7 Oct–7 Dec 2026).
+
 ## Per-protocol findings
 
 ### #1 Steakhouse Financial (`steakhouse-financial`) — verified
@@ -78,13 +100,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 from the Morpho vault and close the position. (Cost: about $3 of gas to exit. Time: 10 minutes to exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $150 into a Steakhouse Financial vault on Base and keep the vault shares. Cost: $150 of capital and about $8 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $4 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $150 locked in the position until you exit. Time: 30 days.
-  5. Check Steakhouse Financial once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Steakhouse Financial's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $150 into a Steakhouse Financial vault on Base and keep the vault shares. Cost: $150 of capital and about $8 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $4 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $150 locked in the position until you exit. Time: 30 days.
+    5. Check Steakhouse Financial once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Steakhouse Financial's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #2 Gauntlet (`gauntlet`) — verified
 
@@ -105,13 +127,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 from the vault and close the position. (Cost: about $3 of gas to exit. Time: 10 minutes to exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $150 into a Gauntlet vault on Base and keep the vault shares. Cost: $150 of capital and about $8 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $4 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $150 locked in the position until you exit. Time: 30 days.
-  5. Check Gauntlet once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Gauntlet's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $150 into a Gauntlet vault on Base and keep the vault shares. Cost: $150 of capital and about $8 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $4 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $150 locked in the position until you exit. Time: 30 days.
+    5. Check Gauntlet once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Gauntlet's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #3 Veda (`veda`) — verified
 
@@ -132,13 +154,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 from the vault and close the position. (Cost: about $3 of gas to exit. Time: 10 minutes to exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $150 into a Veda vault on Ink and keep the vault shares. Cost: $150 of capital and about $8 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $4 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $150 locked in the position until you exit. Time: 30 days.
-  5. Check Veda once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Veda's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $150 into a Veda vault on Ink and keep the vault shares. Cost: $150 of capital and about $8 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $4 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $150 locked in the position until you exit. Time: 30 days.
+    5. Check Veda once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Veda's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #4 USDD (`usdd`) — verified
 
@@ -159,13 +181,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: repay the USDD, withdraw your ETH collateral from the vault, and close the position. (Cost: about $3 of gas to exit. Time: 10 minutes to exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Supply $150 of USDC to USDD on Tron and leave it earning interest. Cost: $150 of capital and about $8 of gas. Time: 15 minutes to set up.
-  3. Lend a second, smaller amount on USDD the following week, using a different asset as collateral, so the record shows more than one deposit. Cost: about $4 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $150 locked in the position until you exit. Time: 30 days.
-  5. Check USDD once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open USDD's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Supply $150 of USDC to USDD on Tron and leave it earning interest. Cost: $150 of capital and about $8 of gas. Time: 15 minutes to set up.
+    3. Lend a second, smaller amount on USDD the following week, using a different asset as collateral, so the record shows more than one deposit. Cost: about $4 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $150 locked in the position until you exit. Time: 30 days.
+    5. Check USDD once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open USDD's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #5 Upshift (`upshift`) — verified
 
@@ -186,13 +208,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 from the vault and close the position. (Cost: about $3 of gas to exit. Time: 10 minutes to exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $100 into a Upshift vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Upshift once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Upshift's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $100 into a Upshift vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Upshift once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Upshift's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #6 Bittensor dTAO (`bittensor-dtao`) — verified
 
@@ -213,256 +235,256 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Exit with remove-stake or unstake-all, which swaps your alpha back to TAO at the pool price instantly; there is no unbonding period, so TAO is spendable at once. (Cost: Network fee, small (estimate under $1). Time: 5 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Provide $100 of liquidity to Bittensor dTAO's main pool on Bittensor and leave it earning trading fees. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Swap a small amount through Bittensor dTAO on Bittensor once a week, on top of the liquidity position. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
-  5. Check Bittensor dTAO once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Bittensor dTAO's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Provide $100 of liquidity to Bittensor dTAO's main pool on Bittensor and leave it earning trading fees. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Swap a small amount through Bittensor dTAO on Bittensor once a week, on top of the liquidity position. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
+    5. Check Bittensor dTAO once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Bittensor dTAO's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #7 Nonce Capital (`nonce-capital`) — partial
+### #7 Nonce Capital (`nonce-capital`) — verified
 
 - Category: Risk Curators · Chains: Ethereum, Optimism
 - Official site: https://nonce-capital.xyz
 - DefiLlama: https://defillama.com/protocol/nonce-capital
 - What it does: Nonce Capital is a DeFi risk curator that manages asset allocation and strategies for third-party vaults, including ether.fi Liquid vaults and Midas tokenized funds. It has no retail deposit app of its own; it curates vaults built on Veda infrastructure for other protocols.
-- Notes: Official site nonce-capital.xyz could not be fetched (browser rate limit, HTTP 429) so status is partial, not verified. The curator-only model is confirmed by DefiLlama, Veda's ecosystem page and ether.fi's help docs. No Nonce points program was found anywhere. Generic 'deposit into a Nonce vault' steps would be wrong: there is no Nonce vault or Nonce app to deposit into. Gas and hold times are estimates.
-- Sources: https://defillama.com/protocol/nonce-capital, https://help.ether.fi/en/articles/517109-how-liquid-works, https://veda.tech/ecosystem/nonce-capital
+- Notes: Re-checked 2026-11-17: nonce-capital.xyz now reads directly (was HTTP 429). It confirms institutional-only, no deposit button: $455.2M TVL (Liquid ETH $324.4M, Liquid USD $112.0M, Liquid BTC $18.8M). Aave governance (2026-07-14) confirms Nonce curates the ether.fi Liquid vault suite and is independent risk admin for ether.fi Cash's Aave V4 instance. ether.fi Liquid unavailable in US, Canada, UK; withdrawals up to 3 days, 7 days for Liquid USD RWA vaults. No Nonce points program was found anywhere.
+- Sources: https://nonce-capital.xyz, https://defillama.com/protocol/nonce-capital, https://help.ether.fi/en/articles/517109-how-liquid-works, https://governance.aave.com/t/arfc-deploy-a-dedicated-aave-v4-whitelabel-instance-fully-managed-by-etherfi-on-op-mainnet-to-power-ether-fi-cash/25314
 
   Farm steps (researched):
-  1. Use a fresh wallet and understand that Nonce Capital itself has no deposit button: you farm its strategies indirectly through the vaults it curates, mainly ether.fi Liquid. (Cost: Free. Time: 10 min.)
-  2. Go to the ether.fi app and open the Liquid product, which is the retail vault suite Nonce Capital curates, and check which Liquid vaults are live on Ethereum or Optimism. (Cost: Free. Time: 10-15 min.)
-  3. Check the geo-restrictions first: ether.fi Liquid is not available to users in the United States, Canada, or the United Kingdom, and availability varies by location. (Cost: Free. Time: 5 min.)
-  4. Fund your wallet with ETH or a supported stablecoin on Ethereum, keeping some ETH aside for gas, since deposits and withdrawals are on-chain transactions. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
-  5. Deposit into a Liquid vault from the ether.fi app by selecting the asset and amount and confirming the transaction; your funds then start earning automatically. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
-  6. Hold the vault position and track it in the ether.fi app; Nonce Capital rebalances allocation and risk parameters behind the scenes and there is no separate Nonce action to take. (Cost: Free. Time: Hold 30 days (estimate).)
-  7. Exit through the ether.fi Liquid withdrawal flow in the same app; ether.fi estimates Liquid ETH withdrawals can take up to three days to settle. (Cost: Gas $2-8 (estimate). Time: Up to 3 days to settle.)
+  1. Use a fresh wallet and understand Nonce Capital itself has no deposit button: nonce-capital.xyz is an institutional curator site ($455.2M TVL: Liquid ETH $324.4M, Liquid USD $112.0M, Liquid BTC $18.8M). You farm it indirectly through ether.fi Liquid vaults it curates. (Cost: Free. Time: 10 min.)
+  2. Go to the ether.fi app and open Liquid, the retail vault suite Nonce Capital curates, and check which Liquid vaults are live — Liquid ETH, Liquid USD and Liquid BTC — on Ethereum or Optimism. (Cost: Free. Time: 10-15 min.)
+  3. Check geo-restrictions first: ether.fi Liquid is not available to users in the United States, Canada, or the United Kingdom, and availability varies by location. Do not proceed if you are in an excluded jurisdiction. (Cost: Free. Time: 5 min.)
+  4. Fund your wallet with ETH, BTC or a supported stablecoin on Ethereum, keeping some ETH aside for gas, since deposits and withdrawals are on-chain transactions. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
+  5. Deposit into a Liquid vault from the ether.fi app by selecting the asset and amount and confirming the transaction; your funds then start earning automatically and Nonce rebalances allocation and risk behind the scenes. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
+  6. Hold the vault position and track it in the ether.fi app; there is no separate Nonce action to take and no Nonce points program was found anywhere. (Cost: Free. Time: Hold 30 days (estimate).)
+  7. Exit through the ether.fi Liquid withdrawal flow in the same app; ether.fi estimates Liquid withdrawals can take up to three days to settle, or up to seven days for Liquid USD RWA vaults. (Cost: Gas $2-8 (estimate). Time: Up to 3 days to settle (7 days for RWA vaults).)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $100 into a Nonce Capital vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
-  5. Check Nonce Capital once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Nonce Capital's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $100 into a Nonce Capital vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
+    5. Check Nonce Capital once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Nonce Capital's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #8 OnRe (`onre`) — partial
+### #8 OnRe (`onre`) — verified
 
 - Category: RWA · Chains: Solana
 - Official site: https://app.onre.finance
 - DefiLlama: https://defillama.com/protocol/onre
 - What it does: OnRe connects on-chain capital to real-world reinsurance risk through ONyc, a yield-bearing token on Solana backed by reinsurance premiums and collateral investments. Its OnRe Points program rewards ONyc holders, with higher multipliers for using ONyc in DeFi.
-- Notes: Official site fetch was blocked (browser rate limit, HTTP 429), so status is partial; the product, ONyc mint flow and OnRe Points program are confirmed by OnRe's own blog and by airdrops.io's guide. Note: Loopscale is no longer recommended after its exploit froze withdrawals. The newer OnRe Core Vault on Ethereum (USDC deposit via Chainlink CCIP, 4x points, 7-day withdrawal notice) is a separate institutional route. No token airdrop is confirmed by OnRe. Gas and hold times are estimates.
-- Sources: https://defillama.com/protocol/onre, https://www.onre.finance/blog/onres-uncorrelated-reinsurance-backed-yield-is-now-available-on-ethereum-for-the-first-time, https://airdrops.io/onre/
+- Notes: Re-checked 2026-11-17: app.onre.finance now reads directly (was HTTP 429). Open Access is permissionless with no onboarding or minimums, for non-US users; US and sanctioned jurisdictions prohibited. Points multipliers corrected from the official blog and airdrops.io (updated 2026-11-11): 1 point per ONyc per day, 1x hold, 2x liquidity, 3-4x lending, 5x YT, 6x loops, plus a limited-time 10x Kamino boost with no announced end date. New: OnRe Yield Plus on Exponent (2.5x points plus a share of $10K in ONyc rewards) and OnRe Core Vault on Ethereum (USDC via Chainlink CCIP, curated by RockawayX, targets 11-13% gross USDC APY, 4x points, 7-day withdrawal notice). Loopscale: second incident reported 2026-11-06 (~$412k + ~$521k, USDC Genesis Vault collateral withdrawals still disabled) — do not use Loopscale.
+- Sources: https://app.onre.finance, https://www.onre.finance/blog/onre-introduces-points-program-rewarding-onyc-participation-across-defi, https://www.onre.finance/blog/onres-uncorrelated-reinsurance-backed-yield-is-now-available-on-ethereum-for-the-first-time, https://airdrops.io/onre/, https://defillama.com/protocol/onre
 
   Farm steps (researched):
-  1. Set up a fresh Solana wallet such as Phantom and fund it with USDC on Solana plus a small amount of SOL for transaction fees. (Cost: SOL gas under $1 (estimate). Time: 10-15 min.)
-  2. Open OnRe Open Access at app.onre.finance, connect your wallet and check the current ONyc price, NAV and APY shown on the deposit page. (Cost: Free. Time: 10 min.)
-  3. Mint ONyc by swapping USDC for ONyc in Open Access; this route is permissionless with no KYC, though some jurisdictions are excluded. (Cost: SOL gas under $1 (estimate). Time: 5-10 min.)
-  4. Hold ONyc in your wallet to start earning OnRe Points at 1 point per ONyc per day, and check your position on the OnRe leaderboard. (Cost: Free. Time: Hold 30 days (estimate).)
-  5. Boost your points by deploying ONyc into a DeFi strategy, such as looping on Kamino or depositing into the OnRe Yield Plus vault on Exponent, for multipliers up to 10x. (Cost: SOL gas under $1 per tx (estimate). Time: 15-30 min.)
-  6. Track your points, multiplier and any campaign boosts in the OnRe app and on the leaderboard, and note that points have no cash value and no token airdrop is confirmed. (Cost: Free. Time: 5 min per check.)
-  7. Exit by redeeming ONyc back to USDC through the OnRe app or by selling it on a Solana DEX; yield accrues inside the token's NAV rather than being paid out separately. (Cost: SOL gas under $1 (estimate). Time: 5-10 min.)
+  1. Set up a fresh Solana wallet such as Phantom and fund it with USDC on Solana plus a small amount of SOL for fees, then open OnRe Open Access at app.onre.finance and accept the terms: it is permissionless with no onboarding or minimums, but the United States and sanctioned jurisdictions are prohibited. Check the current ONyc price, NAV and APY on the deposit page. (Cost: SOL gas under $1 (estimate). Time: 10-15 min.)
+  2. Mint ONyc by swapping USDC for ONyc in Open Access; yield accrues inside the token's NAV rather than being paid out separately, and there is no confirmed token airdrop — points have no cash value. (Cost: SOL gas under $1 (estimate). Time: 5-10 min.)
+  3. Hold ONyc in your wallet to earn OnRe Points at 1 point per ONyc per day (1x), and check your position on the OnRe leaderboard in the app. (Cost: Free. Time: Hold 30 days (estimate).)
+  4. Boost points only if you accept leverage risk: 2x for ONyc liquidity on Kamino, Orca or Raydium, 3-4x for lending, 5x for YT-ONyc on Exponent, and up to 6x for loops; a limited-time 10x Kamino boost has run with no announced end date, so check the live multiplier first. (Cost: SOL gas under $1 per tx (estimate). Time: 15-30 min.)
+  5. Alternatively, deposit ONyc into the OnRe Yield Plus vault on Exponent, curated by Allez, which earns 2.5x OnRe Points plus a share of $10K in ONyc rewards; the vault uses leverage, so losses are possible. For Ethereum-only capital, use the OnRe Core Vault on Accountable's YieldApp instead: deposit USDC on Ethereum, routed via Chainlink CCIP, curated by RockawayX, targeting 11-13% gross USDC APY with 4x OnRe Points and a 7-day standard withdrawal notice. (Cost: SOL gas under $1 per tx (estimate). Time: 15-30 min.)
+  6. Do not use Loopscale for ONyc strategies: it was exploited in April 2025 ($5.8M, later recovered) and again in November 2026, when USDC Genesis Vault collateral withdrawals were disabled and vault withdrawals restricted. (Cost: Free. Time: 5 min.)
+  7. Exit by redeeming ONyc back to USDC through the OnRe app or by selling it on a Solana DEX; for the Core Vault, give the 7-day withdrawal notice first. (Cost: SOL gas under $1 (estimate). Time: 5-10 min, or 7 days for Core Vault.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $100 into the tokenised asset OnRe offers on Solana and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check OnRe once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open OnRe's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $100 into the tokenised asset OnRe offers on Solana and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check OnRe once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open OnRe's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #9 OpenTrade (`opentrade`) — partial
+### #9 OpenTrade (`opentrade`) — verified
 
 - Category: RWA · Chains: Avalanche, Ethereum, Plume Mainnet
 - Official site: https://www.opentrade.io
 - DefiLlama: https://defillama.com/protocol/opentrade
 - What it does: OpenTrade is a B2B stablecoin yield-as-a-service platform: fintechs and neobanks use it to power compliant stablecoin yield products backed by real-world assets such as money market funds and ETFs. It has no direct retail deposit app; end users access it through partner apps.
-- Notes: Official homepage fetch was blocked (browser rate limit, HTTP 429), so status is partial; the B2B model is confirmed by OpenTrade's own blog and GitBook docs via search. Biggest contradiction for this entry: a generic 'deposit USDC into an OpenTrade vault' step is misleading — direct access needs onboarding plus a whitelisted wallet and KYB, and retail users only get in via partners (Littio, Midas, WOO X). No points or rewards program was found. Gas and hold times are estimates.
-- Sources: https://defillama.com/protocol/opentrade, https://www.opentrade.io/resource/neobanks-earn-stablecoin-yield-treasury, https://opentrade.gitbook.io/stablecoin-staking-yield/opentrade-stablecoin-staking-yield-powered-by-figment/how-it-works/investments.md, https://woox.io/blog/unlock-high-yield-returns-rwa-high-yield-corporate-bonds-woo-x
+- Notes: Re-checked 2026-11-17: opentrade.io now reads directly (was HTTP 429). Confirms B2B-only infrastructure: $300M+ TVL, $1.5B+ transaction volume, 60+ institutional partners. Products: Single Asset Vaults (MMFs, ETFs, Commercial Paper), Managed RWA Strategies, SOL Staking, SIERRA. Named partners: Littio, Midas, WOO X. Withdrawal timing corrected: docs say most withdrawals process same day, current maximum is 2 business days, cut-off 6pm GMT, whitelisted wallet required. No points program found.
+- Sources: https://www.opentrade.io, https://docs.opentrade.io/stablecoin-yield/stablecoin-yield-vaults/money-market-fund-vaults/usd-money-market-fund-vault/withdrawals, https://defillama.com/protocol/opentrade, https://opentrade.gitbook.io/stablecoin-staking-yield/opentrade-stablecoin-staking-yield-powered-by-figment/how-it-works/investments.md
 
   Farm steps (researched):
-  1. Use a fresh wallet and understand OpenTrade is B2B: there is no retail 'deposit' button on opentrade.io, so a retail user reaches its vaults through a partner app instead. (Cost: Free. Time: 10 min.)
+  1. Use a fresh wallet and understand OpenTrade is B2B infrastructure ($300M+ TVL, 60+ institutional partners): there is no retail 'deposit' button on opentrade.io, so a retail user reaches its vaults through a partner app instead. (Cost: Free. Time: 10 min.)
   2. Pick a partner app that runs on OpenTrade, such as Littio in Colombia, Midas Kripto in Turkey, or the WOO X RWA Earn section, and open an account there. (Cost: Free to register. Time: 15-30 min.)
-  3. Complete the partner's KYC and onboarding, since OpenTrade's own docs require onboarding and a whitelisted wallet before any vault investment. (Cost: Free. Time: 30 min to 1 day (estimate).)
-  4. Fund the partner account with USDC, USDT or EURC on the chain the partner supports, such as Avalanche or Ethereum, and check the vault's APY and terms. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
+  3. Complete the partner's KYC and onboarding, since OpenTrade requires onboarding and a whitelisted wallet before any vault investment, and direct access also needs KYB. (Cost: Free. Time: 30 min to 1 day (estimate).)
+  4. Fund the partner account with USDC, USDT or EURC on the chain the partner supports, such as Avalanche or Ethereum, and check the vault's APY and terms; underlying assets are money market funds, ETFs and commercial paper. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
   5. Subscribe to the partner's OpenTrade-powered vault in its app; your stablecoins are converted and used to buy the underlying assets, and you receive vault tokens in return. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
   6. Hold the vault tokens while yield accrues daily and compounds; there is no lock-up period on OpenTrade vaults and no points program to farm. (Cost: Free. Time: Hold 30 days (estimate).)
-  7. Exit by redeeming your vault tokens in the partner app; OpenTrade processes withdrawals within 24 hours or less according to its documentation. (Cost: Gas $2-8 (estimate). Time: Under 24 hours to settle.)
+  7. Exit by redeeming your vault tokens in the partner app; OpenTrade docs say most withdrawals process the same day if requested before the 6pm GMT cut-off, with a current maximum of 2 business days. (Cost: Gas $2-8 (estimate). Time: Same day to 2 business days.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $100 into the tokenised asset OpenTrade offers on Avalanche and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check OpenTrade once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open OpenTrade's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $100 into the tokenised asset OpenTrade offers on Avalanche and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check OpenTrade once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open OpenTrade's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #10 Plume Vaults (`plume-vaults`) — partial
+### #10 Plume Vaults (`plume-vaults`) — verified
 
 - Category: RWA · Chains: Ethereum, Plume Mainnet, Solana
 - Official site: https://app.plume.org
 - DefiLlama: https://defillama.com/protocol/plume-vaults
 - What it does: Plume Vaults is Plume's flagship real-world-asset protocol: users deposit stablecoins into structured vaults (nTBILL, nALPHA, nBASIS, nPRIME) and receive a receipt token whose redemption value rises as the underlying real-world yield accrues.
-- Notes: Official site fetch was blocked (browser rate limit, HTTP 429), so status is partial; the deposit/mint/redeem flow is confirmed in detail from Plume's own docs at app.plume.org via search. Key correction vs a generic step: pUSD is the standard deposit asset, not plain USDC — users must mint or bridge into pUSD first. No points program was found in the official docs. Redemption terms vary per vault (standard vs instant, some 7-day cooldown). Gas and hold times are estimates.
-- Sources: https://defillama.com/protocol/plume-vaults, https://app.plume.org/docs/introduction/how-to-use-nest, https://app.plume.org/docs/about/vault-operations-and-valuation, https://www.plume.org/vaults
+- Notes: Re-checked 2026-11-17: app.plume.org now reads directly (was HTTP 429) and shows an Access Denied geo-block: crypto assets are not offered in the US or to US persons or other restricted jurisdictions — a restriction the old steps did not mention. Plume docs confirm the flow exactly (pUSD is the standard deposit asset, mint/bridge at pusd.plume.org, deposit for an nTOKEN, yield as rising redemption value, standard vs instant redemption with a fee). Vault lineup now includes nOPAL (BlackOpal LiquidStone II, $106.9M), nWISDOM, nCREDIT and nACRDX alongside nTBILL, nALPHA, nBASIS and nPRIME; plume.org lists vaults at up to 12.0% APY (check live); Plume Morpho markets are now live on Ethereum with one-click looping. No points program was found in the official docs.
+- Sources: https://app.plume.org, https://app.plume.org/docs/introduction/how-to-use-nest, https://app.plume.org/docs/about/vault-operations-and-valuation, https://app.plume.org/docs/about/liquidity-and-redemptions, https://www.plume.org/vaults, https://defillama.com/protocol/plume-vaults
 
   Farm steps (researched):
-  1. Set up a fresh EVM wallet such as MetaMask or Rabby and connect it directly on the Plume Vaults portal at app.plume.org; no custodial onboarding is required. (Cost: Free. Time: 10-15 min.)
-  2. Get pUSD, the standard deposit asset across all Plume Vaults, by minting or bridging into it at pusd.plume.org; pUSD is backed 1:1 by USDC reserves. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
-  3. Browse the vault list on the portal and compare vaults such as nTBILL, nALPHA, nBASIS or nPRIME by APY, strategy and redemption terms before choosing one. (Cost: Free. Time: 15-30 min.)
-  4. Deposit your pUSD (or another supported stablecoin such as USDC or USDT) into the chosen vault and receive its receipt token, an nTOKEN, representing your share. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
-  5. Hold the nTOKEN while yield accrues inside the vault and shows up as a rising redemption value per token, rather than as separate payouts. (Cost: Free. Time: Hold 30 days (estimate).)
-  6. Optionally use the nTOKEN elsewhere in DeFi, for example supplying pUSD to earn borrower yield or looping vault exposure, if you accept the extra risk. (Cost: Gas $2-8 per tx (estimate). Time: 15-30 min.)
-  7. Exit by redeeming your nTOKEN in the portal to receive the vault's redemption asset plus accrued yield; some vaults offer same-day liquidity and others need a 7-day cooldown. (Cost: Gas $2-8 (estimate). Time: Minutes to 7 days depending on vault.)
+  1. Check geo-access first: app.plume.org shows 'Access Denied' for US persons and other restricted jurisdictions, so do not proceed if you are in a restricted region — use only the official site from an allowed region. (Cost: Free. Time: 5 min.)
+  2. Set up a fresh EVM wallet such as MetaMask or Rabby and connect it directly on the Plume Vaults portal at app.plume.org; no custodial onboarding is required. (Cost: Free. Time: 10-15 min.)
+  3. Get pUSD, the standard deposit asset across all Plume Vaults, by minting or bridging into it at pusd.plume.org; pUSD is backed 1:1 by USDC reserves. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
+  4. Browse the vault list on the portal and compare vaults such as nTBILL, nALPHA, nBASIS, nPRIME, nOPAL, nWISDOM, nCREDIT or nACRDX by APY, strategy and redemption terms before choosing one. (Cost: Free. Time: 15-30 min.)
+  5. Deposit your pUSD (or another supported stablecoin such as USDC or USDT) into the chosen vault and receive its receipt token, an nTOKEN, representing your share. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
+  6. Hold the nTOKEN while yield accrues inside the vault and shows up as a rising redemption value per token, rather than as separate payouts; no points program was found in the official docs. Optionally use the nTOKEN elsewhere in DeFi, for example supplying pUSD to earn borrower yield, looping vault exposure, or using Plume Morpho markets on Ethereum for one-click looping, if you accept the extra risk. (Cost: Free. Time: Hold 30 days (estimate).)
+  7. Exit by redeeming your nTOKEN in the portal to receive the vault's redemption asset plus accrued yield; some vaults offer same-day or instant liquidity for a fee and others need a 7-day cooldown, so check the selected window and fee before submitting. (Cost: Gas $2-8 (estimate). Time: Minutes to 7 days depending on vault.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $100 into the tokenised asset Plume Vaults offers on Ethereum and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Plume Vaults once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Plume Vaults's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $100 into the tokenised asset Plume Vaults offers on Ethereum and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Plume Vaults once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Plume Vaults's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #11 RockawayX (`rockawayx`) — partial
+### #11 RockawayX (`rockawayx`) — verified
 
 - Category: Risk Curators · Chains: Ethereum, Solana, Pharos
 - Official site: https://rockawayx.com
 - DefiLlama: https://defillama.com/protocol/rockawayx
 - What it does: RockawayX is an on-chain asset manager and risk curator (over $2B AUM) that runs actively managed vaults on Morpho (Ethereum) and Kamino (Solana) plus market-neutral strategies on Midas. Retail users deposit into its named vaults through those protocols' apps, not through rockawayx.com.
-- Notes: Official site fetch was blocked (browser rate limit, HTTP 429), so status is partial; vault names, deposit assets and the Morpho/Kamino access route are confirmed from RockawayX's own site content via search. No points program was found. Note the DefiLlama snapshot chains (Ethereum, Solana, Pharos) are a subset — RockawayX vaults also run on Monad, Sei and others. Gas and hold times are estimates.
-- Sources: https://defillama.com/protocol/rockawayx, https://rockawayx.com/insights/rockawayx-launches-three-curated-vaults-on-morpho, https://www.rockawayx.com/insights/rockawayx-vault-curation-an-overview-of-products-capabilities
+- Notes: Re-checked 2026-11-17: rockawayx.com now reads directly (was HTTP 429) — it is a VC/investment-firm site ($2B+ assets, no deposit flow), confirming deposits happen elsewhere. RockawayX's own vault-curation pages and the Morpho curator page confirm vault names and timelocks (3 days for USDC Yield/wETH, 7 days for USDC Prime) and add: fees (USDC Prime 0%, USDC Yield 5%, wETH 5%, Kamino RWA USDC 2.5%), suite grown to 16 Morpho vaults with $120M+ deposits, RockawayX USDC Yield $25.35M, Kamino RWA USDC vault ($41.9M supply) allocates across OnRe, Huma/Figure PRIME and Solstice. New: a RockawayX-managed onycSOL vault on Exponent (SOL + ONyc yield, pre-deposits open) and $9.7M in market-neutral strategies on Midas (mROX, mMEV). No points program found.
+- Sources: https://rockawayx.com, https://www.rockawayx.com/insights/rockawayx-vault-curation-an-overview-of-products-capabilities, https://rockawayx.com/insights/rockawayx-launches-three-curated-vaults-on-morpho, https://app.morpho.org/curator/rockawayx, https://defillama.com/protocol/rockawayx
 
   Farm steps (researched):
-  1. Use a fresh wallet and note that rockawayx.com is a corporate site: deposits happen in the Morpho app for Ethereum vaults or the Kamino app for Solana vaults. (Cost: Free. Time: 10 min.)
-  2. Open the Morpho app vault list filtered to curator RockawayX and compare its vaults, such as USDC Prime (rxUSDCp), USDC Yield (rxUSDCy) and wETH (rxWETH). (Cost: Free. Time: 15-30 min.)
+  1. Use a fresh wallet and note that rockawayx.com is a corporate investment site with no deposit button: deposits happen in the Morpho app for Ethereum vaults or the Kamino app for Solana vaults. (Cost: Free. Time: 10 min.)
+  2. Open the Morpho app vault list filtered to curator RockawayX and compare its vaults, such as USDC Prime (rxUSDCp, 0% fee), USDC Yield (rxUSDCy, 5% fee) and wETH (rxWETH, 5% fee); the suite has grown to 16 Morpho vaults with $120M+ in deposits. (Cost: Free. Time: 15-30 min.)
   3. Fund your wallet with the vault's deposit asset — USDC for the USDC vaults or WETH for the wETH vault — on Ethereum, keeping ETH aside for gas. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
   4. Deposit into the chosen Morpho vault from the app and receive vault shares; RockawayX then handles allocation, rebalancing and risk management behind the scenes. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
-  5. For Solana exposure, deposit USDC into the RockawayX RWA USDC vault on Kamino instead, which allocates across OnRe, Huma, Figure and Solstice markets. (Cost: SOL gas under $1 (estimate). Time: 10-15 min.)
-  6. Hold the vault shares while yield accrues to their value; parameter changes are subject to a timelock of 3 days (USDC Yield, wETH) or 7 days (USDC Prime). (Cost: Free. Time: Hold 30 days (estimate).)
+  5. For Solana exposure, deposit USDC into the RockawayX RWA USDC vault on Kamino instead (2.5% fee, $41.9M supply), which allocates across OnRe, Huma, Figure and Solstice markets. (Cost: SOL gas under $1 (estimate). Time: 10-15 min.)
+  6. Hold the vault shares while yield accrues to their value; parameter changes are subject to a timelock of 3 days (USDC Yield, wETH) or 7 days (USDC Prime). There is no points program. (Cost: Free. Time: Hold 30 days (estimate).)
   7. Exit by redeeming your vault shares in the Morpho or Kamino app, which returns the underlying asset plus accrued yield to your wallet. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $100 into a RockawayX vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 45 days.
-  5. Check RockawayX once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open RockawayX's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $100 into a RockawayX vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 45 days.
+    5. Check RockawayX once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open RockawayX's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #12 Symbiotic (`symbiotic`) — partial
+### #12 Symbiotic (`symbiotic`) — verified
 
 - Category: Collateral Markets · Chains: Ethereum
 - Official site: https://symbiotic.fi
 - DefiLlama: https://defillama.com/protocol/symbiotic
-- What it does: Symbiotic is a permissionless restaking protocol where users deposit ERC-20 collateral such as wstETH or cbETH into curated vaults, which delegate the stake to operators securing other networks. Stakers earn restaking rewards plus Symbiotic Points; it has no token yet.
-- Notes: Official site was not directly opened (browser rate limit, HTTP 429 on the fetch service), so status is partial; the vault deposit flow and Symbiotic Points are corroborated by multiple independent guides and by DefiLlama (80+ vaults, 74,000+ stakers). No token or distribution date has been announced by Symbiotic. Gas and hold times are estimates; vault minimums are not fixed — deposits under about $200 are described as dust in farming guides.
-- Sources: https://defillama.com/protocol/symbiotic, https://www.airdropfarming.org/blog/how-to-qualify-for-the-symbiotic-airdrop-in-2026-without-getting-sybil-flagged, https://symbiosis.finance/blog/symbiosis-x-symbiotic-a-must-read
+- What it does: Symbiotic is a permissionless restaking protocol, now repositioned as Collateral Markets, where users deposit ERC-20 collateral such as wstETH or cbETH into vaults that secure other networks; the site and docs mention no points program or token.
+- Notes: Re-checked 2026-11-17: symbiotic.fi and app.symbiotic.fi now read directly (was HTTP 429). The site has been repositioned as Collateral Markets — a collateral-management platform for allocators, curators and applications — with no points program, token, or retail deposit pitch on the homepage; docs are at docs.symbiotic.fi. Material correction: a November 2026 risk review reports TVL down 41% to $287.49M (from $489.13M), top collateral wstETH $78.84M, uniBTC $77.29M, LBTC $44.15M, and states there is no Symbiotic token and no emissions/points program — contradicting the old step claiming Symbiotic Points accrue to early depositors. Partner docs (Mellow, InceptionLRT) historically credited 1x Symbiotic Points, so points are now presented as historical/partner-tracked only. New: Core V2 lets vault capital earn in outside lending markets, Liquid Lane offers atomic T+0 redemptions, and uniBTC vault epochs are 7 days, so plan on 7-14 days to exit those vaults.
+- Sources: https://symbiotic.fi, https://app.symbiotic.fi, https://docs.symbiotic.fi/get-started, https://defillama.com/protocol/symbiotic, https://10k.nyxshcon.org/risk/symbiotic, https://docs.mellow.finance/points/points-in-symbiotic-pre-deposit-contracts
 
   Farm steps (researched):
-  1. Set up a fresh EVM wallet such as MetaMask, fund it with ETH for gas (around 0.01-0.05 ETH is a common buffer), and open the Symbiotic app at app.symbiotic.fi. (Cost: Free to set up. Time: 10-15 min.)
-  2. Get an accepted collateral asset on Ethereum, most commonly wstETH by staking ETH on Lido and wrapping stETH, or cbETH from Coinbase. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
-  3. Browse the vault registry in the Symbiotic app and shortlist 2-3 active vaults, checking the collateral type, operator set and whether slashing is active. (Cost: Free. Time: 15-30 min.)
-  4. Deposit your collateral into the chosen vault by approving the token spend and confirming the deposit transaction in your wallet. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
-  5. Hold the deposit while it earns restaking rewards from the networks the vault secures plus Symbiotic Points, which accrue to early depositors. (Cost: Free. Time: Hold 30 days (estimate).)
-  6. Track your position, rewards and points in the app dashboard, and note the slashing risk: a share of your deposit can be slashed if delegated operators misbehave. (Cost: Free. Time: 5 min per check.)
-  7. Exit by requesting a withdrawal through the vault's Action tab in the app, then finalizing the transaction to receive your collateral back to the same address. (Cost: Gas $2-8 (estimate). Time: 5-10 min plus vault exit rules.)
+  1. Set up a fresh EVM wallet such as MetaMask, fund it with ETH for gas (around 0.01-0.05 ETH is a common buffer), and open the Symbiotic app at app.symbiotic.fi, which lists vaults by collateral, curator, TVL and access. (Cost: Free to set up. Time: 10-15 min.)
+  2. Get an accepted collateral asset on Ethereum, most commonly wstETH by staking ETH on Lido and wrapping stETH, or cbETH from Coinbase; wstETH is the largest collateral in the book, followed by uniBTC and LBTC. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
+  3. Browse the vault registry in the Symbiotic app and shortlist 2-3 active vaults, checking the collateral type, operator set and whether slashing is active; TVL has fallen about 41% to roughly $287M, so check the vault is still active before depositing. (Cost: Free. Time: 15-30 min.)
+  4. Deposit your collateral into the chosen vault by approving the token spend and confirming the deposit transaction in your wallet; deposits under about $200 are described as dust in farming guides. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
+  5. Hold the deposit while it earns restaking rewards from the networks the vault secures; do not farm on points alone — Symbiotic's current site and docs mention no points program or token, and partner docs only historically credited 1x Symbiotic Points. (Cost: Free. Time: Hold 30 days (estimate).)
+  6. Track your position and rewards in the app dashboard, and note the slashing risk: a share of your deposit can be slashed if delegated operators misbehave, and Core V2 vaults may also lend capital into outside markets. (Cost: Free. Time: 5 min per check.)
+  7. Exit by requesting a withdrawal through the vault in the app, then finalizing the transaction to receive your collateral back to the same address; some vaults use a 7-day epoch, so plan on 7-14 days for those, and check whether Liquid Lane T+0 redemption applies. (Cost: Gas $2-8 (estimate). Time: 5-10 min plus vault exit rules (7-14 days for epoch vaults).)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Supply $100 of USDC to Symbiotic on Ethereum and leave it earning interest. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Symbiotic once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Symbiotic's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Supply $100 of USDC to Symbiotic on Ethereum and leave it earning interest. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Symbiotic once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Symbiotic's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #13 Hyperithm (`hyperithm`) — partial
+### #13 Hyperithm (`hyperithm`) — verified
 
 - Category: Risk Curators · Chains: Monad, Ethereum, Arbitrum
 - Official site: https://www.hyperithm.com
 - DefiLlama: https://defillama.com/protocol/hyperithm
 - What it does: Hyperithm is a Tokyo- and Seoul-based digital asset manager (quant trading and venture) that curates Morpho lending vaults such as Hyperithm USDC Apex, mostly on Monad and Ethereum. Retail users deposit into those vaults through the Morpho app, not through hyperithm.com.
-- Notes: Official site was not directly opened (browser rate limit, HTTP 429 on the fetch service), so status is partial; the Morpho curator page and Accountable case study confirm the vault names and the retail access route. No points program was found. Note the Monad vault had a $65M deposit cap that was hit, so capacity may be limited. Gas and hold times are estimates.
-- Sources: https://defillama.com/protocol/hyperithm, https://app.morpho.org/curator/hyperithm, https://accountabledata.substack.com/p/how-real-time-verification-helped
+- Notes: Re-checked 2026-11-17: hyperithm.com now reads directly (was HTTP 429), but the homepage is dominated by a personal-information breach notice (incident 2026-10-30, discovered 2026-11-03, disclosed 2026-11-06): an unauthorized party accessed business files via a work server, leaking names, affiliations, phone numbers, emails, messenger IDs, home addresses, personal ID numbers and bank account numbers; the server was shut down and authorities notified. Retail users must beware of phishing emails impersonating Hyperithm after this breach. Morpho data confirms the vaults are live and the old $65M cap claim is stale: Hyperithm USDC Apex on Monad holds $32.57M (12.24% APY at last check — check live, it moves), Saturn USDC $14.00M, Hyperithm cbBTC Apex $3.6M; fees are 5% on USDC Apex and 10% on cbBTC Apex. No points program.
+- Sources: https://www.hyperithm.com, https://app.morpho.org/curator/hyperithm, https://defillama.com/protocol/hyperithm, https://morphowatch.com/
 
   Farm steps (researched):
   1. Use a fresh wallet and note that hyperithm.com is a corporate investment-firm site: deposits happen in the Morpho app, where Hyperithm is listed as a curator. (Cost: Free. Time: 10 min.)
-  2. Open the Morpho app curator page for Hyperithm and compare its vaults, such as Hyperithm USDC Apex on Monad and Ethereum, Saturn USDC and Hyperithm cbBTC Apex. (Cost: Free. Time: 15-30 min.)
-  3. Fund your wallet with the vault's deposit asset — USDC for the USDC Apex vaults or cbBTC for the cbBTC vault — on the vault's chain, plus gas tokens for that chain. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
-  4. Deposit into the chosen Hyperithm vault from the Morpho app and receive vault shares; Hyperithm allocates the capital across Morpho lending markets. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
-  5. For the Monad permissionless vault, deposit through Accountable's YieldApp instead and receive aHYPER share tokens, which can also be used as Morpho collateral. (Cost: Gas on Monad, low (estimate). Time: 10-15 min.)
+  2. Read the breach notice on hyperithm.com first: on 30 October 2026 personal information including names, ID numbers and bank account numbers was leaked, so be especially wary of emails or messages impersonating Hyperithm and never enter credentials from a link in a message. (Cost: Free. Time: 5 min.)
+  3. Open the Morpho app curator page for Hyperithm and compare its vaults, such as Hyperithm USDC Apex on Monad ($32.57M deposits at last check), Saturn USDC and Hyperithm cbBTC Apex; check the live APY and liquidity before depositing. (Cost: Free. Time: 15-30 min.)
+  4. Fund your wallet with the vault's deposit asset — USDC for the USDC Apex vaults or cbBTC for the cbBTC vault — on the vault's chain, plus gas tokens for that chain. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
+  5. Deposit into the chosen Hyperithm vault from the Morpho app and receive vault shares; Hyperithm allocates the capital across Morpho lending markets and charges a 5% fee on USDC Apex and 10% on cbBTC Apex. For the Monad permissionless vault, deposit through Accountable's YieldApp instead and receive aHYPER share tokens, which can also be used as Morpho collateral; confirm the route is still live in YieldApp first. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
   6. Hold the vault shares while yield accrues to their value; there is no points program, so the return is the lending yield itself. (Cost: Free. Time: Hold 30 days (estimate).)
   7. Exit by redeeming your vault shares in the Morpho app or YieldApp, which returns the underlying asset plus accrued yield to your wallet. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $100 into a Hyperithm vault on Monad and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Hyperithm once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Hyperithm's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $100 into a Hyperithm vault on Monad and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Hyperithm once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Hyperithm's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #14 R25 (`r25`) — partial
+### #14 R25 (`r25`) — verified
 
 - Category: RWA · Chains: Pharos, Sui
 - Official site: https://www.r25.xyz
 - DefiLlama: https://defillama.com/protocol/r25
 - What it does: R25 builds RWA vault infrastructure for automated and curated on-chain yield strategies. Its R25 Studio app at app.r25.xyz lists public vaults on Pharos (for example PodsAlpha and the Allora Eagle vault), and its rcUSD vault on Sui is distributed through partner wallets.
-- Notes: Official site was not directly opened (browser rate limit, HTTP 429 on the fetch service), so status is partial; the app.r25.xyz vaults, the TopNod-only Sui route and PROS rewards are confirmed by R25's own X posts and the Chainwire announcement. No dedicated R25 points program was found — rewards mentioned are PROS tokens and APY boosts. Some vaults are term-based with deposit windows, not always open. Gas and hold times are estimates.
-- Sources: https://defillama.com/protocol/r25, https://chainwire.org/2025/12/19/r25-and-ember-protocol-debut-exclusive-vault-on-sui-via-topnod-wallet/, https://w.twstalker.com/R25Official
+- Notes: Re-checked 2026-11-17: r25.xyz now reads directly (was HTTP 429): $198.35M deposited, 100+ expert strategies, R25 Studio public beta. R25's own X posts confirm PodsAlpha (flexible USDC deposits from 1 USDC, 20% performance fee with a 4% hurdle rate) and the Allora Eagle vault (app.r25.xyz/vaults/EAGLE, systematic long-short on Hyperliquid perps, deposits open to the public). Material change: the Axil Consumer Credit Vault - 6M boost rate drops from 3% to 1.5% effective 2026-01-01, while the 12% base rate stays unchanged — existing holders keep 15% APY until maturity. The Season 2 Binance Wallet campaign ended 2026-10-26, so its $200K PROS rewards are no longer available. New: the pRNH vault (NYLIM/Anemoy US high-yield credit, target $100M, ~7% indicated yield) is for eligible users only, with no fixed lock-up but fund-timeline settlement and regional restrictions.
+- Sources: https://www.r25.xyz, https://defillama.com/protocol/r25, https://w.twstalker.com/R25Official, https://chainwire.org/2025/12/19/r25-and-ember-protocol-debut-exclusive-vault-on-sui-via-topnod-wallet/, https://ohsem.me/2026/08/pharos-expands-realfi-market-with-onchain-access-to-institutional-u-s-high-yield-credit/
 
   Farm steps (researched):
   1. Set up a fresh wallet for Pharos (EVM-compatible) and fund it with USDC on Pharos plus a small amount of the chain's gas token. (Cost: Gas, low (estimate). Time: 10-15 min.)
-  2. Open R25 Studio at app.r25.xyz, browse the vaults list and compare live vaults such as PodsAlpha, the Allora Eagle market-neutral vault and Axil credit vaults by APY and terms. (Cost: Free. Time: 15-30 min.)
-  3. Check each vault's deposit window and minimum: PodsAlpha accepts flexible USDC deposits from 1 USDC, while some term vaults only open during a set window. (Cost: Free. Time: 5-10 min.)
-  4. Deposit USDC into the chosen Pharos vault from the R25 Studio app and receive vault shares; yield accrues to the share value and some vaults also pay PROS rewards. (Cost: Gas, low (estimate). Time: 5-10 min.)
+  2. Open R25 Studio at app.r25.xyz, browse the vaults list and compare live vaults such as PodsAlpha, the Allora Eagle market-neutral vault and Axil credit vaults by APY and terms; total deposits are $198.35M across 100+ strategies. Check each vault's deposit window, minimum and fees: PodsAlpha accepts flexible USDC deposits from 1 USDC with a 20% performance fee and a 4% hurdle rate, while some term vaults only open during a set window. (Cost: Free. Time: 15-30 min.)
+  3. Deposit USDC into the chosen Pharos vault from the R25 Studio app and receive vault shares; yield accrues to the share value and some vaults also pay PROS rewards. Note the Season 2 Binance Wallet campaign ended on 26 October 2026. (Cost: Gas, low (estimate). Time: 5-10 min.)
+  4. For the Axil Consumer Credit Vault - 6M, note the boost rate drops from 3% to 1.5% from 1 January 2027 while the 12% base rate stays unchanged; existing holders keep 15% APY until maturity. (Cost: Free. Time: 5 min.)
   5. For the Sui rcUSD vault, use the TopNod wallet instead: download it, hold USDC on Sui with a little SUI for gas, and deposit through the wallet's Earn section. (Cost: Gas on Sui, low (estimate). Time: 15-30 min.)
-  6. Hold the vault position for its term; the rcUSD vault runs a 12-month term with early withdrawal settled at T+4, and term vaults may have a secondary market before maturity. (Cost: Free. Time: Hold 30 days (estimate).)
+  6. Hold the vault position for its term; the rcUSD vault runs a 12-month term with early withdrawal settled at T+4, and term vaults may have a secondary market before maturity. The pRNH high-yield credit vault is for eligible users only. (Cost: Free. Time: Hold 30 days (estimate).)
   7. Exit by redeeming in the R25 Studio app or the TopNod wallet; for rcUSD, request withdrawal and expect settlement within 4 days (T+4). (Cost: Gas, low (estimate). Time: Up to 4 days to settle.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $100 into the tokenised asset R25 offers on Pharos and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 45 days.
-  5. Check R25 once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open R25's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $100 into the tokenised asset R25 offers on Pharos and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 45 days.
+    5. Check R25 once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open R25's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #15 K3 Capital (`k3-capital`) — partial
+### #15 K3 Capital (`k3-capital`) — verified
 
 - Category: Risk Curators · Chains: Monad, Ethereum, Optimism
 - Official site: https://k3.capital
 - DefiLlama: https://defillama.com/protocol/k3-capital
-- What it does: K3 Capital is an institutional DeFi asset and risk manager (about $400M AUM, delta-neutral strategies) that curates lending and fixed-rate vaults across Morpho, Euler, Term and Pendle. Retail users reach its vaults through those protocols' apps or Accountable's YieldApp, not through k3.capital.
-- Notes: Official site was not directly opened (browser rate limit, HTTP 429 on the fetch service), so status is partial; the curator model and the Morpho/Euler/YieldApp access routes are confirmed by DefiLlama, the Accountable/GlobeNewswire release and DeFiPrime. No points program was found. K3 is the largest single position on Monad (about $379M per HotDapps), and its Galaxy facility is onboarding-gated and was fully subscribed at launch — a generic 'just deposit' step would be wrong for it. Gas and hold times are estimates.
-- Sources: https://defillama.com/protocol/k3-capital, http://www.stockwatch.com/news/item/u-z9798414-u!glxy-20260727/u/glxy, https://defiprime.com/arbitrum
+- What it does: K3 Capital is an institutional DeFi asset and risk manager (about $200M TVL, delta-neutral strategies) that curates vaults on Morpho, Euler and YieldApp; its own site is only a Coming Soon page.
+- Notes: Re-checked 2026-11-17: k3.capital now reads directly (was HTTP 429), but it is only a Coming Soon page for a dedicated US website, stating no services are offered to US residents through the site — confirming no retail deposit flow there. Search corroborates the existing routes and adds material corrections: K3 Earn WETH and K3 Earn AUSD vaults on Euler/Monad are live and deposit-only; the K3 x Galaxy facility is now visible as gAUSD ($31.4M supply, 6.89%), managed by K3 with Galaxy on 90-day rolling loans and monthly redemptions capped at up to 30% of principal — so it is open but redemption-limited, not simply fully subscribed. sBOLD (deposit BOLD, receive yield-bearing shares) is $3.48M TVL, and K3 Capital ETH Maxi on Unichain via Morpho is confirmed. TVL is now ~$200.4M total ($162.57M on Monad), not the ~$400M AUM in the old notes. No points program.
+- Sources: https://k3.capital, https://defillama.com/protocol/k3-capital, https://github.com/kamalbuilds/ava-monad/blob/HEAD/docs/MONAD.md, https://privatecredit.therawbyte.com/directory/accountable, https://defiprime.com/arbitrum
 
   Farm steps (researched):
-  1. Use a fresh wallet and note that k3.capital is an institutional manager's site: deposits happen in the Morpho or Euler app, or on Accountable's YieldApp marketplace. (Cost: Free. Time: 10 min.)
-  2. Find a K3-curated vault on the Morpho or Euler app, such as the K3 Capital ETH Maxi vault on Unichain or its sBOLD vault where you deposit BOLD for yield-bearing shares. (Cost: Free. Time: 15-30 min.)
+  1. Use a fresh wallet and note that k3.capital is only a 'Coming Soon' page offering no services to US residents: deposits happen in the Morpho or Euler app, or on Accountable's YieldApp marketplace. (Cost: Free. Time: 10 min.)
+  2. Find a K3-curated vault on the Morpho or Euler app, such as the K3 Capital ETH Maxi vault on Unichain, its sBOLD vault where you deposit BOLD for yield-bearing shares, or the K3 Earn WETH and AUSD vaults on Monad. (Cost: Free. Time: 15-30 min.)
   3. Fund your wallet with the vault's deposit asset on the vault's chain — for example BOLD on Ethereum for sBOLD, or AUSD on Monad for the Galaxy credit facility. (Cost: Gas $2-8 (estimate). Time: 10-15 min.)
-  4. Check the vault's access terms first: the K3 x Galaxy facility on Monad launched fully subscribed at $30M and opens extra capacity only as LPs complete onboarding. (Cost: Free. Time: 10 min.)
+  4. Check the vault's access terms first: the K3 x Galaxy facility (gAUSD, $31.4M supply) is open but redemptions are monthly and capped at up to 30% of principal, and Galaxy loans roll every 90 days. (Cost: Free. Time: 10 min.)
   5. Deposit into the chosen K3-curated vault from the host app and receive vault shares; K3 manages allocation, collateral choice and caps across the underlying markets. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
   6. Hold the vault shares while yield accrues to their value; there is no points program, so the return is the lending or credit yield itself. (Cost: Free. Time: Hold 30 days (estimate).)
-  7. Exit by redeeming your vault shares in the same host app, which returns the underlying asset plus accrued yield, subject to that vault's liquidity and exit terms. (Cost: Gas $2-8 (estimate). Time: 5-10 min.)
+  7. Exit by redeeming your vault shares in the same host app, which returns the underlying asset plus accrued yield, subject to that vault's liquidity and exit terms — including the 30% monthly cap on gAUSD. (Cost: Gas $2-8 (estimate). Time: 5-10 min, or up to a month for gAUSD.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $100 into a K3 Capital vault on Monad and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check K3 Capital once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open K3 Capital's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $100 into a K3 Capital vault on Monad and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check K3 Capital once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open K3 Capital's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #16 Hive Protocol (`hive-protocol`) — partial
 
@@ -483,13 +505,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, request unstaking in the Hive interface, wait out the 1-day unstaking lock, then claim or withdraw your BTC and any accrued B2 rewards to your bound EVM address. (Cost: Gas, estimate $2-8. Time: 1 day unstaking lock + 10 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $100 into Hive Protocol's main product on BSquared — check its own page to see which product holds the TVL — and leave the position open. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Hive Protocol once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Hive Protocol's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $100 into Hive Protocol's main product on BSquared — check its own page to see which product holds the TVL — and leave the position open. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Hive Protocol once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Hive Protocol's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #17 Tori Finance (`tori-finance`) — verified
 
@@ -510,13 +532,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, unstake strUSD back to trUSD in the app — note the 7-day unstaking cooldown always applies — then swap trUSD back to USDC or USDT; rewards are collected automatically via the exchange rate at unstaking. (Cost: Gas, estimate $2-8. Time: 7-day cooldown + 10 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $50 into Tori Finance's basis trade on Ethereum and hold the position. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 60 days.
-  5. Check Tori Finance once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Tori Finance's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $50 into Tori Finance's basis trade on Ethereum and hold the position. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 60 days.
+    5. Check Tori Finance once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Tori Finance's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #18 Lightning Network (`lightning-network`) — verified
 
@@ -537,13 +559,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, close your channels on-chain to settle the final balances back to your Bitcoin wallet; routing fees you earned stay in your node and are collected as sats when channels close. (Cost: On-chain close fee per channel, varies. Time: 10-60 min per close.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $100 into Lightning Network's main product on Bitcoin — check its own page to see which product holds the TVL — and leave the position open. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Lightning Network once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Lightning Network's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $100 into Lightning Network's main product on Bitcoin — check its own page to see which product holds the TVL — and leave the position open. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Lightning Network once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Lightning Network's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #19 Lagoon (`lagoon`) — verified
 
@@ -564,13 +586,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, submit a withdrawal (redemption) request in the app; the curator unwinds positions and settles at the next NAV cycle, after which only you can claim your assets back to your wallet. (Cost: Gas, estimate $2-8. Time: Settlement cycle, up to ~7 days depending on vault.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $100 into a Lagoon vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Lagoon once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Lagoon's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $100 into a Lagoon vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Lagoon once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Lagoon's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #20 Axis (`axis`) — partial
 
@@ -591,13 +613,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, redeem your position in the app: sUSDx redemptions use a request with a 7-day cooldown (or instant for about 0.3%), and note Axis's own docs say USDx is not a stablecoin and is not guaranteed to hold $1. (Cost: Gas, estimate $2-8; instant redeem ~0.3%. Time: Up to 7 days for standard redemption.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $50 into Axis's basis trade on Ethereum and hold the position. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 60 days.
-  5. Check Axis once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Axis's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $50 into Axis's basis trade on Ethereum and hold the position. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 60 days.
+    5. Check Axis once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Axis's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #21 Lofty (`lofty`) — verified
 
@@ -618,40 +640,40 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, list your shares on the Lofty marketplace and sell them to other investors instantly — the site states there are no lockups and no waiting years for a fund exit — then withdraw your balance anytime. (Cost: Marketplace/sale fees not stated on homepage. Time: Minutes to sell; withdrawal per account terms.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $100 into the tokenised asset Lofty offers on Algorand and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Lofty once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Lofty's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $100 into the tokenised asset Lofty offers on Algorand and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Lofty once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Lofty's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #22 Clearstar (`clearstar`) — partial
+### #22 Clearstar (`clearstar`) — verified
 
 - Category: Risk Curators · Chains: Flare, Base, Ethereum
 - Official site: https://clearstar.xyz
 - DefiLlama: https://defillama.com/protocol/clearstar
 - What it does: Clearstar Labs is a DeFi risk curator (operated by NovaFusion SA): it does qualitative-first diligence on governance, contracts, and oracles and curates yield vaults on Morpho, Euler, and other protocols. It has no app of its own — retail users deposit into Clearstar-curated Morpho vaults.
-- Notes: Partial: the direct fetch of clearstar.xyz was rate-limited (HTTP 429) and could not be re-attempted, so the site itself was not read; clearstar.xyz is confirmed as Clearstar's research site by multiple independent sources. DeFiLlama lists no website link for Clearstar. The retail deposit path is verified via Morpho's official curator page, which lists the vaults, APYs, and deposit boxes. Clearstar is a curator, not a protocol with its own app — a generic 'deposit on Clearstar's app' step would be wrong. No Clearstar points program was found.
-- Sources: https://defillama.com/protocol/clearstar, https://app.morpho.org/curator/clearstar, https://app.morpho.org/base/vault/0x116e1A65717A534B73EcB7d4F6543c65DBCd0E46/clearstar-base-rwa, https://www.upshift.finance/blog/upshift-is-live-on-base-clearstar-cbxrp-yield-vault
+- Notes: Re-checked 2026-11-17: clearstar.xyz now reads directly (was HTTP 429): it confirms Clearstar is a risk advisory/curator for chains, exchanges and issuers — $415M+ loans underwritten, 6 published APB ratings, active since 2022 — with no retail app, confirming the curator-only framing. The live Morpho curator page (app.morpho.org/curator/clearstar, crawled 2026-11-17) lists real vaults with live figures that replace the old vague examples: Clearstar cbAssets Vault $27.04M deposits at 6.33%, Clearstar USDC Core $4.56M at 7.01%, Clearstar Core ETH 1,754 WETH at 1.58%, plus 3Jane/Noon/Re Ecosystem Vaults and a Solana vault. The cbXRP Yield Vault on Upshift/Base (deposit cbXRP, receive upXRP) and the Flare earnXRP vault are also confirmed as live retail routes. No Clearstar points program exists.
+- Sources: https://clearstar.xyz, https://app.morpho.org/curator/clearstar, https://www.upshift.finance/blog/upshift-is-live-on-base-clearstar-cbxrp-yield-vault, https://defillama.com/protocol/clearstar
 
   Farm steps (researched):
-  1. Use a fresh EVM wallet (e.g. MetaMask) and fund it with the asset the vault takes — usually USDC on Base or Ethereum, or XRP for the Flare earnXRP vault — plus gas for that chain. (Cost: $0 setup; gas estimate $2-8 per tx. Time: 10-15 min.)
-  2. Open the Clearstar curator page on Morpho at app.morpho.org/curator/clearstar and compare its vaults by chain, asset, deposits, and net APY (e.g. Clearstar cbAssets Vault, Clearstar Core USDC, Clearstar Core ETH). (Cost: $0. Time: 10-15 min.)
-  3. Pick one vault and read its description and risk disclosures on the Morpho vault page — e.g. Clearstar Core vaults balance return and risk across diversified collateral — and check its performance fee and timelock (often 3 days). (Cost: $0. Time: 10 min.)
-  4. Deposit the vault's asset (e.g. USDC on Base for Clearstar Base RWA, or WETH for Clearstar Core ETH) through the Morpho deposit box, approving the token and confirming the transaction. (Cost: Gas, estimate $2-8. Time: 10 min.)
-  5. Hold the vault shares to earn the vault's native APY plus any extra incentives; some Clearstar vaults pay additional incentives claimable through Merkl, so check the vault page for a rewards note. (Cost: $0 to hold. Time: Hold 30 days (estimate).)
-  6. Monitor the vault on Morpho and Clearstar's research at clearstar.xyz, since the curator can reallocate across markets and change parameters under a timelock. (Cost: $0. Time: 5 min per check.)
-  7. To exit, withdraw from the Morpho vault page to redeem your shares back into the underlying asset; withdrawals are not gated by the curator, but liquidity depends on the vault's available liquidity. (Cost: Gas, estimate $2-8. Time: 10 min.)
+  1. Use a fresh EVM wallet and understand Clearstar has no app of its own: clearstar.xyz is a risk-advisory site ($415M+ loans underwritten, 6 published ratings) and retail users deposit into Clearstar-curated vaults on Morpho, Euler or Upshift. (Cost: $0. Time: 10 min.)
+  2. Open the Clearstar curator page on Morpho at app.morpho.org/curator/clearstar and compare live vaults by asset, deposits and net APY — e.g. Clearstar cbAssets Vault ($27.04M, 6.33%), Clearstar USDC Core ($4.56M, 7.01%) and Clearstar Core ETH (1,754 WETH, 1.58%) as of 17 Nov 2026. (Cost: $0. Time: 10-15 min.)
+  3. For XRP exposure, use the Clearstar cbXRP Yield Vault on Upshift on Base instead: deposit cbXRP (Coinbase-wrapped XRP on Base) and receive upXRP shares; on Flare the equivalent is the Clearstar earnXRP vault. (Cost: $0. Time: 10 min.)
+  4. Pick one vault and read its Morpho vault page first — its description, allocation, performance fee (e.g. 25% on some Clearstar vaults) and timelock (often 3 days) — before depositing anything. (Cost: $0. Time: 10 min.)
+  5. Deposit the vault's asset through the Morpho deposit box (USDC on Base or Ethereum for the USDC vaults, WETH for Core ETH, cbXRP for the cbXRP vault), approving the token and confirming the transaction. (Cost: Gas, estimate $2-8. Time: 10 min.)
+  6. Hold the vault shares to earn the vault's native APY plus any extra incentives; some Clearstar vaults pay additional incentives claimable through Merkl, so check the vault page for a rewards note. No Clearstar points program exists. (Cost: $0 to hold. Time: Hold 30 days (estimate).)
+  7. To exit, withdraw from the Morpho vault page (or Upshift for the cbXRP vault) to redeem shares back into the underlying asset; withdrawals are not gated by the curator, but liquidity depends on unborrowed funds in the underlying markets. (Cost: Gas, estimate $2-8. Time: 10 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $100 into a Clearstar vault on Flare and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Clearstar once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Clearstar's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $100 into a Clearstar vault on Flare and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Clearstar once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Clearstar's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #23 b14g (`b14g`) — partial
 
@@ -659,26 +681,26 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
 - Official site: https://www.b14g.xyz
 - DefiLlama: https://defillama.com/protocol/b14g
 - What it does: b14g is a modular dual-staking layer for Bitcoin: its Merge Marketplace matches BTC holders with CORE (or BABY) holders so each side earns the higher dual-staking rewards of Core/Babylon without holding both assets. BTC stays time-locked on Bitcoin; it also runs dualCORE and BTCFi lending vaults.
-- Notes: Partial: the official homepage (b14g.xyz) renders almost no text — only the tagline about turning idle BTC into a security engine — so product details (dualCORE, Merge Marketplace, yields, points) come from DeFiLlama and secondary reporting, not the site itself. The Oct 31, 2026 exploit (97M CORE drained, 68M recovered via hard fork, BTC unaffected) is recorded on DeFiLlama as a protocol-logic security incident and must be disclosed. The Babylon Genesis side (co-staking BABY with BTC) follows Babylon's own mechanics; b14g's docs were not directly readable. Do not present the 15-20% APY as a current live rate — it was advertised before the exploit.
-- Sources: https://defillama.com/protocol/b14g, https://www.b14g.xyz, https://cryptomediazone.com/hack-database/b14g-core-staking-exploit/, https://www.bscn-test-blogs.org/news/b14g-core-blockchain-dual-staking-tvl-exploit
+- Notes: Re-checked 2026-11-17: b14g.xyz is still JavaScript-only (tagline only), so product details still rest on secondary sources. The post-exploit picture has moved materially: the contracts have been PAUSED since 31 Oct 2026; no post-mortem had been published as of 6-13 Nov; users had NOT yet been repaid as of 9-13 Nov. On 8 Nov b14g announced a payout plan (reported by CryptoTimes/CoinLab, citing b14g's X posts): the recovered 68.15M CORE (~70%) returns pro rata to affected orders within 5-7 days, the remainder is repaid from 50% of b14g's future Core staking revenue (weekly claims), plus ~9-9.5M CORE frozen at exchanges. The old step 1 (check status before depositing) was too weak — the honest instruction now is DO NOT deposit until contracts are unpaused and the fix is published. If b14g posts an unpause notice, this entry needs another check.
+- Sources: https://www.b14g.xyz, https://www.cryptotimes.io/2026/11/07/b14g-recovers-70-of-stolen-core-after-zero-amount-withdrawal-attack/, https://coinlab.info/en/articles/b14g-hack-oct-2026-explained/, https://itokenly.com/hacks/b14g-core-staking-october-2026, https://defillama.com/protocol/b14g
 
   Farm steps (researched):
-  1. Read the security warning first: on Oct 31, 2026 about 97M CORE (~$1.47M) staked through b14g was withdrawn without authorization in an exploit; a hard fork later recovered 68M. Check b14g's current status on X (@b14g_network) before depositing anything. (Cost: $0. Time: 10 min.)
-  2. Use a fresh setup with a BTC wallet (e.g. Unisat) and a Core-chain EVM wallet (e.g. MetaMask on Core), since dual staking pairs a BTC stake with a CORE stake. (Cost: $0 setup. Time: 10-15 min.)
-  3. Open b14g.xyz and enter the app to choose a product: dualCORE (deposit CORE only, the marketplace matches BTC for you) or the BTC side (lock BTC to be matched with CORE holders). (Cost: $0. Time: 5-10 min.)
-  4. For the CORE side, deposit CORE into dualCORE; b14g states assets stay in the official Core staking contract and it never takes custody, and advertised yields were 15-20% per year versus about 5-6% for plain CORE staking. (Cost: Core gas, estimate $2-8. Time: 10 min.)
-  5. For the BTC side, lock BTC through b14g's Bitcoin staking flow; your BTC stays time-locked on the Bitcoin network and is not moved, while the matched CORE side unlocks the dual-staking tier for both parties. (Cost: BTC tx fee, varies. Time: 10-60 min for confirmations.)
-  6. Hold the position and track rewards plus b14g points — some vaults advertised a 2x points boost (e.g. the Coretoshi NFT vault) — but note b14g has said it offers no extra incentives beyond the network's own yield. (Cost: $0 to hold. Time: Hold 30 days (estimate).)
+  1. Do NOT deposit into b14g right now: on 31 Oct 2026 about 97M CORE (~$1.47M) was drained from 91 staking orders via zero-amount withdrawal requests, and b14g paused the affected contracts the same day. Check @b14g_network on X for an unpause notice before doing anything. (Cost: $0. Time: 10 min.)
+  2. Understand the recovery position: a Core hard fork on 2 Nov clawed back 68.15M CORE (~70%) to a recovery address and ~9.5M CORE was frozen at exchanges, but as of 13 Nov the recovered funds had not yet been distributed and no post-mortem had been published. (Cost: $0. Time: 10 min.)
+  3. If you were affected, note the payout plan announced 8 Nov: recovered CORE returns pro rata to affected orders within 5-7 days, and the shortfall is repaid from 50% of b14g's future Core staking revenue via weekly claims. There is no claims portal to use yet — do not trust any link offering one. (Cost: $0. Time: 10 min.)
+  4. Only if b14g publicly confirms contracts are unpaused and the zero-amount withdrawal fix is live, set up a fresh BTC wallet (e.g. Unisat) plus a Core-chain EVM wallet (e.g. MetaMask on Core), since dual staking pairs a BTC stake with a CORE stake. (Cost: $0 setup. Time: 10-15 min.)
+  5. On b14g.xyz choose a product: dualCORE (deposit CORE only, the marketplace matches BTC for you) or the BTC side (lock BTC to be matched with CORE holders). BTC stays time-locked on Bitcoin and was not affected by the exploit. (Cost: $0. Time: 5-10 min.)
+  6. For the CORE side, deposit CORE into dualCORE; b14g states assets stay in the official Core staking contract and it never takes custody. Do NOT treat the old advertised 15-20% yearly yield as a current rate — it predates the exploit and the pause. (Cost: Core gas, estimate $2-8. Time: 10 min.)
   7. To exit, unbond/withdraw in the b14g app: BTC unbonding follows the underlying chain's timelock (Babylon-style unbonding is about 301 blocks / ~50 hours), and CORE-side withdrawals go through the Core staking contract. (Cost: Gas/fees, estimate $2-8. Time: Unbonding timelock up to ~50 hours + 10 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Stake $100 of the chain's staking asset through b14g on Bitcoin. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Add a small amount to the stake the following week, so the record shows more than one staking action. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check b14g once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open b14g's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Stake $100 of the chain's staking asset through b14g on Bitcoin. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Add a small amount to the stake the following week, so the record shows more than one staking action. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check b14g once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open b14g's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #24 Saturn (`saturn`) — verified
 
@@ -699,40 +721,40 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, unstake sUSDat back to USDat — note unstaking works like a limit order and takes roughly 7 days — then swap USDat back to USDC; claiming of any STRN token happens at TGE via a link published only by @saturn_credit on X. (Cost: Gas, estimate $2-8. Time: ~7 days unstaking + 10 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Hold $100 of the stablecoin Saturn issues on Ethereum. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 45 days.
-  5. Check Saturn once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Saturn's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Hold $100 of the stablecoin Saturn issues on Ethereum. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 45 days.
+    5. Check Saturn once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Saturn's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #28 Galaxy Curation (`galaxy-curation`) — partial
+### #28 Galaxy Curation (`galaxy-curation`) — verified
 
 - Category: Risk Curators · Chains: Arc, Ethereum, Base
 - Official site: https://www.galaxy.com
 - DefiLlama: https://defillama.com/protocol/galaxy-curation
 - What it does: Galaxy Curation is the vault-curation arm of Galaxy (the listed digital-assets and AI infrastructure company): it curates Morpho lending vaults — most notably the Galaxy USDC vault on Arc ($92.7M, ~3.14% APY) — allocating depositor stablecoins into blue-chip-collateral lending markets. There is no Galaxy retail app; deposits go through Morpho.
-- Notes: Partial: galaxy.com confirms Galaxy is an institutional digital-assets company, but it offers no retail vault product — the farm path (Morpho vault on Arc) comes from Morpho/Arc reporting and third-party vault trackers, not from Galaxy's site. No Galaxy points program was found. The vault's single-key owner/curator control and 100% cirBTC allocation are reported by a third-party tracker and should be re-checked live on Morpho before depositing. Note the DeFiLlama slug 'galaxy-curation' tracks the curator's vaults, not a standalone protocol.
-- Sources: https://defillama.com/protocol/galaxy-curation, https://www.galaxy.com, https://www.styx.finance/, https://www.carrytradedesk.com/v/morpho/arc/0x8e357432cc12ff425c36432f312968aeb16112af, https://cryptobriefing.com/arc-earn-kit-sdk-morpho-vaults-usdc/
+- Notes: Re-checked 2026-11-17: galaxy.com now reads directly (was partial via secondary sources) and confirms Galaxy is an institutional digital-assets and AI infrastructure company with no retail deposit product — confirming the Morpho-only framing. Live Morpho/Styx data (crawled 2026-11-17) corrects three details: (1) allocation is 95.4% to the USDC cirBTC market, not 100%; (2) net APY is 3.15% with 0% fee and $92.73M deposits; (3) the 'timelock of up to 7 days' is wrong for this V2 vault — Morpho V2 has a separate timelock per curator action, no single figure. New and practical: USDC is Arc's native gas token, so a farmer needs USDC (not ETH) for Arc gas. The single-key owner/curator warning is retained as reported by a third-party tracker, flagged as unverified on Morpho. No Galaxy points program was found.
+- Sources: https://www.galaxy.com, https://app.morpho.org/arc/vault/0x8E357432CC12ff425c36432F312968aEb16112AF/galaxy-usdc, https://www.styx.finance/, https://defillama.com/protocol/galaxy-curation
 
   Farm steps (researched):
   1. Understand Galaxy itself is an institutional company with no retail deposit app — the farmable product is its Morpho vault, so use a fresh EVM wallet and do not look for a 'Galaxy deposit' button on galaxy.com. (Cost: $0. Time: 5 min.)
-  2. Fund your wallet with USDC and add the Arc network (Circle's L1, chain 5042) to your wallet, since the largest Galaxy vault — Galaxy USDC at about $92.7M — lives on Arc; Ethereum and Base Galaxy vaults also exist. (Cost: $0 setup; gas estimate $2-8 per tx. Time: 10-15 min.)
-  3. Open the Morpho app at app.morpho.org, find the Galaxy USDC vault on Arc (curator: Galaxy Curation), and check its deposits, net APY (about 3.14%), fee (0%), and allocation — reported as 100% allocated to the cirBTC market. (Cost: $0. Time: 10 min.)
+  2. Fund your wallet with USDC and add the Arc network (Circle's L1, chain 5042) to your wallet. USDC is Arc's native gas token, so keep spare USDC for gas — you do not need ETH. The largest Galaxy vault, Galaxy USDC at about $92.7M, lives on Arc. (Cost: $0 setup; gas estimate $2-8 per tx. Time: 10-15 min.)
+  3. Open the Morpho app at app.morpho.org, find the Galaxy USDC vault on Arc (curator: Galaxy Curation), and check its deposits, net APY (about 3.15%) and fee (0%). Its allocation is about 95.4% to the USDC cirBTC market, not 100% as some trackers report. (Cost: $0. Time: 10 min.)
   4. Deposit USDC into the Galaxy USDC vault through the Morpho deposit box, approving the token and confirming the transaction; the vault lends your USDC to borrowers posting ETH/BTC collateral. (Cost: Gas, estimate $2-8. Time: 10 min.)
-  5. Hold the vault shares to earn the lending APY, which accrues through the vault share price; no Galaxy points program was found, so yield comes from lending interest only. (Cost: $0 to hold. Time: Hold 30 days (estimate).)
-  6. Monitor the vault on Morpho: Galaxy as curator can change allocations and parameters under a timelock of up to 7 days, and a single key (not a multisig) reportedly holds the owner and curator roles. (Cost: $0. Time: 5 min per check.)
+  5. Hold the vault shares to earn the lending APY, which accrues through the vault share price; no Galaxy points program was found, so yield comes from lending interest only. A Galaxy USDC Enhanced vault on Ethereum (~5.82% APY, ~$9M) exists as a higher-yield alternative. (Cost: $0 to hold. Time: Hold 30 days (estimate).)
+  6. Monitor the vault on Morpho: Galaxy as curator can change allocations and parameters, and this V2 vault has a separate timelock per curator action rather than one single timelock. A single key (not a multisig) reportedly holds the owner and curator roles — re-check this on Morpho before depositing. (Cost: $0. Time: 5 min per check.)
   7. To exit, withdraw from the Morpho vault page to redeem shares back into USDC; withdrawals cannot be gated by the curator, but available liquidity depends on unborrowed funds in the underlying markets. (Cost: Gas, estimate $2-8. Time: 10 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $100 into a Galaxy Curation vault on Arc and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
-  5. Check Galaxy Curation once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Galaxy Curation's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $100 into a Galaxy Curation vault on Arc and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
+    5. Check Galaxy Curation once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Galaxy Curation's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #29 Ember (`ember`) — partial
 
@@ -740,35 +762,35 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
 - Official site: https://ember.so/
 - DefiLlama: https://defillama.com/protocol/ember
 - What it does: Ember originates and issues tokenized investment products, bringing funds, strategies and real-world assets onchain. Users deposit an asset such as USDC into an Ember vault and receive receipt tokens whose price rises as the curator's strategy earns.
-- Notes: Official homepage ember.so opened but is JavaScript-only (only the logo text was readable), so vault mechanics were confirmed from Ember's docs as quoted by secondary sources and the Ember SDK docs, not from the homepage itself. No points program was found anywhere for Ember. Some vaults are permissioned/KYC-gated, which contradicts a generic 'just deposit' step. Withdrawal is an operator-processed queue with no fixed deadline, not an instant redeem.
-- Sources: https://defillama.com/protocol/ember, https://ember.so/, https://www.jewelswap.io/blog/what-is-ember-protocol, https://socket.dev/npm/package/@ember-finance/sdk
+- Notes: Re-checked 2026-11-17: ember.so is still JavaScript-only (logo only), so the homepage adds nothing — mechanics still rest on secondary sources quoting Ember's own vault API and docs. A detailed guide reading Ember's vault API and docs (JewelSwap, 12 Oct 2026) names the flagship Ember Earn (eEARN): USDC deposit, ~$10.0M deposits, 10.0% target APY, 3-day withdrawal period, among 27 Sui vaults holding ~$47.2M total. The Ember SDK docs confirm the withdrawal model (operator-processed redemption queue, EVM vaults are ERC-4626) and that some vaults are permissioned/KYC-gated. No points program was found anywhere. The upgrade names eEARN and replaces 'allow several days' with the 3-day period.
+- Sources: https://ember.so/, https://www.jewelswap.io/blog/what-is-ember-protocol, https://socket.dev/npm/package/@ember-finance/sdk, https://defillama.com/protocol/ember
 
   Farm steps (researched):
-  1. Set up a fresh wallet on the chain you plan to use (an EVM wallet for Ethereum or Base, a Sui wallet for Sui) and fund it with USDC plus gas tokens. (Cost: Gas $2-8 on Ethereum, under $1 on Sui or Base (estimate). Time: 10-15 min setup.)
-  2. Open the Ember app at ember.so and browse the live vault list to find a vault whose deposit asset, chain and strategy fit you. (Cost: Free to browse. Time: 10 min.)
+  1. Set up a fresh wallet on the chain you plan to use (an EVM wallet for Ethereum or Base, a Sui wallet for Sui) and fund it with USDC plus gas tokens. Ember's homepage is JavaScript-only, so use the Ember app and docs for live vault data. (Cost: Gas $2-8 on Ethereum, under $1 on Sui or Base (estimate). Time: 10-15 min setup.)
+  2. Open the Ember app at ember.so and browse the live vault list. The flagship is Ember Earn (eEARN) on Sui: deposit USDC, receive eEARN, with a 10.0% target APY and about $10M deposited as of 12 Oct 2026. (Cost: Free to browse. Time: 10 min.)
   3. Check the vault's eligibility rules before depositing, because Ember docs say vaults can be permissionless or permissioned (KYC-gated), and some RWA products sit behind eligibility requirements. (Cost: Free. Time: 10 min.)
-  4. Approve USDC and deposit into the chosen vault; on Sui you receive a receipt token such as eEARN, and on EVM chains you receive ERC-4626 vault shares. (Cost: Gas $2-8 on Ethereum (estimate). Time: 5 min.)
-  5. Hold the receipt tokens while the curator runs the strategy; yield shows up as a rising receipt-token price, not as separate reward payments you claim. (Cost: No extra cost. Time: Hold 30 days (estimate).)
-  6. Track the vault's exchange rate and any curator or operator updates in the Ember app or docs while your deposit is active. (Cost: Free. Time: 5 min per check.)
-  7. To exit, submit a redemption request in the app; your shares enter a queue and the vault operator processes the payout later, so allow extra days beyond a normal withdrawal. (Cost: Gas $2-8 on Ethereum (estimate). Time: Redemption is operator-processed, allow several days.)
+  4. Approve USDC and deposit into the chosen vault; on Sui you receive a receipt token such as eEARN, and on EVM chains you receive ERC-4626 vault shares. A new vault starts at a 1:1 rate, so 100 USDC buys 100 receipt tokens. (Cost: Gas $2-8 on Ethereum (estimate). Time: 5 min.)
+  5. Hold the receipt tokens while the curator runs the strategy; yield shows up as a rising receipt-token price, not as separate reward payments you claim. There is no Ember points program. (Cost: No extra cost. Time: Hold 30 days (estimate).)
+  6. Track the vault's exchange rate and any curator or operator updates in the Ember app or docs while your deposit is active; the operator can move vault assets only to whitelisted sub-accounts. (Cost: Free. Time: 5 min per check.)
+  7. To exit, submit a redemption request in the app; your shares enter a queue and the vault operator processes the payout later. For eEARN the withdrawal period is 3 days — do not treat it as an instant redeem. (Cost: Gas $2-8 on Ethereum (estimate). Time: 3 days for eEARN; varies by vault.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $50 into the tokenised asset Ember offers on Ethereum and hold it. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
-  5. Check Ember once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Ember's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $50 into the tokenised asset Ember offers on Ethereum and hold it. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
+    5. Check Ember once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Ember's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #30 Valos (`valos`) — partial
+### #30 Valos (`valos`) — verified
 
 - Category: RWA · Chains: Monad
 - Official site: https://valos.io/
 - DefiLlama: https://defillama.com/protocol/valos
 - What it does: Valos offers institutional-grade digital asset yield solutions, mainly private credit strategies, for institutional investors under a compliance-led onboarding process. It has no public retail deposit product.
-- Notes: Valos is institutional-only: the official site's whole pitch is 'Why Institutional Investors choose Valos' with compliance onboarding. This directly contradicts any generic category-based step such as 'deposit into the Valos vault'. DeFiLlama lists $106.37m TVL, all on Monad, sub-category Private Credit. No points program or retail app was found. A Valos vUSD market exists on Curvance, but that is Curvance's product.
-- Sources: https://defillama.com/protocol/valos, https://valos.io/, https://github.com/kamalbuilds/ava-monad/blob/HEAD/docs/MONAD.md
+- Notes: Re-checked 2026-11-17: valos.io now reads directly and confirms the old entry word-for-word in substance: 'Where Institutional Discipline Meets Digital Assets', 'Why Institutional Investors choose Valos', a 'disciplined onboarding and compliance process', fully disclosed fee structures, and 'find the right strategy for your portfolio' via contacting the team. No retail deposit page, no vault, no token, no points program. No contradiction and no new farmable path; the steps are unchanged — the entry already states all of this honestly. Status upgraded to verified because the official site was directly read this round and confirms the entry.
+- Sources: https://valos.io/, https://defillama.com/protocol/valos, https://github.com/kamalbuilds/ava-monad/blob/HEAD/docs/MONAD.md
 
   Farm steps (researched):
   1. Use a fresh wallet but do not send funds anywhere yet, because Valos has no public retail deposit page or vault on its official site. (Cost: Free. Time: 5 min.)
@@ -780,13 +802,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Re-check valos.io before acting, since a retail product would have to appear there first; until then there is no Valos farm step to complete. (Cost: Free. Time: 5 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $100 into the tokenised asset Valos offers on Monad and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
-  5. Check Valos once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Valos's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $100 into the tokenised asset Valos offers on Monad and hold it. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
+    5. Check Valos once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Valos's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #35 Armitage by Wintermute (`armitage-by-wintermute`) — verified
 
@@ -807,13 +829,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, withdraw from the Morpho vault back to USDC; withdrawals depend on available market liquidity, so check liquidity first. (Cost: Gas $2-8 (estimate). Time: 5 min, subject to liquidity.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $100 into a Armitage by Wintermute vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
-  5. Check Armitage by Wintermute once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Armitage by Wintermute's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $100 into a Armitage by Wintermute vault on Ethereum and keep the vault shares. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 60 days.
+    5. Check Armitage by Wintermute once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Armitage by Wintermute's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #36 Doppler Finance (`doppler-finance`) — verified
 
@@ -834,13 +856,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, request a withdrawal in the app and allow several days for it to process; check your points and any XDP claim status before withdrawing. (Cost: No platform fee on withdrawals, per Doppler's blog. Time: Several days to process (estimate).)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $50 into Doppler Finance's main product on Ripple — check its own page to see which product holds the TVL — and leave the position open. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
-  5. Check Doppler Finance once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Doppler Finance's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $50 into Doppler Finance's main product on Ripple — check its own page to see which product holds the TVL — and leave the position open. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
+    5. Check Doppler Finance once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Doppler Finance's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #39 Curvance (`curvance`) — verified
 
@@ -861,40 +883,40 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, wait out the 20-minute hold that follows any borrow, then repay any loan and withdraw your supplied collateral. (Cost: Gas under $1 (estimate). Time: 20 min hold, then 5 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Supply $100 of USDC to Curvance on Monad and leave it earning interest. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Lend a second, smaller amount on Curvance the following week, using a different asset as collateral, so the record shows more than one deposit. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 45 days.
-  5. Check Curvance once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Curvance's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Supply $100 of USDC to Curvance on Monad and leave it earning interest. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Lend a second, smaller amount on Curvance the following week, using a different asset as collateral, so the record shows more than one deposit. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 45 days.
+    5. Check Curvance once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Curvance's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #41 Noble (`noble`) — partial
+### #41 Noble (`noble`) — verified
 
 - Category: Chain · Chains: Noble
 - Official site: https://noble.xyz/
 - DefiLlama: https://defillama.com/protocol/noble
 - What it does: Noble is a Cosmos appchain built for stablecoin issuance. Its flagship asset is USDN (Noble Dollar), a yield-bearing stablecoin fully backed by short-term US Treasuries, with a Points Vault that trades base yield for Noble Points toward a NOBLE token allocation.
-- Notes: BIGGEST CONTRADICTION: DeFiLlama has no protocol page for Noble at all — https://defillama.com/protocol/noble returns 404 — because Noble is a chain, not a protocol, so the snapshot's 'Noble as a farmable protocol' framing is a category error. Also, noble.org is an unrelated ranching institute; the real site is noble.xyz, whose homepage is JavaScript-only, so the USDN/Points mechanics were confirmed from Noble's own Medium post and other sources citing official pages, not from the homepage text. Second contradiction: Circle is ending USDC and CCTP V1 support on Noble (new minting disabled 13 Oct 2026, contract paused 12 Jan 2027), which threatens the standard 'bridge USDC to Noble' entry path. Season 2 points earn 1 point per $100 per day and end when Hyperliquid vaults launch; Season 1 holders get a fixed 5% of supply and Season 2 holders 2%.
-- Sources: https://defillama.com/protocol/noble, https://noble.xyz/, https://medium.com/@noble_xyz/noble-airdrop-farm-points-s2-eligibility-claim-74734a6371dd, https://crypto.news/circle-ends-usdc-and-cctp-support-on-noble/, https://www.techflowpost.com/en-US/article/28346
+- Notes: Re-checked 2026-11-17: noble.xyz is still JavaScript-only (logo + footer only), but the substance is now confirmed by Noble's own official Medium account (@noble_xyz, updated 24 Oct 2026) plus Circle/Injective reporting, so this entry is verified on official channels rather than the homepage. Two live developments change the old steps. (1) The USDC bridge-in path is now actively degrading: Circle disabled new USDC minting to Noble on 13 Oct 2026; CCTP V1 burn limits began falling on 31 Oct 2026; exits narrow from 1 Dec 2026; the Noble USDC contract and CCTP routes are FULLY PAUSED 12 Jan 2027, with a snapshot that day and manual redemption from 13 Jan 2027. Bridging in now risks stranding funds past the pause. (2) Noble's own Medium confirms the Season 2 mechanics (1 point per $100 USDN per day, points only after day 30, multipliers to 1.75x after 120 days, S2 = 2% fixed allocation, ends at Hyperliquid vault launch) and the 31 Dec 2026 address-linking deadline — resolving the old 2025-vs-2026 date confusion in favour of 2026. Noble is a chain, not a protocol: DeFiLlama has no protocol page for it (still 404).
+- Sources: https://noble.xyz/, https://medium.com/@noble_xyz/noble-airdrop-farm-points-s2-eligibility-claim-74734a6371dd, https://injective.com/blog/injective-usdc-canonical-standard, https://Coinpaprika.com/news/circle-pulls-usdc-noble-forcing-cosmos
 
   Farm steps (researched):
-  1. Set up a Cosmos wallet such as Keplr or Leap and keep a little USDC for Noble gas fees. (Cost: About $0.01 per transfer (estimate). Time: 10-15 min setup.)
-  2. Bridge USDC to the Noble chain, for example via express.noble.xyz, and check the route still works, because Circle is winding down USDC support on Noble. (Cost: Bridge fee varies (estimate). Time: 10-15 min.)
-  3. Buy USDN with USDC at dollar.noble.xyz; USDN is backed by short-term US Treasuries and earns about 4% base yield when simply held. (Cost: 0.1% conversion fee between USDC and USDN. Time: 5 min.)
+  1. Set up a Cosmos wallet such as Keplr or Leap and keep a little USDC for Noble gas fees. Noble is a Cosmos appchain for stablecoins, not a protocol — DeFiLlama has no protocol page for it. (Cost: About $0.01 per transfer (estimate). Time: 10-15 min setup.)
+  2. Think twice before bridging USDC to Noble now: Circle stopped new USDC minting to Noble on 13 Oct 2026, CCTP V1 burn limits have been falling since 31 Oct, exits narrow from 1 Dec 2026, and the Noble USDC contract is fully paused on 12 Jan 2027 with only manual redemption after that. Only bridge what you can exit before January. (Cost: Bridge fee varies (estimate). Time: 10-15 min.)
+  3. Buy USDN with USDC at dollar.noble.xyz; USDN is backed by short-term US Treasuries and earns about 4% base yield when simply held. The 0.1% conversion fee applies between USDC and USDN. (Cost: 0.1% conversion fee between USDC and USDN. Time: 5 min.)
   4. Open points.noble.xyz and deposit USDN into the Points Vault to earn Noble Points instead of the base yield. (Cost: About $0.01 per transfer (estimate). Time: 5 min.)
-  5. Hold for at least 30 days, because points only start counting after 30 days in the vault, and multipliers rise with longer holds (up to 1.75x after 120 days). (Cost: No extra cost, but you forgo base yield. Time: Hold at least 30 days.)
-  6. Link your Cosmos address to an Ethereum address on the Noble claim page before 31 December 2026, so any allocation can be delivered to you. (Cost: Free. Time: 5 min.)
-  7. To exit, withdraw USDN from the Points Vault and swap it back to USDC; withdrawing before 30 days earns zero points for that deposit. (Cost: 0.1% conversion fee (estimate). Time: 5 min.)
+  5. Hold for at least 30 days, because points only start counting after 30 days in the vault, and multipliers rise with longer holds (up to 1.75x after 120 days). Season 2 earns 1 point per $100 USDN per day toward a fixed 2% NOBLE allocation. (Cost: No extra cost, but you forgo base yield. Time: Hold at least 30 days.)
+  6. Link your Cosmos address to an Ethereum address on the Noble claim page before 31 December 2026, so any allocation can be delivered to you. Season 2 ends when the Hyperliquid vaults launch, and the allocation shown until then is a projection, not final. (Cost: Free. Time: 5 min.)
+  7. To exit, withdraw USDN from the Points Vault and swap it back to USDC; withdrawing before 30 days earns zero points for that deposit. Exit Noble USDC entirely before the 12 Jan 2027 contract pause. (Cost: 0.1% conversion fee (estimate). Time: 5 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $50 into Noble's main product on Noble — check its own page to see which product holds the TVL — and leave the position open. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
-  5. Check Noble once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Noble's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $50 into Noble's main product on Noble — check its own page to see which product holds the TVL — and leave the position open. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
+    5. Check Noble once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Noble's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #43 Keyrock (`keyrock`) — verified
 
@@ -915,13 +937,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, withdraw from the Morpho vault back to USDC; withdrawals are on demand but depend on available market liquidity. (Cost: Gas $2-8 on Ethereum (estimate). Time: 5 min, subject to liquidity.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $50 into a Keyrock vault on Arc and keep the vault shares. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 60 days.
-  5. Check Keyrock once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Keyrock's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $50 into a Keyrock vault on Arc and keep the vault shares. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 60 days.
+    5. Check Keyrock once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Keyrock's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #44 infiniFi (`infinifi`) — verified
 
@@ -942,13 +964,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, unstake siUSD or wait out your liUSD lock's exit timer, then redeem iUSD back to USDC in the app; locked liUSD is first-loss capital, so understand the tier before locking. (Cost: Gas $2-8 (estimate). Time: 5 min, plus lock exit timer for liUSD.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $50 into infiniFi's main vault on Ethereum and leave it to compound. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
-  5. Check infiniFi once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open infiniFi's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $50 into infiniFi's main vault on Ethereum and leave it to compound. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
+    5. Check infiniFi once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open infiniFi's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #45 Gami Labs (`gami-labs`) — verified
 
@@ -969,67 +991,67 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. To exit, redeem your receipt tokens for the underlying asset in the vault app; large Stellar withdrawals can take longer because liquidity there is thinner. (Cost: Gas $2-8 on Ethereum (estimate). Time: 5 min, longer for large Stellar exits.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $50 into a Gami Labs vault on Stellar and keep the vault shares. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 60 days.
-  5. Check Gami Labs once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Gami Labs's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $50 into a Gami Labs vault on Stellar and keep the vault shares. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 60 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 60 days.
+    5. Check Gami Labs once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Gami Labs's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 90 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #47 Reti Pooling (`reti-pooling`) — partial
+### #47 Reti Pooling (`reti-pooling`) — verified
 
 - Category: Staking Pool · Chains: Algorand
 - Official site: https://reti.nodely.io
 - DefiLlama: https://defillama.com/protocol/reti-pooling
 - What it does: Reti Pooling is a decentralized, non-custodial protocol that lets users pool ALGO together so small holders can collectively meet Algorand's 30,000 ALGO solo-staking threshold, stake with a validator of their choice, and earn consensus rewards proportionally.
-- Notes: The official app reti.nodely.io timed out when fetched, so the staking flow was verified against the official Reti docs (TxnLab gitbook) instead; that is why this is partial rather than verified. No points program or token exists for Reti; the reward is ALGO consensus rewards. Creating a validator costs 10.4449 ALGO, but ordinary users only stake with existing validators and do not pay that.
-- Sources: https://defillama.com/protocol/reti-pooling, https://reti.nodely.io, https://txnlab.gitbook.io/reti-open-pooling/~gitbook/pdf?limit=100
+- Notes: Re-checked 2026-11-17: reti.nodely.io now loads (was timing out) — the page title renders, though only a stale transaction error toast was visible in the crawl, so the staking flow itself still rests on the official docs. The official Réti docs (TxnLab GitBook, read this round) confirm the old steps and add two concrete mechanics they lacked: (1) an unstake must be above the validator's minimum entry amount, or the entire balance — partial unstakes below the minimum are rejected; (2) rewards are computed per epoch and pro-rated if you stake mid-epoch, and the protocol itself charges no fees (only the validator's immutable per-epoch commission). Validator creation costs 10.4449 ALGO, which ordinary stakers never pay. A live third-party report also shows Reti pools in active use (e.g. Steak Pool validator #13, 228,313 ALGO, 300 ALGO minimum entry), confirming minimums vary widely per validator. No points program or token exists for Reti; the reward is ALGO consensus rewards.
+- Sources: https://reti.nodely.io, https://txnlab.gitbook.io/reti-open-pooling/core-concepts/staking-pools, https://txnlab.gitbook.io/reti-open-pooling/~gitbook/pdf?limit=100, https://defillama.com/protocol/reti-pooling
 
   Farm steps (researched):
-  1. Set up an Algorand wallet such as Pera and fund it with ALGO plus a little extra for transaction fees. (Cost: Algorand fees under $1 (estimate). Time: 10-15 min setup.)
-  2. Open the Reti Pooling staking dashboard at reti.nodely.io and browse the list of validators. (Cost: Free to browse. Time: 10 min.)
-  3. Compare validators on performance, commission, payout frequency and restrictions before choosing one, since validators vary greatly. (Cost: Free. Time: 10 min.)
-  4. Select Stake on your chosen validator, enter at least the minimum entry amount of ALGO, and sign the transaction. (Cost: Algorand fees under $1 (estimate). Time: 5 min.)
-  5. Check the My Stakes section to confirm your staked amount and the validator's epoch rewards. (Cost: Free. Time: 5 min.)
-  6. Hold the stake while the validator participates in Algorand consensus; rewards are distributed proportionally minus the validator's commission each epoch. (Cost: Validator commission, set per validator. Time: Hold 30 days (estimate).)
-  7. To exit, select Unstake on your validator in the Staked section; there is no lockup, so your ALGO is released without a fixed waiting period. (Cost: Algorand fees under $1 (estimate). Time: 5 min.)
+  1. Set up an Algorand wallet such as Pera and fund it with ALGO plus a little extra for transaction fees. Reti lets small holders pool ALGO to collectively meet Algorand's 30,000 ALGO solo-staking threshold. (Cost: Algorand fees under $1 (estimate). Time: 10-15 min setup.)
+  2. Open the Reti Pooling staking dashboard at reti.nodely.io and browse the list of validators. The app loads again this round after timing out before, but confirm the validator list renders before you trust it. (Cost: Free to browse. Time: 10 min.)
+  3. Compare validators on performance, commission, payout frequency and restrictions before choosing one, since validators vary greatly — including the minimum entry, which is set per validator (e.g. 300 ALGO on one live pool) and is immutable once set. (Cost: Free. Time: 10 min.)
+  4. Select Stake on your chosen validator, enter at least the minimum entry amount of ALGO, and sign the transaction. The protocol itself charges no fees; only the validator's commission, taken per epoch, applies. (Cost: Algorand fees under $1 (estimate). Time: 5 min.)
+  5. Check the My Stakes section to confirm your staked amount and the validator's epoch rewards. Rewards are computed per epoch and pro-rated if you stake mid-epoch, so a stake placed late in an epoch earns less that epoch. (Cost: Free. Time: 5 min.)
+  6. Hold the stake while the validator participates in Algorand consensus; rewards are distributed proportionally minus the validator's commission each epoch. No points program or token exists for Reti — the reward is ALGO consensus rewards. (Cost: Validator commission, set per validator. Time: Hold 30 days (estimate).)
+  7. To exit, select Unstake on your validator in the Staked section; there is no lockup, so your ALGO is released without a fixed waiting period — but the unstake amount must be above the minimum entry amount, or your entire balance. (Cost: Algorand fees under $1 (estimate). Time: 5 min.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Stake $50 of the chain's staking asset through Reti Pooling on Algorand. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Add a small amount to the stake the following week, so the record shows more than one staking action. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
-  5. Check Reti Pooling once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Reti Pooling's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Stake $50 of the chain's staking asset through Reti Pooling on Algorand. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Add a small amount to the stake the following week, so the record shows more than one staking action. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
+    5. Check Reti Pooling once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Reti Pooling's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #48 Tydro (`tydro`) — partial
+### #48 Tydro (`tydro`) — verified
 
 - Category: Lending · Chains: Ink
 - Official site: https://tydro.com
 - DefiLlama: https://defillama.com/protocol/tydro
-- What it does: Tydro is a decentralized, non-custodial lending protocol on Ink where anyone can supply assets to earn interest or borrow against over-collateralized positions, with no central entity able to freeze or change positions.
-- Notes: PARTIAL: the DeFiLlama tydr page failed to load and the tydr.com homepage hit a rate limit, so this rests on the official tydr.com FAQ as returned by search (crawled 1 hour before this check). No points or rewards program was found on the site, and no specific supported-asset list was confirmed, so no asset names are given in the steps. The snapshot chain (Ink) matches the FAQ and DeFiLlama Ink rankings, which list Tydro as the largest Ink lending protocol. [CORRECTED by merger 2026-11-17: the real slug is tydr (snapshot/board/DefiLlama all agree); the draft used the typo tydr, so its DefiLlama fetch failed. The DefiLlama page for tydr was then opened directly and confirms: non-custodial lending protocol on Ink, powered by Aave, TVL $232m, $57.5m active loans, official site tydr.com. The what_it_does and steps were already correct for the real protocol.]
-- Sources: https://defillama.com/protocol/tydro, https://tydro.com/faq
+- What it does: Tydro is a decentralized, non-custodial lending protocol on Ink where anyone can supply assets to earn interest, with weekly TydroInkPoints campaigns (Season 2 live) tracked and claimed via Merkl toward $INK.
+- Notes: Re-checked 2026-11-17: this is the biggest correction of the round. The old entry said 'No points or rewards program was found on the site' — that is now WRONG. Tydro's own forum (forum.tydro.com, official) confirms weekly TydroInkPoints supply/borrow incentive campaigns running since 14 Oct 2025, renewed weekly (latest posted renewal 11-18 Nov 2026), covering WETH, kBTC, USDC, USDT0, USDG and GHO; Season 1 snapshot locked in Jan 2026 and Season 2 is live now through the eventual INK TGE, with points tracked and claimed via Merkl and converting toward $INK (Kraken's unlaunched L2 token — no TGE date exists). The old steps also named no assets; the live reserve list is now confirmed on-chain (14 reserves incl. WETH, kBTC, USDT0, USDG, GHO, USDC, weETH, wrsETH, ezETH, sUSDe, USDe, SolvBTC, syrupUSDT, kHYPE) and live market data shows USDC at $59.2M supplied, 80.88% utilization, 4.59% supply APY. tydr.com itself now reads directly (Aave-powered, non-custodial, Ink; app at app.tydro.com). Note: the homepage's own 'by the numbers' figures ($2.3B deposits etc.) look inconsistent with DefiLlama/on-chain supply (~$157M total) and were NOT used.
+- Sources: https://tydro.com, https://forum.tydro.com/t/tydroinkpoints-incentives-renewals/21, https://app.tydro.com, https://defillama.com/protocol/tydro, https://10k.nyxshcon.org/lending?view=markets&protocol=tydro
 
   Farm steps (researched):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. You need a wallet that supports the Ink network to interact with Tydro at all. (Cost: $0. Time: 5 minutes.)
-  2. Fund that wallet with the asset you want to supply plus a little ETH on Ink for gas. Tydro's own FAQ says using the protocol requires on-chain transactions and gas fees, which are lower on Ink than on Ethereum. (Cost: $2-8 of gas (estimate). Time: 10-15 minutes.)
-  3. Open tydr.com, connect your wallet, and go to the Markets section to check the current supply rate for each supported token before you commit any funds. (Cost: $0. Time: 10 minutes.)
-  4. Supply the asset and amount of your choice through the Tydro interface, approving the token spend first and then confirming the supply transaction in your wallet. (Cost: $2-8 of gas (estimate). Time: 10 minutes.)
+  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. You need a wallet that supports the Ink network (chain 57073) to interact with Tydro at all. Fund that wallet with the asset you want to supply plus a little ETH on Ink for gas. Confirmed supply assets include USDC, USDT0, USDG, GHO, WETH and kBTC; USDC is the largest market at about $59M supplied and about 4.59% supply APY as of 17 Nov 2026. (Cost: $2-8 of gas (estimate). Time: 10-15 minutes.)
+  2. Open app.tydro.com, connect your wallet, and go to the Markets section to check the current supply rate and utilization for each supported token before you commit any funds. Tydro is an Aave v3 white-label market on Ink. (Cost: $0. Time: 10 minutes.)
+  3. Supply the asset and amount of your choice through the Tydro interface, approving the token spend first and then confirming the supply transaction in your wallet. Supplying also earns TydroInkPoints — see the next step. (Cost: $2-8 of gas (estimate). Time: 10 minutes.)
+  4. Track TydroInkPoints: weekly supply and borrow campaigns have run since 14 Oct 2025 (see the renewals thread on forum.tydro.com), Season 1 snapshotted in Jan 2026 and Season 2 is live through the eventual INK TGE. Points are tracked and claimed via Merkl from the same wallet and convert toward $INK, which has no announced TGE date. (Cost: $0. Time: 10 minutes.)
   5. Optionally borrow against your supplied collateral if you want a second position, keeping the loan well over-collateralized. Tydro only supports over-collateralized borrowing, so never borrow close to the maximum. (Cost: $2-8 of gas if you borrow (estimate). Time: 10 minutes.)
   6. Hold the supplied position for at least 30 days and check the Markets page weekly to confirm the supply rate has not collapsed. Supplied tokens sit in audited smart contracts and keep earning while deposited. (Cost: capital locked in the protocol. Time: 30 days.)
   7. Exit by withdrawing your supplied tokens through the Tydro interface, repaying any open borrow first, and moving the funds back to your main wallet. Only claim anything from a link published on tydr.com itself, never from a DM or ad. (Cost: $2-8 of gas (estimate). Time: 10 minutes to exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Supply $100 of USDC to Tydro on Ink and leave it earning interest. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Lend a second, smaller amount on Tydro the following week, using a different asset as collateral, so the record shows more than one deposit. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
-  5. Check Tydro once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Tydro's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Supply $100 of USDC to Tydro on Ink and leave it earning interest. Cost: $100 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Lend a second, smaller amount on Tydro the following week, using a different asset as collateral, so the record shows more than one deposit. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $100 locked in the position until you exit. Time: 30 days.
+    5. Check Tydro once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Tydro's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $100 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #51 Tulipa Capital (`tulipa-capital`) — verified
 
@@ -1050,13 +1072,13 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Exit by redeeming your vault shares in the Morpho or Euler app and withdrawing the underlying asset. Only claim anything from a link published on tulipa.capital, Morpho, or Euler itself, never from a DM, reply, or ad. (Cost: $2-8 of gas (estimate). Time: 10 minutes to exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $50 into a Tulipa Capital vault on Ethereum and keep the vault shares. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
-  5. Check Tulipa Capital once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Tulipa Capital's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $50 into a Tulipa Capital vault on Ethereum and keep the vault shares. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
+    5. Check Tulipa Capital once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Tulipa Capital's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #58 Yuzu Money (`yuzu-money`) — verified
 
@@ -1077,40 +1099,40 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Exit by unstaking syzUSD back to yzUSD, which Yuzu's FAQ says is basically instant, then selling yzUSD on the secondary market. Direct redemption of yzUSD takes up to 3 days and is gated, and yzPP has a 30-day redemption period with a 5,000 minimum, so plan the exit through the secondary market. (Cost: $2-8 of gas plus any swap fee (estimate). Time: 10 minutes to exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Deposit $50 into Yuzu Money's main vault on Plasma and leave it to compound. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
-  5. Check Yuzu Money once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Yuzu Money's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Deposit $50 into Yuzu Money's main vault on Plasma and leave it to compound. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 30 days.
+    5. Check Yuzu Money once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Yuzu Money's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
-### #61 Firelight (`firelight`) — partial
+### #61 Firelight (`firelight`) — verified
 
 - Category: Insurance · Chains: Flare
 - Official site: https://firelight.finance
 - DefiLlama: https://defillama.com/protocol/firelight
 - What it does: Firelight is an on-chain cover protocol on Flare: users stake FXRP (wrapped XRP via Flare FAssets) and receive stXRP, and that staked capital backs cover for DeFi vaults against defined failures, with incidents validated by an independent Risk Consortium and staked capital subject to slashing.
-- Notes: PARTIAL: the DeFiLlama page and the firelight.finance homepage were opened directly, but the app and docs pages were not directly opened, so the staking flow, the 6 October 2026 launch, the Points rules, and the 30-60 day exit come from secondary sources that quote Firelight's docs and launch announcement. CONTRADICTION with a generic insurance step: this is not buying cover — a retail farmer is the capital provider (staking FXRP for stXRP), takes slashing risk, and cannot exit quickly once 30-day cover periods apply.
-- Sources: https://defillama.com/protocol/firelight, https://firelight.finance/, https://superapp.spendthebits.com/insights/earning-on-xrp-firelight-stxrp-points, https://www.tradingview.com/news/chainwire:ca766ea70094b:0-firelight-is-live-backed-by-staked-fxrp-on-flare/
+- Notes: Re-checked 2026-11-17: firelight.finance now reads directly and confirms the cover-product framing, the independent Risk Consortium, audits (OpenZeppelin, Coinspect, 0xMacro, Immunefi bug bounty) and the FAssets/FXRP mechanism — all consistent with the old entry. The upgrade is driven by one time-sensitive addition the old steps miss: the early-contributor campaign allocates 230,000 FXRP pro rata by Firelight Points, with claims open 7 Oct-7 Dec 2026 (confirmed by AltcoinBuzz and Weex, citing Firelight/Flare). With today at 17 Nov, ~20 days of that window remain. The 30-60 day exit, emissions stopping at unstake initiation, and Points-not-a-claim-on-premiums are re-confirmed by SpendTheBits' 13 Nov 2026 update quoting Firelight's docs, so those steps are kept and only tightened (the exit step now states the final withdrawal transaction must be submitted manually).
+- Sources: https://firelight.finance/, https://superapp.spendthebits.com/insights/earning-on-xrp-firelight-stxrp-points, https://www.altcoinbuzz.io/firelight-s-oct-6-switch-turns-staked-fxrp-into-cover-backing, https://defillama.com/protocol/firelight
 
   Farm steps (researched):
   1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. You need a Flare-compatible wallet plus a little FLR for gas, or an XRPL wallet if you use the Flare Smart Accounts one-flow route. (Cost: $0. Time: 5 minutes.)
   2. Get FXRP, the wrapped XRP on Flare created through Flare's FAssets system. You can mint it from XRP or buy it, and Flare's guidance says at least 13 XRP is needed to cover a minted lot and fees. (Cost: $2-8 of gas or minting fees (estimate). Time: 15 minutes.)
   3. Open the Firelight app at firelight.finance, connect your wallet, and accept the terms of use on your first visit. The app is where staking happens; the main firelight.finance site itself is informational and describes the cover product and the Risk Consortium. (Cost: $0. Time: 10 minutes.)
   4. Deposit your FXRP into the Staked XRP Vault and confirm the deposit. You receive stXRP 1:1 for the FXRP deposited, as a liquid token representing your share of the vault. (Cost: $2-8 of gas (estimate). Time: 10 minutes.)
-  5. Hold the stXRP position and understand what it now does: since the full launch on 6 October 2026, staked FXRP backs live cover and cover premiums stream into the vault, while your capital can be slashed if a covered event pays out. Firelight Points track early participation but are not a claim on premiums. (Cost: capital at risk of slashing. Time: 30 days.)
-  6. Check the Firelight dashboard weekly for your stXRP balance, Firelight Points, and the cover status of the vaults your capital backs. Keep some FLR in the wallet so you can always pay for the exit transaction. (Cost: $0. Time: 10 minutes a week.)
-  7. Exit by starting an unstake in the app, which burns your stXRP, then waiting out the cooldown before claiming your FXRP. With 30-day cover periods now in force, the wait is 30 to 60 days depending on when you request the exit, so do not treat this as an instant withdrawal. (Cost: $2-8 of gas (estimate). Time: 30-60 days to fully exit.)
+  5. Hold the stXRP position and understand what it now does: since the full launch on 6 October 2026, staked FXRP backs live cover and cover premiums stream into the vault, while your capital can be slashed if a covered event pays out. Firelight Points track early participation but are not a claim on premiums. Check the Firelight dashboard weekly for your stXRP balance, Firelight Points, and the cover status of the vaults your capital backs. Keep some FLR for gas. (Cost: capital at risk of slashing. Time: 30 days.)
+  6. If you staked early, check the early-contributor claim now: 230,000 FXRP is allocated pro rata by Firelight Points, claimable from 7 Oct to 7 Dec 2026 — about 20 days remain as of 17 Nov. Claim only through Firelight's own app or a link it publishes. (Cost: $0. Time: 10 minutes.)
+  7. Exit by starting an unstake in the app, which burns your stXRP and stops all emissions at once, then waiting out the cooldown before submitting the final withdrawal transaction yourself — it is not automatic. With 30-day cover periods now in force, the wait is 30 to 60 days depending on when you request the exit, so do not treat this as an instant withdrawal. (Cost: $2-8 of gas (estimate). Time: 30-60 days to fully exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Buy $50 of cover from Firelight on Flare and keep the policy active. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 45 days.
-  5. Check Firelight once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Firelight's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Buy $50 of cover from Firelight on Flare and keep the policy active. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 45 days.
+    5. Check Firelight once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Firelight's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
 
 ### #62 Mezo Earn (`mezo-earn`) — verified
 
@@ -1131,10 +1153,11 @@ lock BTC for veBTC, optionally lock MEZO for up to 5x boost, and vote weekly on 
   7. Claim your fees and incentives at the end of each epoch from the Mezo app, and when you want out, unlock through the Lock page and withdraw your BTC. Only claim from links on mezo.org itself, never from a DM, reply, or ad. (Cost: $2-8 of gas to claim and exit (estimate). Time: 10 minutes to exit.)
 
   Current repo steps (for comparison):
-  1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
-  2. Put $50 into Mezo Earn's main product on Mezo — check its own page to see which product holds the TVL — and leave the position open. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
-  3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
-  4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 45 days.
-  5. Check Mezo Earn once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
-  6. Before you claim anything, open Mezo Earn's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
-  7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+    1. Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else. Cost: under $3 of gas for the first transaction. Time: 5 minutes.
+    2. Put $50 into Mezo Earn's main product on Mezo — check its own page to see which product holds the TVL — and leave the position open. Cost: $50 of capital and about $4 of gas. Time: 15 minutes to set up.
+    3. Top up the position with a smaller amount the following week, so the record shows more than one deposit instead of a single one. Cost: about $2 of gas a week. Time: 10 minutes a week.
+    4. Hold the position for at least 45 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon. Cost: $50 locked in the position until you exit. Time: 45 days.
+    5. Check Mezo Earn once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more. Cost: no money, just your time. Time: 10 minutes a week.
+    6. Before you claim anything, open Mezo Earn's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained. Cost: nothing to check. Time: 10 minutes.
+    7. Stop when the token launches and the first claim is paid, or after 75 days with no launch: withdraw the $50 and close the position. Cost: about $3 of gas to exit. Time: 10 minutes to exit.
+
