@@ -16,7 +16,7 @@
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { boardIssue, buildRadar, dataScript, parseSnapshot } from './lib/model.ts';
+import { MODEL, boardIssue, buildRadar, dataScript, parseFarmGuides, parseSnapshot } from './lib/model.ts';
 import { buildDossier } from './vendor/makefun-board.ts';
 
 const here = fileURLToPath(new URL('.', import.meta.url));
@@ -43,7 +43,14 @@ if (!existsSync(inputFile)) {
 const out = arg('output', process.env.MAKEFUN_OUTPUT_DIR ?? '/output');
 
 const snapshot = parseSnapshot(readFileSync(inputFile, 'utf8'));
-const { board, radar } = buildRadar(snapshot);
+// The researched farm guides live beside the program, not in the sealed input: the 40 watchlist
+// protocols' plans as their own websites state them. A missing file only falls back to the derived
+// wording; a present-but-broken one fails the run, so a bad research file never ships silently.
+const guidesPath = join(here, 'research', 'farm-guides.json');
+const guides = existsSync(guidesPath)
+  ? parseFarmGuides(readFileSync(guidesPath, 'utf8'))
+  : (process.stderr.write('token radar: no research/farm-guides.json: farm plans fall back to the derived wording\n'), new Map());
+const { board, radar } = buildRadar(snapshot, MODEL, guides);
 const issue = boardIssue(board, snapshot);
 if (issue !== null) {
   process.stderr.write(`token radar: the model wrote a board the gate refuses: ${issue}\n`);

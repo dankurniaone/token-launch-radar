@@ -75,6 +75,9 @@
 
   // The farm plan is the same derivation main.ts writes to board.json: category, chains, TVL and age
   // decide the action, the capital, the hold and every cost and time. No name is special-cased.
+  // Researched plans come first: the 40 watchlist protocols' plans, read off their own websites,
+  // ride in data.js as DATA.guides, and a row with one uses it verbatim — so the page and
+  // board.json agree on every row. The derived plan below is only the fallback for the other rows.
   function chainOf(p) { return p.chains && p.chains.length > 0 ? p.chains[0] : 'its main chain'; }
   function capitalFor(p) {
     if (p.tvl_usd >= 5e9) return 250;
@@ -128,6 +131,7 @@
     return s;
   }
   function farmSteps(p) {
+    if (DATA.guides && DATA.guides[p.slug]) return DATA.guides[p.slug].slice();
     var chain = chainOf(p);
     var capital = capitalFor(p);
     var hold = holdDaysFor(p.age_days);

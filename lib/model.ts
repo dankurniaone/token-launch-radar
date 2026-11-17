@@ -155,7 +155,9 @@ export interface LiveRow {
   change_7d: number | null;
 }
 
-/** Everything the dashboard needs: the board, the live set, and the model it runs. */
+/** Everything the dashboard needs: the board, the live set, and the model it runs. `guides` is the
+ * researched farm plan per watchlist slug, as composed step strings — the dashboard renders those
+ * verbatim for the protocols that have one, and derives the rest in the page, exactly as board.json does. */
 export interface RadarData {
   as_of: string;
   source: string;
@@ -169,6 +171,7 @@ export interface RadarData {
   rows: RadarRow[];
   live: LiveRow[];
   peer_multiples: { category: string; multiple: number; peers: number }[];
+  guides: { [slug: string]: string[] };
 }
 
 /** Why the snapshot is not one this model can score. */
@@ -280,8 +283,9 @@ export interface BoardSummary {
   live_size: number;
 }
 
-/** The protocols the board ranks, strongest first, with ranks 1..n. */
-export function buildBoard(snapshot: Snapshot, model: ModelConstants = MODEL): BoardRow[] {
+/** The protocols the board ranks, strongest first, with ranks 1..n. A protocol with a researched
+ * guide gets that plan verbatim; every other row keeps the derived plan from `farmSteps`. */
+export function buildBoard(snapshot: Snapshot, model: ModelConstants = MODEL, guides: Map<string, FarmStep[]> = new Map()): BoardRow[] {
   const peers = peerMultiples(snapshot, model);
   const index = bySlug(snapshot.protocols);
   const chosen = new Map<string, SnapshotProtocol>();
@@ -332,18 +336,77 @@ export function buildBoard(snapshot: Snapshot, model: ModelConstants = MODEL): B
       chains_multiplier: round4(s.chainsMult),
       age_days: s.age,
     },
-    farm_steps: farmSteps(s.p, s.age).map(stepText),
+    farm_steps: (guides.get(s.p.slug) ?? farmSteps(s.p, s.age)).map(stepText),
   }));
 }
 
 const round4 = (n: number): number => Math.round(n * 1e4) / 1e4;
 
-/** A step as one string: its action, then its cost and time, within the gate's 20..600 characters. */
+/** A step as one string: its action, then its cost and time, within the gate's 20..600 characters.
+ * The text is trimmed first when a long action would push the whole step past 600, so the cost
+ * and time — the parts the gate's farm-plan criterion actually checks — are never the part cut. */
 export function stepText(step: FarmStep): string {
-  let s = `${step.text} Cost: ${step.cost}. Time: ${step.time}.`;
-  if (s.length > 600) s = `${s.slice(0, 596)}...`;
+  const tail = ` Cost: ${step.cost}. Time: ${step.time}.`;
+  let text = step.text;
+  if (text.length + tail.length > 600) text = `${text.slice(0, 600 - tail.length - 3)}...`;
+  let s = `${text}${tail}`;
   if (s.length < 20) s = `${s} Hold the position and check the protocol's own page.`;
   return s;
+}
+
+/** A researched farm guide: the plan a protocol's own website actually supports, found by
+ * opening that site and its docs — not by guessing from the snapshot. One entry per watchlist
+ * slug, seven steps each. The research file is data, not model: the implied value never looks
+ * at it, and a protocol with no guide keeps the derived plan below. */
+export interface FarmGuide {
+  slug: string;
+  steps: FarmStep[];
+}
+
+/** Why the farm guides are not ones the program can use. */
+export class GuideError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'GuideError';
+  }
+}
+
+/** The researched farm guides out of a file's text: one entry per slug, seven steps each, each
+ * step an action with a cost and a time. A step that would compose past 600 characters is
+ * refused here, not silently cut, so a bad research file fails the run instead of the gate. */
+export function parseFarmGuides(text: string): Map<string, FarmStep[]> {
+  let raw: unknown;
+  try {
+    raw = JSON.parse(text);
+  } catch {
+    throw new GuideError('farm-guides.json is not JSON');
+  }
+  if (!Array.isArray(raw)) throw new GuideError('farm-guides.json is not a JSON array');
+  const out = new Map<string, FarmStep[]>();
+  for (let i = 0; i < raw.length; i++) {
+    const v = raw[i];
+    if (typeof v !== 'object' || v === null || Array.isArray(v)) throw new GuideError(`farm-guides.json's entry ${i} is not an object`);
+    const e = v as Record<string, unknown>;
+    if (typeof e.slug !== 'string' || e.slug.length === 0) throw new GuideError(`farm-guides.json's entry ${i} has no slug`);
+    if (!Array.isArray(e.farm_steps) || e.farm_steps.length !== 7) {
+      throw new GuideError(`farm-guides.json's ${e.slug} has ${Array.isArray(e.farm_steps) ? e.farm_steps.length : 'no'} farm steps, not 7`);
+    }
+    const steps = e.farm_steps.map((s, j) => {
+      if (typeof s !== 'object' || s === null || Array.isArray(s)) throw new GuideError(`farm-guides.json's ${e.slug} step ${j + 1} is not an object`);
+      const o = s as Record<string, unknown>;
+      if (typeof o.text !== 'string' || typeof o.cost !== 'string' || typeof o.time !== 'string') {
+        throw new GuideError(`farm-guides.json's ${e.slug} step ${j + 1} lacks text, cost or time`);
+      }
+      const composed = stepText({ text: o.text, cost: o.cost, time: o.time });
+      if (composed.length < 20 || composed.length > 600) {
+        throw new GuideError(`farm-guides.json's ${e.slug} step ${j + 1} composes to ${composed.length} characters`);
+      }
+      return { text: o.text, cost: o.cost, time: o.time };
+    });
+    if (out.has(e.slug)) throw new GuideError(`farm-guides.json names ${e.slug} twice`);
+    out.set(e.slug, steps);
+  }
+  return out;
 }
 
 /** The first chain a protocol names, or a neutral phrase. */
@@ -406,12 +469,15 @@ function weeklyActionFor(p: SnapshotProtocol, capital: number, chain: string): s
 }
 
 /**
- * A protocol's farm plan: seven steps, each an action with a cost and a time. The plan is derived
- * from the protocol's own record (category, chains, TVL, age), never from a hand-written list of
- * names — and never from a feature the snapshot cannot prove exists. Each step does a different
- * job: 1) a clean wallet, 2) the first real position, 3) the weekly habit, 4) the hold, 5) what
- * to watch, 6) the safety check before any claim, 7) the exit rule. Step 7 is the exit rule:
- * when to stop, so the plan is a complete trade, not an open loop.
+ * A protocol's farm plan: seven steps, each an action with a cost and a time. This is the DERIVED
+ * plan, used for every row with no researched guide: it is derived from the protocol's own record
+ * (category, chains, TVL, age), never from a hand-written list of names — and never from a feature
+ * the snapshot cannot prove exists. Each step does a different job: 1) a clean wallet, 2) the first
+ * real position, 3) the weekly habit, 4) the hold, 5) what to watch, 6) the safety check before any
+ * claim, 7) the exit rule. Step 7 is the exit rule: when to stop, so the plan is a complete trade,
+ * not an open loop. A row WITH a guide (see `parseFarmGuides`) uses that plan instead, because the
+ * guide was read off the protocol's own website: which product to use, which route is retail, and
+ * which doors are already closed.
  */
 export function farmSteps(p: SnapshotProtocol, age: number | null): FarmStep[] {
   const chain = chainOf(p);
@@ -497,9 +563,11 @@ export function radarRow(row: BoardRow): RadarRow {
   };
 }
 
-/** Everything the dashboard renders, from the snapshot. */
-export function buildRadar(snapshot: Snapshot, model: ModelConstants = MODEL): { board: BoardRow[]; radar: RadarData } {
-  const board = buildBoard(snapshot, model);
+/** Everything the dashboard renders, from the snapshot. `guides` is the researched farm plans:
+ * they ride along in `radar.guides` as composed step strings, so the dashboard renders the same
+ * words board.json carries for the 40 watchlist protocols, and derives the other 186 in the page. */
+export function buildRadar(snapshot: Snapshot, model: ModelConstants = MODEL, guides: Map<string, FarmStep[]> = new Map()): { board: BoardRow[]; radar: RadarData } {
+  const board = buildBoard(snapshot, model, guides);
   const live = liveRows(snapshot);
   const peers = peerMultiples(snapshot, model);
   const early = board.filter((r) => !snapshot.watchlist.includes(r.slug)).length;
@@ -527,6 +595,13 @@ export function buildRadar(snapshot: Snapshot, model: ModelConstants = MODEL): {
     rows: board.map(radarRow),
     live,
     peer_multiples: peerList,
+    // Only the guides that landed on a board row: a guide for a slug the board
+    // does not rank is research, not dashboard data, and stays out of data.js.
+    guides: Object.fromEntries(
+      board
+        .filter((r) => guides.has(r.slug))
+        .map((r) => [r.slug, guides.get(r.slug)!.map(stepText)]),
+    ),
   };
   return { board, radar };
 }

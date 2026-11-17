@@ -1,0 +1,2311 @@
+[
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Base",
+   "Ethereum",
+   "Robinhood Chain",
+   "Arbitrum",
+   "Solana",
+   "Monad",
+   "Arc",
+   "Katana",
+   "Polygon",
+   "Unichain",
+   "Corn"
+  ],
+  "defillama_url": "https://defillama.com/protocol/steakhouse-financial",
+  "farm_steps": [
+   {
+    "cost": "under $3 of gas for the first transaction",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "$150 of capital and about $8 of gas",
+    "text": "Deposit $150 of USDC into a Steakhouse-curated vault on Morpho on Base: open the Morpho app, find a Steakhouse vault, and supply USDC. The site lists Coinbase DeFi Lend as the retail route for eligible Coinbase users.",
+    "time": "15 minutes to set up"
+   },
+   {
+    "cost": "about $4 of gas a week",
+    "text": "Top up the same vault with a smaller amount the following week, so the record shows more than one deposit instead of a single one.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "$150 locked in the vault until you exit",
+    "text": "Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon.",
+    "time": "30 days"
+   },
+   {
+    "cost": "no money, just your time",
+    "text": "Check Steakhouse Financial once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "nothing to check",
+    "text": "Before you claim anything, open Steakhouse Financial's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "about $3 of gas to exit",
+    "text": "Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 from the Morpho vault and close the position.",
+    "time": "10 minutes to exit"
+   }
+  ],
+  "name": "Steakhouse Financial",
+  "notes": "No points or rewards program found on the site. CONTRADICTION with current steps: the current step 2 says 'Deposit $150 into a Steakhouse Financial vault on Base' as if the site itself takes deposits — it does not; deposits go through Morpho vaults or partner apps (Coinbase DeFi Lend). The vault-on-Base part is right (Base holds 47% of TVL, $1.285B).",
+  "official_site": "https://www.steakhouse.financial",
+  "slug": "steakhouse-financial",
+  "sources": [
+   "https://defillama.com/protocol/steakhouse-financial",
+   "https://www.steakhouse.financial"
+  ],
+  "status": "verified",
+  "what_it_does": "An onchain vault curator that designs and curates noncustodial stablecoin lending vaults, mostly on Morpho (income statement shows Morpho Yields and Kamino Yields). Retail users do not deposit on steakhouse.financial itself; they access the vaults through partner apps — Coinbase DeFi Lend lets eligible Coinbase users lend USDC through Steakhouse-curated Morpho vaults — or directly on Morpho."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Base",
+   "Binance",
+   "Ethereum",
+   "Arbitrum",
+   "Stable",
+   "Morph",
+   "Solana",
+   "Hyperliquid L1",
+   "Polygon",
+   "OP Mainnet",
+   "Unichain",
+   "Katana",
+   "Arc",
+   "Tempo"
+  ],
+  "defillama_url": "https://defillama.com/protocol/gauntlet",
+  "farm_steps": [
+   {
+    "cost": "under $3 of gas for the first transaction",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "$150 of capital and about $8 of gas",
+    "text": "Deposit $150 of USDC into a Gauntlet vault on Base through the Gauntlet app (app.gauntlet.xyz) or the vault catalogue, and keep the vault shares. Base holds the largest share of Gauntlet TVL.",
+    "time": "15 minutes to set up"
+   },
+   {
+    "cost": "about $4 of gas a week",
+    "text": "Top up the same vault with a smaller amount the following week, so the record shows more than one deposit instead of a single one.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "$150 locked in the vault until you exit",
+    "text": "Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon.",
+    "time": "30 days"
+   },
+   {
+    "cost": "no money, just your time",
+    "text": "Check Gauntlet once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "nothing to check",
+    "text": "Before you claim anything, open Gauntlet's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "about $3 of gas to exit",
+    "text": "Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 from the vault and close the position.",
+    "time": "10 minutes to exit"
+   }
+  ],
+  "name": "Gauntlet",
+  "notes": "No points or rewards program found on the site. The site is institutional-first ('Crypto Yield Strategies for Institutions'); the retail path is the app or partner earn programs such as KAST Earn. Current generic vault steps are directionally right but miss that gauntlet.xyz itself is a marketing site — deposits happen in app.gauntlet.xyz or a partner app.",
+  "official_site": "https://gauntlet.xyz",
+  "slug": "gauntlet",
+  "sources": [
+   "https://defillama.com/protocol/gauntlet",
+   "https://gauntlet.xyz"
+  ],
+  "status": "verified",
+  "what_it_does": "Institutional vault curator: full-stack vault curation (lending, restaking, multi-strategy vaults) built on Morpho and Pendle, with an app at app.gauntlet.xyz and a vault catalogue at vaultbook.gauntlet.xyz. Its Gauntlet USD Alpha strategy powers partner earn programs (e.g. KAST Earn, no gas fees for users, rewards auto-compounded). Retail access is through the app or partner apps, not a simple 'deposit on gauntlet.xyz' flow."
+ },
+ {
+  "category": "Onchain Capital Allocator",
+  "chains": [
+   "Ink",
+   "Ethereum",
+   "Optimism",
+   "Monad",
+   "Plasma",
+   "Hyperliquid L1",
+   "Base",
+   "Arbitrum",
+   "Berachain",
+   "Sonic",
+   "Binance",
+   "BOB",
+   "Scroll"
+  ],
+  "defillama_url": "https://defillama.com/protocol/veda",
+  "farm_steps": [
+   {
+    "cost": "under $3 of gas for the first transaction",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "$150 of capital and about $8 of gas",
+    "text": "Deposit $150 into a vault built on Veda on Ink, the chain holding most Veda TVL: the named products are ether.fi Liquid, Lombard DeFi Vault, and Mantle cmETH — open the product's own app and deposit there, since veda.tech itself takes no deposits.",
+    "time": "15 minutes to set up"
+   },
+   {
+    "cost": "about $4 of gas a week",
+    "text": "Top up the same vault with a smaller amount the following week, so the record shows more than one deposit instead of a single one.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "$150 locked in the vault until you exit",
+    "text": "Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon.",
+    "time": "30 days"
+   },
+   {
+    "cost": "no money, just your time",
+    "text": "Check Veda once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "nothing to check",
+    "text": "Before you claim anything, open the product's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "about $3 of gas to exit",
+    "text": "Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 from the vault and close the position.",
+    "time": "10 minutes to exit"
+   }
+  ],
+  "name": "Veda",
+  "notes": "BIG CONTRADICTION with current steps: the current plan tells the reader to deposit into 'a Veda vault' as if veda.tech takes deposits. It does not — Veda is B2B infrastructure. A retail user farms Veda by depositing into a partner product built on Veda (ether.fi Liquid, Lombard DeFi Vault, Mantle cmETH, per the site and DefiLlama). No points program found on the site.",
+  "official_site": "https://veda.tech",
+  "slug": "veda",
+  "sources": [
+   "https://defillama.com/protocol/veda",
+   "https://veda.tech"
+  ],
+  "status": "verified",
+  "what_it_does": "A B2B DeFi vault platform: Veda builds the vault infrastructure that other apps sell as yield products ('Veda Earn' lets an app offer Earn without building the infrastructure). Its technology powers ether.fi Liquid, Lombard DeFi Vault, and Mantle cmETH. There is NO retail deposit flow on veda.tech itself."
+ },
+ {
+  "category": "CDP",
+  "chains": [
+   "Tron",
+   "Ethereum",
+   "Binance"
+  ],
+  "defillama_url": "https://defillama.com/protocol/usdd",
+  "farm_steps": [
+   {
+    "cost": "under $3 of gas for the first transaction",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "$150 of collateral value and about $8 of gas",
+    "text": "Mint $150 of USDD against ETH collateral in the ETH Vault at app.usdd.io/eth: connect your wallet, deposit ETH, and mint USDD without selling your ETH position.",
+    "time": "15 minutes to set up"
+   },
+   {
+    "cost": "about $4 of gas a week",
+    "text": "Put the minted USDD to work the following week — use it to trade or farm yield in another DeFi protocol — while keeping the ETH collateral locked in the vault.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "$150 of collateral locked until you exit",
+    "text": "Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Keep the collateral ratio healthy: if ETH falls hard, top up collateral or repay some USDD before the vault is liquidated.",
+    "time": "30 days"
+   },
+   {
+    "cost": "no money, just your time",
+    "text": "Check USDD once a week: its peg, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If the peg slips or TVL drops hard two weeks in a row, re-check before you add more.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "nothing to check",
+    "text": "Before you claim anything, open USDD's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "about $3 of gas to exit",
+    "text": "Stop when the token launches and the first claim is paid, or after 60 days with no launch: repay the USDD, withdraw your ETH collateral from the vault, and close the position.",
+    "time": "10 minutes to exit"
+   }
+  ],
+  "name": "USDD",
+  "notes": "No points or rewards program found on the site. The site's mint flow (ETH Vault / WBTC Vault at app.usdd.io) matches the CDP category mechanics, so the current generic CDP steps are directionally right — but they miss the specifics: the vaults are named ETH Vault and WBTC Vault, and minting happens at app.usdd.io/eth. Note: Tron holds 96% of TVL while the documented mint flow is on Ethereum; the steps use the Ethereum flow because that is what the site documents.",
+  "official_site": "https://usdd.io",
+  "slug": "usdd",
+  "sources": [
+   "https://defillama.com/protocol/usdd",
+   "https://usdd.io"
+  ],
+  "status": "verified",
+  "what_it_does": "A fully decentralized stablecoin pegged to the US dollar through crypto reserves. Users mint USDD against ETH or WBTC collateral in the ETH Vault or WBTC Vault at app.usdd.io, keeping upside exposure to the collateral while spending the minted USDD. Tron holds 96% of TVL, but the site's mint flow is the ETH/WBTC vaults."
+ },
+ {
+  "category": "Onchain Capital Allocator",
+  "chains": [
+   "Ethereum",
+   "Stellar",
+   "Flare",
+   "Monad",
+   "Hyperliquid L1",
+   "Avalanche",
+   "Solana",
+   "Fluent",
+   "Base",
+   "Citrea",
+   "Sui",
+   "Plasma",
+   "Binance",
+   "Mezo",
+   "Ink"
+  ],
+  "defillama_url": "https://defillama.com/protocol/upshift",
+  "farm_steps": [
+   {
+    "cost": "under $3 of gas for the first transaction",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. Never connect it to anything else.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "$150 of capital and about $8 of gas",
+    "text": "Deposit $150 of USDC into a featured vault on the Upshift Earn page (app.upshift.finance) on Ethereum, the chain holding most Upshift TVL — for example the Sentora USD Core vault — and keep the vault shares.",
+    "time": "15 minutes to set up"
+   },
+   {
+    "cost": "about $4 of gas a week",
+    "text": "Top up the same vault with a smaller amount the following week, so the record shows more than one deposit instead of a single one.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "$150 locked in the vault until you exit",
+    "text": "Hold the position for at least 30 days, so the activity shows up in more than one snapshot. Airdrops usually reward wallets that were there for weeks, not for a single afternoon.",
+    "time": "30 days"
+   },
+   {
+    "cost": "no money, just your time",
+    "text": "Check Upshift once a week: its TVL trend, any token announcement on its own site or docs, and whether the team mentions a points or rewards program. If TVL drops hard two weeks in a row, stop topping up and re-check before you add more.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "nothing to check",
+    "text": "Before you claim anything, open Upshift's own site or docs yourself and follow only the link published there. Never claim from a link in a DM, a reply, or an ad — fake claim pages are how wallets get drained.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "about $3 of gas to exit",
+    "text": "Stop when the token launches and the first claim is paid, or after 60 days with no launch: withdraw the $150 from the vault and close the position.",
+    "time": "10 minutes to exit"
+   }
+  ],
+  "name": "Upshift",
+  "notes": "No points or rewards program found on the site. Unlike Steakhouse/Gauntlet/Veda, Upshift DOES have a direct retail Earn page with named vaults (Sentora USD Core, Gami earnUSDC, Flare XRP Yield Vault, tokenized T-bill vault), so the current generic vault steps are close — but naming a real vault from the Earn page is more accurate than a generic 'vault on Ethereum'.",
+  "official_site": "https://app.upshift.finance",
+  "slug": "upshift",
+  "sources": [
+   "https://defillama.com/protocol/upshift",
+   "https://app.upshift.finance"
+  ],
+  "status": "verified",
+  "what_it_does": "Onchain yield app: 'Supply, stake and access cross-chain yields.' The Earn page at app.upshift.finance lists featured vaults a retail user can deposit into directly — tokenized T-bill vaults, Sentora USD Core, Gami earnUSDC, Flare XRP Yield Vault, and others — with $522M total deposited. Upshift also builds custom yield products for fintechs."
+ },
+ {
+  "category": "Dexs",
+  "chains": [
+   "Bittensor"
+  ],
+  "defillama_url": "https://defillama.com/protocol/bittensor-dtao",
+  "farm_steps": [
+   {
+    "cost": "Free to create",
+    "text": "Set up a fresh Bittensor wallet (coldkey) using btcli or a Bittensor wallet such as Crucible, and save the seed phrase offline before funding it.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Exchange withdrawal fee varies",
+    "text": "Buy native TAO on a major exchange and withdraw it to your Bittensor wallet on the Bittensor (Finney) network, not a wrapped TAO on another chain.",
+    "time": "10-30 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Pick a subnet by its netuid and check its validator hotkeys, take (commission) rate and recent performance before staking anything.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Free to quote",
+    "text": "Quote the stake first with btcli so you can see the price impact, since staking swaps TAO into the subnet's alpha token at the AMM pool price.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Network fee, small (estimate under $1)",
+    "text": "Stake TAO to your chosen validator hotkey on that subnet; your TAO is swapped into alpha and your position earns a share of that subnet's alpha emissions.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold the stake and let emissions accrue automatically each tempo; there is nothing to claim and nothing to manage unless you want to move stake.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Network fee, small (estimate under $1)",
+    "text": "Exit with remove-stake or unstake-all, which swaps your alpha back to TAO at the pool price instantly; there is no unbonding period, so TAO is spendable at once.",
+    "time": "5 min"
+   }
+  ],
+  "name": "Bittensor dTAO",
+  "notes": "Homepage opened directly; staking mechanics confirmed from Bittensor's official docs via search. No points program exists: rewards are alpha emissions and root dividends, not points. There is no vault to deposit into — staking is a swap into a subnet alpha token through an AMM pool, so any generic 'deposit into a vault' step would be wrong here. Costs and the 30-day hold are honest estimates, not site facts. Minimum partial stake is 0.002 TAO per the docs.",
+  "official_site": "https://bittensor.com/",
+  "slug": "bittensor-dtao",
+  "sources": [
+   "https://defillama.com/protocol/bittensor-dtao",
+   "https://bittensor.com/",
+   "https://www.bittensor.com/docs/guides/staking"
+  ],
+  "status": "verified",
+  "what_it_does": "Bittensor is a decentralized machine-intelligence network where independent subnets produce digital commodities and the chain pays contributors in TAO. Its dTAO pools are the native AMMs that price each subnet's alpha token against TAO and hold subnet liquidity."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Ethereum",
+   "Optimism"
+  ],
+  "defillama_url": "https://defillama.com/protocol/nonce-capital",
+  "farm_steps": [
+   {
+    "cost": "Free",
+    "text": "Use a fresh wallet and understand that Nonce Capital itself has no deposit button: you farm its strategies indirectly through the vaults it curates, mainly ether.fi Liquid.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Go to the ether.fi app and open the Liquid product, which is the retail vault suite Nonce Capital curates, and check which Liquid vaults are live on Ethereum or Optimism.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Check the geo-restrictions first: ether.fi Liquid is not available to users in the United States, Canada, or the United Kingdom, and availability varies by location.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Fund your wallet with ETH or a supported stablecoin on Ethereum, keeping some ETH aside for gas, since deposits and withdrawals are on-chain transactions.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Deposit into a Liquid vault from the ether.fi app by selecting the asset and amount and confirming the transaction; your funds then start earning automatically.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold the vault position and track it in the ether.fi app; Nonce Capital rebalances allocation and risk parameters behind the scenes and there is no separate Nonce action to take.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Exit through the ether.fi Liquid withdrawal flow in the same app; ether.fi estimates Liquid ETH withdrawals can take up to three days to settle.",
+    "time": "Up to 3 days to settle"
+   }
+  ],
+  "name": "Nonce Capital",
+  "notes": "Official site nonce-capital.xyz could not be fetched (browser rate limit, HTTP 429) so status is partial, not verified. The curator-only model is confirmed by DefiLlama, Veda's ecosystem page and ether.fi's help docs. No Nonce points program was found anywhere. Generic 'deposit into a Nonce vault' steps would be wrong: there is no Nonce vault or Nonce app to deposit into. Gas and hold times are estimates.",
+  "official_site": "https://nonce-capital.xyz",
+  "slug": "nonce-capital",
+  "sources": [
+   "https://defillama.com/protocol/nonce-capital",
+   "https://help.ether.fi/en/articles/517109-how-liquid-works",
+   "https://veda.tech/ecosystem/nonce-capital"
+  ],
+  "status": "partial",
+  "what_it_does": "Nonce Capital is a DeFi risk curator that manages asset allocation and strategies for third-party vaults, including ether.fi Liquid vaults and Midas tokenized funds. It has no retail deposit app of its own; it curates vaults built on Veda infrastructure for other protocols."
+ },
+ {
+  "category": "RWA",
+  "chains": [
+   "Solana"
+  ],
+  "defillama_url": "https://defillama.com/protocol/onre",
+  "farm_steps": [
+   {
+    "cost": "SOL gas under $1 (estimate)",
+    "text": "Set up a fresh Solana wallet such as Phantom and fund it with USDC on Solana plus a small amount of SOL for transaction fees.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Open OnRe Open Access at app.onre.finance, connect your wallet and check the current ONyc price, NAV and APY shown on the deposit page.",
+    "time": "10 min"
+   },
+   {
+    "cost": "SOL gas under $1 (estimate)",
+    "text": "Mint ONyc by swapping USDC for ONyc in Open Access; this route is permissionless with no KYC, though some jurisdictions are excluded.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold ONyc in your wallet to start earning OnRe Points at 1 point per ONyc per day, and check your position on the OnRe leaderboard.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "SOL gas under $1 per tx (estimate)",
+    "text": "Boost your points by deploying ONyc into a DeFi strategy, such as looping on Kamino or depositing into the OnRe Yield Plus vault on Exponent, for multipliers up to 10x.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Track your points, multiplier and any campaign boosts in the OnRe app and on the leaderboard, and note that points have no cash value and no token airdrop is confirmed.",
+    "time": "5 min per check"
+   },
+   {
+    "cost": "SOL gas under $1 (estimate)",
+    "text": "Exit by redeeming ONyc back to USDC through the OnRe app or by selling it on a Solana DEX; yield accrues inside the token's NAV rather than being paid out separately.",
+    "time": "5-10 min"
+   }
+  ],
+  "name": "OnRe",
+  "notes": "Official site fetch was blocked (browser rate limit, HTTP 429), so status is partial; the product, ONyc mint flow and OnRe Points program are confirmed by OnRe's own blog and by airdrops.io's guide. Note: Loopscale is no longer recommended after its exploit froze withdrawals. The newer OnRe Core Vault on Ethereum (USDC deposit via Chainlink CCIP, 4x points, 7-day withdrawal notice) is a separate institutional route. No token airdrop is confirmed by OnRe. Gas and hold times are estimates.",
+  "official_site": "https://app.onre.finance",
+  "slug": "onre",
+  "sources": [
+   "https://defillama.com/protocol/onre",
+   "https://www.onre.finance/blog/onres-uncorrelated-reinsurance-backed-yield-is-now-available-on-ethereum-for-the-first-time",
+   "https://airdrops.io/onre/"
+  ],
+  "status": "partial",
+  "what_it_does": "OnRe connects on-chain capital to real-world reinsurance risk through ONyc, a yield-bearing token on Solana backed by reinsurance premiums and collateral investments. Its OnRe Points program rewards ONyc holders, with higher multipliers for using ONyc in DeFi."
+ },
+ {
+  "category": "RWA",
+  "chains": [
+   "Avalanche",
+   "Ethereum",
+   "Plume Mainnet"
+  ],
+  "defillama_url": "https://defillama.com/protocol/opentrade",
+  "farm_steps": [
+   {
+    "cost": "Free",
+    "text": "Use a fresh wallet and understand OpenTrade is B2B: there is no retail 'deposit' button on opentrade.io, so a retail user reaches its vaults through a partner app instead.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free to register",
+    "text": "Pick a partner app that runs on OpenTrade, such as Littio in Colombia, Midas Kripto in Turkey, or the WOO X RWA Earn section, and open an account there.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Complete the partner's KYC and onboarding, since OpenTrade's own docs require onboarding and a whitelisted wallet before any vault investment.",
+    "time": "30 min to 1 day (estimate)"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Fund the partner account with USDC, USDT or EURC on the chain the partner supports, such as Avalanche or Ethereum, and check the vault's APY and terms.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Subscribe to the partner's OpenTrade-powered vault in its app; your stablecoins are converted and used to buy the underlying assets, and you receive vault tokens in return.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold the vault tokens while yield accrues daily and compounds; there is no lock-up period on OpenTrade vaults and no points program to farm.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Exit by redeeming your vault tokens in the partner app; OpenTrade processes withdrawals within 24 hours or less according to its documentation.",
+    "time": "Under 24 hours to settle"
+   }
+  ],
+  "name": "OpenTrade",
+  "notes": "Official homepage fetch was blocked (browser rate limit, HTTP 429), so status is partial; the B2B model is confirmed by OpenTrade's own blog and GitBook docs via search. Biggest contradiction for this entry: a generic 'deposit USDC into an OpenTrade vault' step is misleading — direct access needs onboarding plus a whitelisted wallet and KYB, and retail users only get in via partners (Littio, Midas, WOO X). No points or rewards program was found. Gas and hold times are estimates.",
+  "official_site": "https://www.opentrade.io",
+  "slug": "opentrade",
+  "sources": [
+   "https://defillama.com/protocol/opentrade",
+   "https://www.opentrade.io/resource/neobanks-earn-stablecoin-yield-treasury",
+   "https://opentrade.gitbook.io/stablecoin-staking-yield/opentrade-stablecoin-staking-yield-powered-by-figment/how-it-works/investments.md",
+   "https://woox.io/blog/unlock-high-yield-returns-rwa-high-yield-corporate-bonds-woo-x"
+  ],
+  "status": "partial",
+  "what_it_does": "OpenTrade is a B2B stablecoin yield-as-a-service platform: fintechs and neobanks use it to power compliant stablecoin yield products backed by real-world assets such as money market funds and ETFs. It has no direct retail deposit app; end users access it through partner apps."
+ },
+ {
+  "category": "RWA",
+  "chains": [
+   "Ethereum",
+   "Plume Mainnet",
+   "Solana"
+  ],
+  "defillama_url": "https://defillama.com/protocol/plume-vaults",
+  "farm_steps": [
+   {
+    "cost": "Free",
+    "text": "Set up a fresh EVM wallet such as MetaMask or Rabby and connect it directly on the Plume Vaults portal at app.plume.org; no custodial onboarding is required.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Get pUSD, the standard deposit asset across all Plume Vaults, by minting or bridging into it at pusd.plume.org; pUSD is backed 1:1 by USDC reserves.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Browse the vault list on the portal and compare vaults such as nTBILL, nALPHA, nBASIS or nPRIME by APY, strategy and redemption terms before choosing one.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Deposit your pUSD (or another supported stablecoin such as USDC or USDT) into the chosen vault and receive its receipt token, an nTOKEN, representing your share.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold the nTOKEN while yield accrues inside the vault and shows up as a rising redemption value per token, rather than as separate payouts.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas $2-8 per tx (estimate)",
+    "text": "Optionally use the nTOKEN elsewhere in DeFi, for example supplying pUSD to earn borrower yield or looping vault exposure, if you accept the extra risk.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Exit by redeeming your nTOKEN in the portal to receive the vault's redemption asset plus accrued yield; some vaults offer same-day liquidity and others need a 7-day cooldown.",
+    "time": "Minutes to 7 days depending on vault"
+   }
+  ],
+  "name": "Plume Vaults",
+  "notes": "Official site fetch was blocked (browser rate limit, HTTP 429), so status is partial; the deposit/mint/redeem flow is confirmed in detail from Plume's own docs at app.plume.org via search. Key correction vs a generic step: pUSD is the standard deposit asset, not plain USDC — users must mint or bridge into pUSD first. No points program was found in the official docs. Redemption terms vary per vault (standard vs instant, some 7-day cooldown). Gas and hold times are estimates.",
+  "official_site": "https://app.plume.org",
+  "slug": "plume-vaults",
+  "sources": [
+   "https://defillama.com/protocol/plume-vaults",
+   "https://app.plume.org/docs/introduction/how-to-use-nest",
+   "https://app.plume.org/docs/about/vault-operations-and-valuation",
+   "https://www.plume.org/vaults"
+  ],
+  "status": "partial",
+  "what_it_does": "Plume Vaults is Plume's flagship real-world-asset protocol: users deposit stablecoins into structured vaults (nTBILL, nALPHA, nBASIS, nPRIME) and receive a receipt token whose redemption value rises as the underlying real-world yield accrues."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Ethereum",
+   "Solana",
+   "Pharos"
+  ],
+  "defillama_url": "https://defillama.com/protocol/rockawayx",
+  "farm_steps": [
+   {
+    "cost": "Free",
+    "text": "Use a fresh wallet and note that rockawayx.com is a corporate site: deposits happen in the Morpho app for Ethereum vaults or the Kamino app for Solana vaults.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Open the Morpho app vault list filtered to curator RockawayX and compare its vaults, such as USDC Prime (rxUSDCp), USDC Yield (rxUSDCy) and wETH (rxWETH).",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Fund your wallet with the vault's deposit asset — USDC for the USDC vaults or WETH for the wETH vault — on Ethereum, keeping ETH aside for gas.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Deposit into the chosen Morpho vault from the app and receive vault shares; RockawayX then handles allocation, rebalancing and risk management behind the scenes.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "SOL gas under $1 (estimate)",
+    "text": "For Solana exposure, deposit USDC into the RockawayX RWA USDC vault on Kamino instead, which allocates across OnRe, Huma, Figure and Solstice markets.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold the vault shares while yield accrues to their value; parameter changes are subject to a timelock of 3 days (USDC Yield, wETH) or 7 days (USDC Prime).",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Exit by redeeming your vault shares in the Morpho or Kamino app, which returns the underlying asset plus accrued yield to your wallet.",
+    "time": "5-10 min"
+   }
+  ],
+  "name": "RockawayX",
+  "notes": "Official site fetch was blocked (browser rate limit, HTTP 429), so status is partial; vault names, deposit assets and the Morpho/Kamino access route are confirmed from RockawayX's own site content via search. No points program was found. Note the DefiLlama snapshot chains (Ethereum, Solana, Pharos) are a subset — RockawayX vaults also run on Monad, Sei and others. Gas and hold times are estimates.",
+  "official_site": "https://rockawayx.com",
+  "slug": "rockawayx",
+  "sources": [
+   "https://defillama.com/protocol/rockawayx",
+   "https://rockawayx.com/insights/rockawayx-launches-three-curated-vaults-on-morpho",
+   "https://www.rockawayx.com/insights/rockawayx-vault-curation-an-overview-of-products-capabilities"
+  ],
+  "status": "partial",
+  "what_it_does": "RockawayX is an on-chain asset manager and risk curator (over $2B AUM) that runs actively managed vaults on Morpho (Ethereum) and Kamino (Solana) plus market-neutral strategies on Midas. Retail users deposit into its named vaults through those protocols' apps, not through rockawayx.com."
+ },
+ {
+  "category": "Collateral Markets",
+  "chains": [
+   "Ethereum"
+  ],
+  "defillama_url": "https://defillama.com/protocol/symbiotic",
+  "farm_steps": [
+   {
+    "cost": "Free to set up",
+    "text": "Set up a fresh EVM wallet such as MetaMask, fund it with ETH for gas (around 0.01-0.05 ETH is a common buffer), and open the Symbiotic app at app.symbiotic.fi.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Get an accepted collateral asset on Ethereum, most commonly wstETH by staking ETH on Lido and wrapping stETH, or cbETH from Coinbase.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Browse the vault registry in the Symbiotic app and shortlist 2-3 active vaults, checking the collateral type, operator set and whether slashing is active.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Deposit your collateral into the chosen vault by approving the token spend and confirming the deposit transaction in your wallet.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold the deposit while it earns restaking rewards from the networks the vault secures plus Symbiotic Points, which accrue to early depositors.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Free",
+    "text": "Track your position, rewards and points in the app dashboard, and note the slashing risk: a share of your deposit can be slashed if delegated operators misbehave.",
+    "time": "5 min per check"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Exit by requesting a withdrawal through the vault's Action tab in the app, then finalizing the transaction to receive your collateral back to the same address.",
+    "time": "5-10 min plus vault exit rules"
+   }
+  ],
+  "name": "Symbiotic",
+  "notes": "Official site was not directly opened (browser rate limit, HTTP 429 on the fetch service), so status is partial; the vault deposit flow and Symbiotic Points are corroborated by multiple independent guides and by DefiLlama (80+ vaults, 74,000+ stakers). No token or distribution date has been announced by Symbiotic. Gas and hold times are estimates; vault minimums are not fixed — deposits under about $200 are described as dust in farming guides.",
+  "official_site": "https://symbiotic.fi",
+  "slug": "symbiotic",
+  "sources": [
+   "https://defillama.com/protocol/symbiotic",
+   "https://www.airdropfarming.org/blog/how-to-qualify-for-the-symbiotic-airdrop-in-2026-without-getting-sybil-flagged",
+   "https://symbiosis.finance/blog/symbiosis-x-symbiotic-a-must-read"
+  ],
+  "status": "partial",
+  "what_it_does": "Symbiotic is a permissionless restaking protocol where users deposit ERC-20 collateral such as wstETH or cbETH into curated vaults, which delegate the stake to operators securing other networks. Stakers earn restaking rewards plus Symbiotic Points; it has no token yet."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Monad",
+   "Ethereum",
+   "Arbitrum"
+  ],
+  "defillama_url": "https://defillama.com/protocol/hyperithm",
+  "farm_steps": [
+   {
+    "cost": "Free",
+    "text": "Use a fresh wallet and note that hyperithm.com is a corporate investment-firm site: deposits happen in the Morpho app, where Hyperithm is listed as a curator.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Open the Morpho app curator page for Hyperithm and compare its vaults, such as Hyperithm USDC Apex on Monad and Ethereum, Saturn USDC and Hyperithm cbBTC Apex.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Fund your wallet with the vault's deposit asset — USDC for the USDC Apex vaults or cbBTC for the cbBTC vault — on the vault's chain, plus gas tokens for that chain.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Deposit into the chosen Hyperithm vault from the Morpho app and receive vault shares; Hyperithm allocates the capital across Morpho lending markets.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Gas on Monad, low (estimate)",
+    "text": "For the Monad permissionless vault, deposit through Accountable's YieldApp instead and receive aHYPER share tokens, which can also be used as Morpho collateral.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold the vault shares while yield accrues to their value; there is no points program, so the return is the lending yield itself.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Exit by redeeming your vault shares in the Morpho app or YieldApp, which returns the underlying asset plus accrued yield to your wallet.",
+    "time": "5-10 min"
+   }
+  ],
+  "name": "Hyperithm",
+  "notes": "Official site was not directly opened (browser rate limit, HTTP 429 on the fetch service), so status is partial; the Morpho curator page and Accountable case study confirm the vault names and the retail access route. No points program was found. Note the Monad vault had a $65M deposit cap that was hit, so capacity may be limited. Gas and hold times are estimates.",
+  "official_site": "https://www.hyperithm.com",
+  "slug": "hyperithm",
+  "sources": [
+   "https://defillama.com/protocol/hyperithm",
+   "https://app.morpho.org/curator/hyperithm",
+   "https://accountabledata.substack.com/p/how-real-time-verification-helped"
+  ],
+  "status": "partial",
+  "what_it_does": "Hyperithm is a Tokyo- and Seoul-based digital asset manager (quant trading and venture) that curates Morpho lending vaults such as Hyperithm USDC Apex, mostly on Monad and Ethereum. Retail users deposit into those vaults through the Morpho app, not through hyperithm.com."
+ },
+ {
+  "category": "RWA",
+  "chains": [
+   "Pharos",
+   "Sui"
+  ],
+  "defillama_url": "https://defillama.com/protocol/r25",
+  "farm_steps": [
+   {
+    "cost": "Gas, low (estimate)",
+    "text": "Set up a fresh wallet for Pharos (EVM-compatible) and fund it with USDC on Pharos plus a small amount of the chain's gas token.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Open R25 Studio at app.r25.xyz, browse the vaults list and compare live vaults such as PodsAlpha, the Allora Eagle market-neutral vault and Axil credit vaults by APY and terms.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Check each vault's deposit window and minimum: PodsAlpha accepts flexible USDC deposits from 1 USDC, while some term vaults only open during a set window.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Gas, low (estimate)",
+    "text": "Deposit USDC into the chosen Pharos vault from the R25 Studio app and receive vault shares; yield accrues to the share value and some vaults also pay PROS rewards.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Gas on Sui, low (estimate)",
+    "text": "For the Sui rcUSD vault, use the TopNod wallet instead: download it, hold USDC on Sui with a little SUI for gas, and deposit through the wallet's Earn section.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold the vault position for its term; the rcUSD vault runs a 12-month term with early withdrawal settled at T+4, and term vaults may have a secondary market before maturity.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas, low (estimate)",
+    "text": "Exit by redeeming in the R25 Studio app or the TopNod wallet; for rcUSD, request withdrawal and expect settlement within 4 days (T+4).",
+    "time": "Up to 4 days to settle"
+   }
+  ],
+  "name": "R25",
+  "notes": "Official site was not directly opened (browser rate limit, HTTP 429 on the fetch service), so status is partial; the app.r25.xyz vaults, the TopNod-only Sui route and PROS rewards are confirmed by R25's own X posts and the Chainwire announcement. No dedicated R25 points program was found — rewards mentioned are PROS tokens and APY boosts. Some vaults are term-based with deposit windows, not always open. Gas and hold times are estimates.",
+  "official_site": "https://www.r25.xyz",
+  "slug": "r25",
+  "sources": [
+   "https://defillama.com/protocol/r25",
+   "https://chainwire.org/2025/12/19/r25-and-ember-protocol-debut-exclusive-vault-on-sui-via-topnod-wallet/",
+   "https://w.twstalker.com/R25Official"
+  ],
+  "status": "partial",
+  "what_it_does": "R25 builds RWA vault infrastructure for automated and curated on-chain yield strategies. Its R25 Studio app at app.r25.xyz lists public vaults on Pharos (for example PodsAlpha and the Allora Eagle vault), and its rcUSD vault on Sui is distributed through partner wallets."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Monad",
+   "Ethereum",
+   "Optimism"
+  ],
+  "defillama_url": "https://defillama.com/protocol/k3-capital",
+  "farm_steps": [
+   {
+    "cost": "Free",
+    "text": "Use a fresh wallet and note that k3.capital is an institutional manager's site: deposits happen in the Morpho or Euler app, or on Accountable's YieldApp marketplace.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Find a K3-curated vault on the Morpho or Euler app, such as the K3 Capital ETH Maxi vault on Unichain or its sBOLD vault where you deposit BOLD for yield-bearing shares.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Fund your wallet with the vault's deposit asset on the vault's chain — for example BOLD on Ethereum for sBOLD, or AUSD on Monad for the Galaxy credit facility.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Check the vault's access terms first: the K3 x Galaxy facility on Monad launched fully subscribed at $30M and opens extra capacity only as LPs complete onboarding.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Deposit into the chosen K3-curated vault from the host app and receive vault shares; K3 manages allocation, collateral choice and caps across the underlying markets.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Hold the vault shares while yield accrues to their value; there is no points program, so the return is the lending or credit yield itself.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Exit by redeeming your vault shares in the same host app, which returns the underlying asset plus accrued yield, subject to that vault's liquidity and exit terms.",
+    "time": "5-10 min"
+   }
+  ],
+  "name": "K3 Capital",
+  "notes": "Official site was not directly opened (browser rate limit, HTTP 429 on the fetch service), so status is partial; the curator model and the Morpho/Euler/YieldApp access routes are confirmed by DefiLlama, the Accountable/GlobeNewswire release and DeFiPrime. No points program was found. K3 is the largest single position on Monad (about $379M per HotDapps), and its Galaxy facility is onboarding-gated and was fully subscribed at launch — a generic 'just deposit' step would be wrong for it. Gas and hold times are estimates.",
+  "official_site": "https://k3.capital",
+  "slug": "k3-capital",
+  "sources": [
+   "https://defillama.com/protocol/k3-capital",
+   "http://www.stockwatch.com/news/item/u-z9798414-u!glxy-20260727/u/glxy",
+   "https://defiprime.com/arbitrum"
+  ],
+  "status": "partial",
+  "what_it_does": "K3 Capital is an institutional DeFi asset and risk manager (about $400M AUM, delta-neutral strategies) that curates lending and fixed-rate vaults across Morpho, Euler, Term and Pendle. Retail users reach its vaults through those protocols' apps or Accountable's YieldApp, not through k3.capital."
+ },
+ {
+  "category": "Chain",
+  "chains": [
+   "BSquared"
+  ],
+  "defillama_url": "https://defillama.com/protocol/hive-protocol",
+  "farm_steps": [
+   {
+    "cost": "$0 (wallet setup is free)",
+    "text": "Use a fresh wallet for farming and set up a BTC-compatible wallet (e.g. Unisat) plus an EVM wallet (e.g. MetaMask) for the B² network, since Hive staking pairs a BTC address with an EVM address.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Open the official Hive page at hive.bsquared.network and connect both wallets; if the page shows 'Access restricted' in your region, do not use a mirror site — access the official B² docs or app from an allowed region instead.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Bridge/gas fees vary; estimate $2-8",
+    "text": "Bridge or acquire BTC to stake through Hive on B² Network, choosing the Hive staking option in the B² Hub interface rather than a third-party pool.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "On-chain tx fee, estimate $2-8",
+    "text": "Stake your BTC in Hive: enter the amount, confirm the staking transaction, and note the 1-day unstaking lock reported for B² Hub staking before you commit funds.",
+    "time": "10 min"
+   },
+   {
+    "cost": "$0 to hold",
+    "text": "Hold the staked BTC position so B2 token rewards accrue proportionally to your stake; rewards activate immediately once staking is confirmed.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "Optionally stake B2 tokens themselves by delegating to a B² sequencer to earn a share of transaction fees, instead of running your own sequencer node.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "To exit, request unstaking in the Hive interface, wait out the 1-day unstaking lock, then claim or withdraw your BTC and any accrued B2 rewards to your bound EVM address.",
+    "time": "1 day unstaking lock + 10 min"
+   }
+  ],
+  "name": "Hive Protocol",
+  "notes": "The official Hive page (hive.bsquared.network) returned 'Access restricted / not available in your country or region' when opened, so the staking flow could not be confirmed directly on the site; steps 2-7 rely on DeFiLlama's description and third-party guides (GetBlock, KuCoin). No points program was confirmed on the official site; older Odyssey/BUZZ campaign points relate to B² testnet campaigns, not a live Hive points program. Hive is a chain-level staking product, not a vault — there is no 'deposit into a vault' step.",
+  "official_site": "https://hive.bsquared.network",
+  "slug": "hive-protocol",
+  "sources": [
+   "https://defillama.com/protocol/hive-protocol",
+   "https://hive.bsquared.network",
+   "https://getblock.io/marketplace/projects/bsquared/",
+   "https://www.kucoin.com/price/B2"
+  ],
+  "status": "partial",
+  "what_it_does": "Hive is the Bitcoin staking layer of B² Network (a Bitcoin zk-rollup L2): users stake BTC to help secure B² and receive $B2 tokens as rewards. DeFiLlama describes it as 'Stake BTC, safeguard B², and receive $B2 Tokens'."
+ },
+ {
+  "category": "Basis Trading",
+  "chains": [
+   "Ethereum"
+  ],
+  "defillama_url": "https://defillama.com/protocol/tori-finance",
+  "farm_steps": [
+   {
+    "cost": "$0 setup; gas estimate $2-8 per tx",
+    "text": "Use a fresh Ethereum wallet (e.g. MetaMask) for farming and fund it with USDC or USDT plus a little ETH for gas, since Tori runs on Ethereum mainnet.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Open app.tori.finance, connect your wallet, and check the live APY and the Cores multipliers on the app's Earn/DeFi pages before depositing anything.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Standard DEX fees + gas, estimate $2-8",
+    "text": "Swap USDC or USDT for trUSD in the Tori app; swapping is instant once the Ethereum transaction confirms (typically 12-15 seconds) and there is no minimum amount.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8; staking itself is free per docs",
+    "text": "Stake your trUSD for strUSD in the app to start earning rewards; staking is free and instant, and rewards accrue automatically through the rising strUSD exchange rate with no claiming needed.",
+    "time": "5 min"
+   },
+   {
+    "cost": "$0 extra",
+    "text": "Earn Cores, Tori's points program, by holding trUSD, staking strUSD, and using integrated DeFi venues; check the app's Rewards/Boosts tab for the current multiplier per venue (Season 1 pre-deposit paid 30 Cores per dollar per day).",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "Optionally boost Cores with the Pendle YT Lock tab on the Earn page, which locks Pendle YT-strUSD or YT-trUSD for a higher Cores multiplier, or share your referral link to earn 10% of your referrals' Cores.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "To exit, unstake strUSD back to trUSD in the app — note the 7-day unstaking cooldown always applies — then swap trUSD back to USDC or USDT; rewards are collected automatically via the exchange rate at unstaking.",
+    "time": "7-day cooldown + 10 min"
+   }
+  ],
+  "name": "Tori Finance",
+  "notes": "Verified against Tori's own docs. Cores are explicitly 'not a promise of any token or payment' per the docs, and their future use is undecided. Direct minting/redeeming of trUSD at NAV is for verified participants only (0.1% fee, KYC/AML); retail users swap instead. The Season 1 pre-deposit phase (with 2x boost) has ended. The app homepage itself is a JS app that renders little text, so docs.tori.finance was the main verification source.",
+  "official_site": "https://app.tori.finance",
+  "slug": "tori-finance",
+  "sources": [
+   "https://defillama.com/protocol/tori-finance",
+   "https://app.tori.finance",
+   "https://docs.tori.finance/llms.txt",
+   "https://docs.tori.finance/faq/trusd",
+   "https://docs.tori.finance/resources/cores"
+  ],
+  "status": "verified",
+  "what_it_does": "Tori Finance is a synthetic dollar protocol: trUSD is a dollar-pegged token backed by delta-neutral (market-neutral) trading positions, and staking trUSD gives strUSD, an ERC-4626 vault token whose exchange rate grows as the strategies earn."
+ },
+ {
+  "category": "Payments",
+  "chains": [
+   "Bitcoin"
+  ],
+  "defillama_url": "https://defillama.com/protocol/lightning-network",
+  "farm_steps": [
+   {
+    "cost": "$0",
+    "text": "Understand that Lightning has no deposit vault, token, or points program — the only way to 'farm' it is to run a node and earn routing fees, so use a fresh setup and do not expect passive yield.",
+    "time": "10 min reading"
+   },
+   {
+    "cost": "Hardware cost varies; software is free",
+    "text": "Set up a Lightning node using a packaged node OS such as Umbrel, Start9, or RaspiBlitz, or install LND (the most widely used implementation) on your own hardware.",
+    "time": "1-2 hours setup"
+   },
+   {
+    "cost": "$0 (plus hardware/storage)",
+    "text": "Sync a full Bitcoin node first, since Lightning requires the Bitcoin base layer underneath it; this takes days and a few hundred GB of storage.",
+    "time": "Several days to sync"
+   },
+   {
+    "cost": "On-chain BTC tx fee, varies",
+    "text": "Fund your node's on-chain Bitcoin wallet (e.g. via lncli newaddress) by sending BTC from an exchange or wallet, since you cannot open channels without BTC.",
+    "time": "10-60 min for confirmations"
+   },
+   {
+    "cost": "On-chain fee per channel open, varies",
+    "text": "Open payment channels to useful, well-connected peers (wallets, exchanges, big routers) by locking BTC into each channel with an on-chain transaction.",
+    "time": "10 min per channel"
+   },
+   {
+    "cost": "Rebalancing costs fees, varies",
+    "text": "Set your routing fees (a base fee per forward plus a fee rate in parts per million) and keep channels balanced with inbound and outbound liquidity so payments can actually flow through your node.",
+    "time": "Ongoing management, 30 days"
+   },
+   {
+    "cost": "On-chain close fee per channel, varies",
+    "text": "To exit, close your channels on-chain to settle the final balances back to your Bitcoin wallet; routing fees you earned stay in your node and are collected as sats when channels close.",
+    "time": "10-60 min per close"
+   }
+  ],
+  "name": "Lightning Network",
+  "notes": "Verified: lightning.network describes only instant payments, scalability, low cost, and payment channels — there is no farmable product, no token, and no points program. Any generic 'deposit and stake' step for Lightning would be invented. Node setup details come from third-party guides, not the official site. Routing-fee earnings are tiny (hobbyist nodes often earn $1-20/month) and most casual nodes lose money after costs.",
+  "official_site": "https://lightning.network",
+  "slug": "lightning-network",
+  "sources": [
+   "https://defillama.com/protocol/lightning-network",
+   "https://lightning.network",
+   "https://www.cherryservers.com/blog/how-to-run-a-lightning-node",
+   "https://www.cryptopigs.one/blog/understanding-bitcoin-lightning-network"
+  ],
+  "status": "verified",
+  "what_it_does": "The Lightning Network is Bitcoin's Layer-2 payment network: users open off-chain payment channels secured by Bitcoin smart contracts to send instant, low-fee payments, and node operators can earn small routing fees for forwarding others' payments. There is no token, vault, or points program."
+ },
+ {
+  "category": "Onchain Capital Allocator",
+  "chains": [
+   "Ethereum",
+   "Arbitrum",
+   "Base"
+  ],
+  "defillama_url": "https://defillama.com/protocol/lagoon",
+  "farm_steps": [
+   {
+    "cost": "$0 setup; gas estimate $2-8 per tx",
+    "text": "Use a fresh EVM wallet (e.g. MetaMask or Rabby) and fund it with the asset a vault accepts (usually USDC or ETH) plus gas for the vault's chain — most TVL is on Ethereum, with vaults also on Arbitrum and Base.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Open lagoon.finance, connect your wallet, and browse the 80+ public vaults by curator, strategy (market neutral, directional, fixed income, private credit, PayFi), APY, and chain.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Pick one public vault and read its strategy, fees, settlement frequency, and asset before depositing; some vaults are gated with whitelists, KYC, or sanctions screening, so confirm yours is open to everyone.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "Deposit by approving the token spend and confirming the deposit transaction; your deposit enters a queue in the vault's silo contract until the curator strikes NAV and settles it.",
+    "time": "10 min + settlement wait (often ~24h)"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "Claim your ERC-20 vault share tokens once the deposit settles at the new NAV; your position's value then grows through the share price as the curator's strategy earns.",
+    "time": "10 min after settlement"
+   },
+   {
+    "cost": "$0 to hold",
+    "text": "Hold the vault shares and monitor performance in the Lagoon app; there is no Lagoon points program found on the site, so yield comes from the vault's strategy, not from points.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "To exit, submit a withdrawal (redemption) request in the app; the curator unwinds positions and settles at the next NAV cycle, after which only you can claim your assets back to your wallet.",
+    "time": "Settlement cycle, up to ~7 days depending on vault"
+   }
+  ],
+  "name": "Lagoon",
+  "notes": "Verified against the official homepage and DeFiLlama description. The homepage is partly B2B-facing (vault deployment, 'Talk to us' services), but DeFiLlama and the site confirm users can join any public vault. No Lagoon points/rewards program was found anywhere on the official site — do not claim one exists. Deposit/withdrawal queue mechanics (silo, NAV settlement, async ERC-7540) were confirmed via Lagoon's own blog and a curator's docs page, since the homepage does not spell out the user flow. Typical minimums around $100 were reported by a curator, not by Lagoon itself.",
+  "official_site": "https://lagoon.finance",
+  "slug": "lagoon",
+  "sources": [
+   "https://defillama.com/protocol/lagoon",
+   "https://lagoon.finance",
+   "https://www.attrius.capital/docs",
+   "https://lagoon.finance/blog/building-yield-strategy"
+  ],
+  "status": "verified",
+  "what_it_does": "Lagoon is open, general-purpose vault infrastructure (ERC-7540) for on-chain asset management: curators run yield vaults and any user can join a public vault to start earning on their assets. It is infrastructure, not a single fund — the farmable product is the individual curator vault you pick."
+ },
+ {
+  "category": "Basis Trading",
+  "chains": [
+   "Ethereum"
+  ],
+  "defillama_url": "https://defillama.com/protocol/axis",
+  "farm_steps": [
+   {
+    "cost": "$0 setup; gas estimate $2-8 per tx",
+    "text": "Use a fresh Ethereum wallet (e.g. MetaMask) and fund it with USDC or USDT plus ETH for gas, since Axis and its vaults run on Ethereum mainnet.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Open axis.to and the Axis app at app.axis.to to check which positions currently earn Coordinates (the points program) and at what rate before depositing anything.",
+    "time": "10 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Understand the Origin Vault is CLOSED: its pre-deposit window ran July 29 to Aug 5, 2026 and converted into the Ecosystem Vault, so do not follow any guide telling you to deposit into the Origin Vault now.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "To farm now, hold a USDx or sUSDx position the app counts for Coordinates — e.g. by acquiring USDx and staking it into sUSDx, the ERC-4626 vault whose value rises as arbitrage profits accrue.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "Optionally deploy USDx or sUSDx into the Ecosystem Vault's DeFi markets (Curve, Pendle) shown in the app, confirming first in the app that the position still earns Coordinates.",
+    "time": "15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Track your Coordinates balance at app.axis.to/coordinates and bind a referral code first if you have one (referrals add a permanent Coordinates boost, e.g. +10%); Coordinates accrue while your funds sit in a counted position.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas, estimate $2-8; instant redeem ~0.3%",
+    "text": "To exit, redeem your position in the app: sUSDx redemptions use a request with a 7-day cooldown (or instant for about 0.3%), and note Axis's own docs say USDx is not a stablecoin and is not guaranteed to hold $1.",
+    "time": "Up to 7 days for standard redemption"
+   }
+  ],
+  "name": "Axis",
+  "notes": "Partial: axis.to confirms the product, USDx/sUSDx, 15% net APY and $70m TVL, but the live farming mechanics (Origin Vault closure Aug 5 2026, Ecosystem Vault, Coordinates accrual, 7-day redemption, 0.3% instant fee) come from secondary guides, not the official site, and could not be verified on axis.to itself. No Axis token is live and no token is confirmed. Coordinates Season 1 began Sept 4, 2026 per one guide (another says July 29) — the exact season dates are inconsistent across sources and unverified.",
+  "official_site": "https://axis.to",
+  "slug": "axis",
+  "sources": [
+   "https://defillama.com/protocol/axis",
+   "https://axis.to/",
+   "https://airdrops.io/axis/",
+   "https://www.airdropsea.app/guides/axis-origin-vault-airdrop-guide",
+   "https://www.upshift.finance/blog/axis-origin-vault"
+  ],
+  "status": "partial",
+  "what_it_does": "Axis is a quantitative yield protocol that issues USDx, a synthetic dollar backed by a cross-venue arbitrage engine; staking USDx gives sUSDx, the yield-bearing vault token. Its site reports about 15% net APY and $70m TVL, with profits streamed to USDx holders."
+ },
+ {
+  "category": "RWA",
+  "chains": [
+   "Algorand"
+  ],
+  "defillama_url": "https://defillama.com/protocol/lofty",
+  "farm_steps": [
+   {
+    "cost": "$0 to sign up",
+    "text": "Create a Lofty account at lofty.ai — sign-up takes about 2 minutes — and complete KYC/KYB verification, which the site requires for investments over $200 and for withdrawals.",
+    "time": "2-15 min"
+   },
+   {
+    "cost": "Card/crypto funding fees vary",
+    "text": "Fund your account with a credit card, debit card, or crypto; Lofty accepts crypto deposits, and the underlying property tokens live on Algorand.",
+    "time": "10 min"
+   },
+   {
+    "cost": "$0 to browse",
+    "text": "Browse the property marketplace and review each listing's financials, inspection reports, projected rental yield, local market data, and ownership documents before buying.",
+    "time": "15-30 min"
+   },
+   {
+    "cost": "Share price, often ~$50 or less per share",
+    "text": "Buy fractional shares of a rental property — many shares cost around $50 or less — and your first rent payment arrives with the next daily rent run, usually within 24 hours.",
+    "time": "5-10 min to buy"
+   },
+   {
+    "cost": "$0 to hold",
+    "text": "Hold your shares to earn rent daily in the daily rent run and to benefit from property appreciation; reinvesting the daily rent into more shares compounds your position.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "$0",
+    "text": "Optionally vote on key property decisions through Lofty's governance system, where investor-elected property managers handle day-to-day operations like leasing and maintenance.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Marketplace/sale fees not stated on homepage",
+    "text": "To exit, list your shares on the Lofty marketplace and sell them to other investors instantly — the site states there are no lockups and no waiting years for a fund exit — then withdraw your balance anytime.",
+    "time": "Minutes to sell; withdrawal per account terms"
+   }
+  ],
+  "name": "Lofty",
+  "notes": "Verified against the official homepage, which spells out the whole flow. No points program was found on the site — Lofty pays daily rental income, not points, so do not invent a points step. Lofty is a custodial, KYC-gated RWA marketplace, not a permissionless DeFi vault: investments over $200 and withdrawals require KYC/KYB, and US users should note it is a regulated-style investment product. The Algorand chain detail is confirmed by DeFiLlama; the homepage itself does not emphasize the chain.",
+  "official_site": "https://www.lofty.ai",
+  "slug": "lofty",
+  "sources": [
+   "https://defillama.com/protocol/lofty",
+   "https://www.lofty.ai"
+  ],
+  "status": "verified",
+  "what_it_does": "Lofty is a fractional real estate marketplace on Algorand: users buy tokenized shares of US rental properties (many around $50 or less), earn daily rental income, and can sell shares instantly on its marketplace with no lockups."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Flare",
+   "Base",
+   "Ethereum"
+  ],
+  "defillama_url": "https://defillama.com/protocol/clearstar",
+  "farm_steps": [
+   {
+    "cost": "$0 setup; gas estimate $2-8 per tx",
+    "text": "Use a fresh EVM wallet (e.g. MetaMask) and fund it with the asset the vault takes — usually USDC on Base or Ethereum, or XRP for the Flare earnXRP vault — plus gas for that chain.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Open the Clearstar curator page on Morpho at app.morpho.org/curator/clearstar and compare its vaults by chain, asset, deposits, and net APY (e.g. Clearstar cbAssets Vault, Clearstar Core USDC, Clearstar Core ETH).",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Pick one vault and read its description and risk disclosures on the Morpho vault page — e.g. Clearstar Core vaults balance return and risk across diversified collateral — and check its performance fee and timelock (often 3 days).",
+    "time": "10 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "Deposit the vault's asset (e.g. USDC on Base for Clearstar Base RWA, or WETH for Clearstar Core ETH) through the Morpho deposit box, approving the token and confirming the transaction.",
+    "time": "10 min"
+   },
+   {
+    "cost": "$0 to hold",
+    "text": "Hold the vault shares to earn the vault's native APY plus any extra incentives; some Clearstar vaults pay additional incentives claimable through Merkl, so check the vault page for a rewards note.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "$0",
+    "text": "Monitor the vault on Morpho and Clearstar's research at clearstar.xyz, since the curator can reallocate across markets and change parameters under a timelock.",
+    "time": "5 min per check"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "To exit, withdraw from the Morpho vault page to redeem your shares back into the underlying asset; withdrawals are not gated by the curator, but liquidity depends on the vault's available liquidity.",
+    "time": "10 min"
+   }
+  ],
+  "name": "Clearstar",
+  "notes": "Partial: the direct fetch of clearstar.xyz was rate-limited (HTTP 429) and could not be re-attempted, so the site itself was not read; clearstar.xyz is confirmed as Clearstar's research site by multiple independent sources. DeFiLlama lists no website link for Clearstar. The retail deposit path is verified via Morpho's official curator page, which lists the vaults, APYs, and deposit boxes. Clearstar is a curator, not a protocol with its own app — a generic 'deposit on Clearstar's app' step would be wrong. No Clearstar points program was found.",
+  "official_site": "https://clearstar.xyz",
+  "slug": "clearstar",
+  "sources": [
+   "https://defillama.com/protocol/clearstar",
+   "https://app.morpho.org/curator/clearstar",
+   "https://app.morpho.org/base/vault/0x116e1A65717A534B73EcB7d4F6543c65DBCd0E46/clearstar-base-rwa",
+   "https://www.upshift.finance/blog/upshift-is-live-on-base-clearstar-cbxrp-yield-vault"
+  ],
+  "status": "partial",
+  "what_it_does": "Clearstar Labs is a DeFi risk curator (operated by NovaFusion SA): it does qualitative-first diligence on governance, contracts, and oracles and curates yield vaults on Morpho, Euler, and other protocols. It has no app of its own — retail users deposit into Clearstar-curated Morpho vaults."
+ },
+ {
+  "category": "Restaking",
+  "chains": [
+   "Bitcoin",
+   "CORE",
+   "Babylon Genesis"
+  ],
+  "defillama_url": "https://defillama.com/protocol/b14g",
+  "farm_steps": [
+   {
+    "cost": "$0",
+    "text": "Read the security warning first: on Oct 31, 2026 about 97M CORE (~$1.47M) staked through b14g was withdrawn without authorization in an exploit; a hard fork later recovered 68M. Check b14g's current status on X (@b14g_network) before depositing anything.",
+    "time": "10 min"
+   },
+   {
+    "cost": "$0 setup",
+    "text": "Use a fresh setup with a BTC wallet (e.g. Unisat) and a Core-chain EVM wallet (e.g. MetaMask on Core), since dual staking pairs a BTC stake with a CORE stake.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Open b14g.xyz and enter the app to choose a product: dualCORE (deposit CORE only, the marketplace matches BTC for you) or the BTC side (lock BTC to be matched with CORE holders).",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Core gas, estimate $2-8",
+    "text": "For the CORE side, deposit CORE into dualCORE; b14g states assets stay in the official Core staking contract and it never takes custody, and advertised yields were 15-20% per year versus about 5-6% for plain CORE staking.",
+    "time": "10 min"
+   },
+   {
+    "cost": "BTC tx fee, varies",
+    "text": "For the BTC side, lock BTC through b14g's Bitcoin staking flow; your BTC stays time-locked on the Bitcoin network and is not moved, while the matched CORE side unlocks the dual-staking tier for both parties.",
+    "time": "10-60 min for confirmations"
+   },
+   {
+    "cost": "$0 to hold",
+    "text": "Hold the position and track rewards plus b14g points — some vaults advertised a 2x points boost (e.g. the Coretoshi NFT vault) — but note b14g has said it offers no extra incentives beyond the network's own yield.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas/fees, estimate $2-8",
+    "text": "To exit, unbond/withdraw in the b14g app: BTC unbonding follows the underlying chain's timelock (Babylon-style unbonding is about 301 blocks / ~50 hours), and CORE-side withdrawals go through the Core staking contract.",
+    "time": "Unbonding timelock up to ~50 hours + 10 min"
+   }
+  ],
+  "name": "b14g",
+  "notes": "Partial: the official homepage (b14g.xyz) renders almost no text — only the tagline about turning idle BTC into a security engine — so product details (dualCORE, Merge Marketplace, yields, points) come from DeFiLlama and secondary reporting, not the site itself. The Oct 31, 2026 exploit (97M CORE drained, 68M recovered via hard fork, BTC unaffected) is recorded on DeFiLlama as a protocol-logic security incident and must be disclosed. The Babylon Genesis side (co-staking BABY with BTC) follows Babylon's own mechanics; b14g's docs were not directly readable. Do not present the 15-20% APY as a current live rate — it was advertised before the exploit.",
+  "official_site": "https://www.b14g.xyz",
+  "slug": "b14g",
+  "sources": [
+   "https://defillama.com/protocol/b14g",
+   "https://www.b14g.xyz",
+   "https://cryptomediazone.com/hack-database/b14g-core-staking-exploit/",
+   "https://www.bscn-test-blogs.org/news/b14g-core-blockchain-dual-staking-tvl-exploit"
+  ],
+  "status": "partial",
+  "what_it_does": "b14g is a modular dual-staking layer for Bitcoin: its Merge Marketplace matches BTC holders with CORE (or BABY) holders so each side earns the higher dual-staking rewards of Core/Babylon without holding both assets. BTC stays time-locked on Bitcoin; it also runs dualCORE and BTCFi lending vaults."
+ },
+ {
+  "category": "Stablecoin Wrapper",
+  "chains": [
+   "Ethereum",
+   "Monad",
+   "Binance"
+  ],
+  "defillama_url": "https://defillama.com/protocol/saturn",
+  "farm_steps": [
+   {
+    "cost": "$0 setup; gas estimate $2-8 per tx",
+    "text": "Use a fresh EVM wallet (e.g. MetaMask) and fund it with USDC plus ETH for gas, since the main Saturn app runs on Ethereum (Monad and BNB Chain are also supported).",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Open app.saturn.credit, connect your wallet, and check the live sUSDat APY and your points balance; note sUSDat is only available to users outside the US per Saturn's terms.",
+    "time": "5-10 min"
+   },
+   {
+    "cost": "Swap fee/gas, estimate $2-8",
+    "text": "Swap USDC for USDat in the Saturn app at a 1:1 ratio via the Saturn Curve pool; holding USDat alone already accrues points (reported at 5-7x per day depending on the season).",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "Stake your USDat for sUSDat in the Stake tab to earn yield from digital-credit exposure (reported around 9.8-11% APY); rewards accrue through the sUSDat exchange rate.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas per position, estimate $2-8",
+    "text": "Earn Orbital Points (Season 2, running Aug 9 to Dec 8, 2026 or until $1B TVL): hold USDat or sUSDat, or deploy into partner strategies — Curve USDC/USDat LP (reported up to 20-25x) or Pendle YT-USDat (reported up to 30x) — for higher multipliers.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "$0",
+    "text": "Register your points wallet at claim.saturn.credit if you farmed Season 1 or Season 2 — registration opened Nov 9 and closed Nov 16, 2026 at 9:00 AM EST, and it only confirms eligibility and a receiving address; it is not itself a claim.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "To exit, unstake sUSDat back to USDat — note unstaking works like a limit order and takes roughly 7 days — then swap USDat back to USDC; claiming of any STRN token happens at TGE via a link published only by @saturn_credit on X.",
+    "time": "~7 days unstaking + 10 min"
+   }
+  ],
+  "name": "Saturn",
+  "notes": "Verified: the official app confirms USDat/sUSDat, no lock-up, and points on deposits. Season 2 (Orbital Points), multipliers, the Nov 16 2026 registration deadline, and the STRN token allocation (up to 5% of supply for Season 2) come from secondary guides, not the official app, and point multipliers differ between sources (USDat hold reported as both 5x and 7x; Curve LP as 20x and 25x). US, UK, EU/EEA users are excluded from the points program per Saturn's terms. Minting USDat directly via M0 requires whitelisting; retail users swap via Curve.",
+  "official_site": "https://app.saturn.credit",
+  "slug": "saturn",
+  "sources": [
+   "https://defillama.com/protocol/saturn",
+   "https://app.saturn.credit/",
+   "https://airdrops.io/saturn-credit/",
+   "https://usethebitcoin.com/airdrop/saturn-airdrop-guide/"
+  ],
+  "status": "verified",
+  "what_it_does": "Saturn is a dual-token Bitcoin-backed credit protocol: USDat is a stablecoin fully backed by tokenized US Treasuries, and staking USDat gives sUSDat, a yield-bearing version with digital-credit (STRC) exposure. Its app states 'No lock-up period. Accrue points on deposits.'"
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Arc",
+   "Ethereum",
+   "Base"
+  ],
+  "defillama_url": "https://defillama.com/protocol/galaxy-curation",
+  "farm_steps": [
+   {
+    "cost": "$0",
+    "text": "Understand Galaxy itself is an institutional company with no retail deposit app — the farmable product is its Morpho vault, so use a fresh EVM wallet and do not look for a 'Galaxy deposit' button on galaxy.com.",
+    "time": "5 min"
+   },
+   {
+    "cost": "$0 setup; gas estimate $2-8 per tx",
+    "text": "Fund your wallet with USDC and add the Arc network (Circle's L1, chain 5042) to your wallet, since the largest Galaxy vault — Galaxy USDC at about $92.7M — lives on Arc; Ethereum and Base Galaxy vaults also exist.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "$0",
+    "text": "Open the Morpho app at app.morpho.org, find the Galaxy USDC vault on Arc (curator: Galaxy Curation), and check its deposits, net APY (about 3.14%), fee (0%), and allocation — reported as 100% allocated to the cirBTC market.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "Deposit USDC into the Galaxy USDC vault through the Morpho deposit box, approving the token and confirming the transaction; the vault lends your USDC to borrowers posting ETH/BTC collateral.",
+    "time": "10 min"
+   },
+   {
+    "cost": "$0 to hold",
+    "text": "Hold the vault shares to earn the lending APY, which accrues through the vault share price; no Galaxy points program was found, so yield comes from lending interest only.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "$0",
+    "text": "Monitor the vault on Morpho: Galaxy as curator can change allocations and parameters under a timelock of up to 7 days, and a single key (not a multisig) reportedly holds the owner and curator roles.",
+    "time": "5 min per check"
+   },
+   {
+    "cost": "Gas, estimate $2-8",
+    "text": "To exit, withdraw from the Morpho vault page to redeem shares back into USDC; withdrawals cannot be gated by the curator, but available liquidity depends on unborrowed funds in the underlying markets.",
+    "time": "10 min"
+   }
+  ],
+  "name": "Galaxy Curation",
+  "notes": "Partial: galaxy.com confirms Galaxy is an institutional digital-assets company, but it offers no retail vault product — the farm path (Morpho vault on Arc) comes from Morpho/Arc reporting and third-party vault trackers, not from Galaxy's site. No Galaxy points program was found. The vault's single-key owner/curator control and 100% cirBTC allocation are reported by a third-party tracker and should be re-checked live on Morpho before depositing. Note the DeFiLlama slug 'galaxy-curation' tracks the curator's vaults, not a standalone protocol.",
+  "official_site": "https://www.galaxy.com",
+  "slug": "galaxy-curation",
+  "sources": [
+   "https://defillama.com/protocol/galaxy-curation",
+   "https://www.galaxy.com",
+   "https://www.styx.finance/",
+   "https://www.carrytradedesk.com/v/morpho/arc/0x8e357432cc12ff425c36432f312968aeb16112af",
+   "https://cryptobriefing.com/arc-earn-kit-sdk-morpho-vaults-usdc/"
+  ],
+  "status": "partial",
+  "what_it_does": "Galaxy Curation is the vault-curation arm of Galaxy (the listed digital-assets and AI infrastructure company): it curates Morpho lending vaults — most notably the Galaxy USDC vault on Arc ($92.7M, ~3.14% APY) — allocating depositor stablecoins into blue-chip-collateral lending markets. There is no Galaxy retail app; deposits go through Morpho."
+ },
+ {
+  "category": "RWA",
+  "chains": [
+   "Ethereum",
+   "Sui",
+   "Base"
+  ],
+  "defillama_url": "https://defillama.com/protocol/ember",
+  "farm_steps": [
+   {
+    "cost": "Gas $2-8 on Ethereum, under $1 on Sui or Base (estimate)",
+    "text": "Set up a fresh wallet on the chain you plan to use (an EVM wallet for Ethereum or Base, a Sui wallet for Sui) and fund it with USDC plus gas tokens.",
+    "time": "10-15 min setup"
+   },
+   {
+    "cost": "Free to browse",
+    "text": "Open the Ember app at ember.so and browse the live vault list to find a vault whose deposit asset, chain and strategy fit you.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Check the vault's eligibility rules before depositing, because Ember docs say vaults can be permissionless or permissioned (KYC-gated), and some RWA products sit behind eligibility requirements.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Gas $2-8 on Ethereum (estimate)",
+    "text": "Approve USDC and deposit into the chosen vault; on Sui you receive a receipt token such as eEARN, and on EVM chains you receive ERC-4626 vault shares.",
+    "time": "5 min"
+   },
+   {
+    "cost": "No extra cost",
+    "text": "Hold the receipt tokens while the curator runs the strategy; yield shows up as a rising receipt-token price, not as separate reward payments you claim.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Free",
+    "text": "Track the vault's exchange rate and any curator or operator updates in the Ember app or docs while your deposit is active.",
+    "time": "5 min per check"
+   },
+   {
+    "cost": "Gas $2-8 on Ethereum (estimate)",
+    "text": "To exit, submit a redemption request in the app; your shares enter a queue and the vault operator processes the payout later, so allow extra days beyond a normal withdrawal.",
+    "time": "Redemption is operator-processed, allow several days"
+   }
+  ],
+  "name": "Ember",
+  "notes": "Official homepage ember.so opened but is JavaScript-only (only the logo text was readable), so vault mechanics were confirmed from Ember's docs as quoted by secondary sources and the Ember SDK docs, not from the homepage itself. No points program was found anywhere for Ember. Some vaults are permissioned/KYC-gated, which contradicts a generic 'just deposit' step. Withdrawal is an operator-processed queue with no fixed deadline, not an instant redeem.",
+  "official_site": "https://ember.so/",
+  "slug": "ember",
+  "sources": [
+   "https://defillama.com/protocol/ember",
+   "https://ember.so/",
+   "https://www.jewelswap.io/blog/what-is-ember-protocol",
+   "https://socket.dev/npm/package/@ember-finance/sdk"
+  ],
+  "status": "partial",
+  "what_it_does": "Ember originates and issues tokenized investment products, bringing funds, strategies and real-world assets onchain. Users deposit an asset such as USDC into an Ember vault and receive receipt tokens whose price rises as the curator's strategy earns."
+ },
+ {
+  "category": "RWA",
+  "chains": [
+   "Monad"
+  ],
+  "defillama_url": "https://defillama.com/protocol/valos",
+  "farm_steps": [
+   {
+    "cost": "Free",
+    "text": "Use a fresh wallet but do not send funds anywhere yet, because Valos has no public retail deposit page or vault on its official site.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Read valos.io and confirm the access route yourself: the site speaks to institutional investors, describes a disciplined compliance onboarding process, and invites you to contact the team about a strategy for your portfolio.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Contact the Valos team through the site's enquiry route to ask about minimums, eligibility and whether any retail access exists at all.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Unknown, set by Valos",
+    "text": "If you are an institution, complete Valos's compliance and onboarding process before any capital moves; there is no connect-wallet deposit flow to use instead.",
+    "time": "Days to weeks (estimate)"
+   },
+   {
+    "cost": "Free to check",
+    "text": "Note that Valos exposure can appear inside other protocols, for example a Valos vUSD lending market on Curvance on Monad, but that is a separate protocol's product, not a Valos deposit.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Do not deposit into any lookalike site or contract claiming to be a Valos retail vault; the official site lists no such vault and no token.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Re-check valos.io before acting, since a retail product would have to appear there first; until then there is no Valos farm step to complete.",
+    "time": "5 min"
+   }
+  ],
+  "name": "Valos",
+  "notes": "Valos is institutional-only: the official site's whole pitch is 'Why Institutional Investors choose Valos' with compliance onboarding. This directly contradicts any generic category-based step such as 'deposit into the Valos vault'. DeFiLlama lists $106.37m TVL, all on Monad, sub-category Private Credit. No points program or retail app was found. A Valos vUSD market exists on Curvance, but that is Curvance's product.",
+  "official_site": "https://valos.io/",
+  "slug": "valos",
+  "sources": [
+   "https://defillama.com/protocol/valos",
+   "https://valos.io/",
+   "https://github.com/kamalbuilds/ava-monad/blob/HEAD/docs/MONAD.md"
+  ],
+  "status": "partial",
+  "what_it_does": "Valos offers institutional-grade digital asset yield solutions, mainly private credit strategies, for institutional investors under a compliance-led onboarding process. It has no public retail deposit product."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Ethereum"
+  ],
+  "defillama_url": "https://defillama.com/protocol/armitage-by-wintermute",
+  "farm_steps": [
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Set up an Ethereum wallet holding USDC or USDT plus ETH for gas.",
+    "time": "10-15 min setup"
+   },
+   {
+    "cost": "Free to browse",
+    "text": "Open armitage.wintermute.com and compare the Core tiers: Prime is conservative, Select is balanced, and Apex is aggressive and still planned.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Pick a vault, for example Wintermute USDC Prime with a 4-5% target APY or Wintermute USDC Select with a 5-8% target APY, and note its Morpho vault address.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Go to app.morpho.org, find the same Armitage vault, and check its live APY, TVL and available liquidity before depositing.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Approve USDC and deposit into the Morpho Vault V2 contract; deposits are permissionless and noncustodial, and you receive vault shares while yield accrues to them.",
+    "time": "5 min"
+   },
+   {
+    "cost": "No extra cost",
+    "text": "Hold the position and monitor the vault's disclosed collateral exposure and APY on the Armitage site or on Morpho.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "To exit, withdraw from the Morpho vault back to USDC; withdrawals depend on available market liquidity, so check liquidity first.",
+    "time": "5 min, subject to liquidity"
+   }
+  ],
+  "name": "Armitage by Wintermute",
+  "notes": "Armitage has no points program and no token; the farm is yield only. Deposits do not happen on armitage.wintermute.com itself but on Morpho's app, which the official Armitage deposit guide states explicitly. Ecosystem vaults (e.g. Pendle Ecosystem USDC, 5-7% target APY) are partner vaults, not Core vaults.",
+  "official_site": "https://armitage.wintermute.com",
+  "slug": "armitage-by-wintermute",
+  "sources": [
+   "https://defillama.com/protocol/armitage-by-wintermute",
+   "https://armitage.wintermute.com",
+   "https://armitage.wintermute.com/docs/llms-full.txt",
+   "https://armitage.wintermute.com/docs/vaults/ecosystem",
+   "https://app.morpho.org/vaults"
+  ],
+  "status": "verified",
+  "what_it_does": "Armitage is Wintermute's onchain vault curation arm. It curates Morpho Vault V2 lending vaults on Ethereum in tiers (Prime conservative, Select balanced, Apex planned, plus partner Ecosystem vaults), managing risk and earning yield for depositors."
+ },
+ {
+  "category": "CeDeFi",
+  "chains": [
+   "Ripple",
+   "Ethereum"
+  ],
+  "defillama_url": "https://defillama.com/protocol/doppler-finance",
+  "farm_steps": [
+   {
+    "cost": "XRPL fees under $1 (estimate)",
+    "text": "Set up an XRP Ledger wallet such as Xaman and fund it with XRP for deposits, keeping a small XRP reserve for network fees.",
+    "time": "10-15 min setup"
+   },
+   {
+    "cost": "Free to browse",
+    "text": "Open doppler.finance and open the Doppler Vaults app to see the live XRP and RLUSD vault rates.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Choose the XRP vault (about 3-4.5% APR) or the RLUSD vault (about 7% APR) and check the current rate, since APRs move week to week.",
+    "time": "5 min"
+   },
+   {
+    "cost": "No platform fee on deposits or withdrawals, per Doppler's blog",
+    "text": "Deposit XRP or RLUSD into the vault; yield is paid in the same asset you deposited and compounds automatically with no action needed.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Track your balance, weekly yield and Doppler Points on the Vault and Manage pages; every $1 deposited earns about 0.01 points per hour.",
+    "time": "5 min per check"
+   },
+   {
+    "cost": "No extra cost",
+    "text": "Hold the deposit for at least a full week, because yield is calculated from your average balance across the week, not a single snapshot.",
+    "time": "Hold at least 7 days"
+   },
+   {
+    "cost": "No platform fee on withdrawals, per Doppler's blog",
+    "text": "To exit, request a withdrawal in the app and allow several days for it to process; check your points and any XDP claim status before withdrawing.",
+    "time": "Several days to process (estimate)"
+   }
+  ],
+  "name": "Doppler Finance",
+  "notes": "The snapshot lists chains as 'Ripple, Ethereum'; in reality 99.8% of TVL is on the XRP Ledger (XRPL), per DeFiLlama, and the RLUSD vault is also on Ethereum. DeFiLlama shows no website link for Doppler, but the official site is doppler.finance, confirmed by the project's own blog. Doppler Points ($1 = 0.01 points/hour) and the XDP token (TGE 28 Sep 2026, claim window to 28 Nov 2026) were confirmed via sources citing the official site, not from the homepage text itself. The withdrawal delay of about a week comes from a secondary source, not the official homepage.",
+  "official_site": "https://doppler.finance/",
+  "slug": "doppler-finance",
+  "sources": [
+   "https://defillama.com/protocol/doppler-finance",
+   "https://doppler.finance/",
+   "https://blog.doppler.finance/blog/building-the-financial-operating-layer-for-tokenized-assets",
+   "https://coinstats.app/news/27e982a19f499a547d05f008858a37c9a82e982041bbdadc049da7ace617a80f_Doppler-Finance-XRP-Vault-Update-Lifts-XDP-Coin-Price-What-Next/"
+  ],
+  "status": "verified",
+  "what_it_does": "Doppler Finance runs CeDeFi yield vaults, mainly on the XRP Ledger, that turn idle XRP and RLUSD into yield through institutional strategies such as arbitrage and basis trading. Yield is paid in the deposited asset and compounds automatically."
+ },
+ {
+  "category": "Lending",
+  "chains": [
+   "Monad"
+  ],
+  "defillama_url": "https://defillama.com/protocol/curvance",
+  "farm_steps": [
+   {
+    "cost": "Monad gas under $1 (estimate)",
+    "text": "Set up a Monad wallet holding MON for gas and the asset you want to supply, for example USDC or savUSD.",
+    "time": "10-15 min setup"
+   },
+   {
+    "cost": "Free to browse",
+    "text": "Open app.curvance.com and browse the Markets tab to compare isolated lending markets, interest rates, caps and liquidation parameters.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Gas under $1 (estimate)",
+    "text": "Supply an asset into a market to start earning borrow interest; you receive a cToken receipt for your deposit.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas under $1 (estimate)",
+    "text": "Optionally borrow a second asset against your supplied collateral for one-click leverage, watching your health factor so you are not liquidated.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Check the Bytes tab and any live incentives in the app, since Curvance has no confirmed CVE token contract and no verified airdrop.",
+    "time": "5 min"
+   },
+   {
+    "cost": "No extra cost",
+    "text": "Hold the position and monitor utilization, interest rates and liquidation parameters for your market.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas under $1 (estimate)",
+    "text": "To exit, wait out the 20-minute hold that follows any borrow, then repay any loan and withdraw your supplied collateral.",
+    "time": "20 min hold, then 5 min"
+   }
+  ],
+  "name": "Curvance",
+  "notes": "The app's tagline is 'Deposit your crypto, borrow against it, and earn yield while you sleep', and it has portfolio, markets, vaults and bytes tabs. There is NO verified CVE token contract and no confirmed airdrop as of late October 2026, which contradicts generic 'farm Curvance for the CVE airdrop' steps; the testnet bytes campaign is historical. The 20-minute hold after borrowing blocks repay/withdraw, per Curvance docs as quoted by multiple sources.",
+  "official_site": "https://app.curvance.com",
+  "slug": "curvance",
+  "sources": [
+   "https://defillama.com/protocol/curvance",
+   "https://app.curvance.com",
+   "https://boxmining.com/curvance-cve-token-airdrop-guide/",
+   "https://github.com/kamalbuilds/ava-monad/blob/HEAD/docs/MONAD.md"
+  ],
+  "status": "verified",
+  "what_it_does": "Curvance is Monad's lending layer. It offers isolated lending markets where users supply assets to earn interest, borrow against collateral, use one-click leverage, and deposit into Earn Vaults."
+ },
+ {
+  "category": "Chain",
+  "chains": [
+   "Noble"
+  ],
+  "defillama_url": "https://defillama.com/protocol/noble",
+  "farm_steps": [
+   {
+    "cost": "About $0.01 per transfer (estimate)",
+    "text": "Set up a Cosmos wallet such as Keplr or Leap and keep a little USDC for Noble gas fees.",
+    "time": "10-15 min setup"
+   },
+   {
+    "cost": "Bridge fee varies (estimate)",
+    "text": "Bridge USDC to the Noble chain, for example via express.noble.xyz, and check the route still works, because Circle is winding down USDC support on Noble.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "0.1% conversion fee between USDC and USDN",
+    "text": "Buy USDN with USDC at dollar.noble.xyz; USDN is backed by short-term US Treasuries and earns about 4% base yield when simply held.",
+    "time": "5 min"
+   },
+   {
+    "cost": "About $0.01 per transfer (estimate)",
+    "text": "Open points.noble.xyz and deposit USDN into the Points Vault to earn Noble Points instead of the base yield.",
+    "time": "5 min"
+   },
+   {
+    "cost": "No extra cost, but you forgo base yield",
+    "text": "Hold for at least 30 days, because points only start counting after 30 days in the vault, and multipliers rise with longer holds (up to 1.75x after 120 days).",
+    "time": "Hold at least 30 days"
+   },
+   {
+    "cost": "Free",
+    "text": "Link your Cosmos address to an Ethereum address on the Noble claim page before 31 December 2026, so any allocation can be delivered to you.",
+    "time": "5 min"
+   },
+   {
+    "cost": "0.1% conversion fee (estimate)",
+    "text": "To exit, withdraw USDN from the Points Vault and swap it back to USDC; withdrawing before 30 days earns zero points for that deposit.",
+    "time": "5 min"
+   }
+  ],
+  "name": "Noble",
+  "notes": "BIGGEST CONTRADICTION: DeFiLlama has no protocol page for Noble at all — https://defillama.com/protocol/noble returns 404 — because Noble is a chain, not a protocol, so the snapshot's 'Noble as a farmable protocol' framing is a category error. Also, noble.org is an unrelated ranching institute; the real site is noble.xyz, whose homepage is JavaScript-only, so the USDN/Points mechanics were confirmed from Noble's own Medium post and other sources citing official pages, not from the homepage text. Second contradiction: Circle is ending USDC and CCTP V1 support on Noble (new minting disabled 13 Oct 2026, contract paused 12 Jan 2027), which threatens the standard 'bridge USDC to Noble' entry path. Season 2 points earn 1 point per $100 per day and end when Hyperliquid vaults launch; Season 1 holders get a fixed 5% of supply and Season 2 holders 2%.",
+  "official_site": "https://noble.xyz/",
+  "slug": "noble",
+  "sources": [
+   "https://defillama.com/protocol/noble",
+   "https://noble.xyz/",
+   "https://medium.com/@noble_xyz/noble-airdrop-farm-points-s2-eligibility-claim-74734a6371dd",
+   "https://crypto.news/circle-ends-usdc-and-cctp-support-on-noble/",
+   "https://www.techflowpost.com/en-US/article/28346"
+  ],
+  "status": "partial",
+  "what_it_does": "Noble is a Cosmos appchain built for stablecoin issuance. Its flagship asset is USDN (Noble Dollar), a yield-bearing stablecoin fully backed by short-term US Treasuries, with a Points Vault that trades base yield for Noble Points toward a NOBLE token allocation."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Arc",
+   "Ethereum"
+  ],
+  "defillama_url": "https://defillama.com/protocol/keyrock",
+  "farm_steps": [
+   {
+    "cost": "Gas $2-8 on Ethereum, under $1 on Arc (estimate)",
+    "text": "Set up a wallet on Arc or Ethereum holding USDC plus gas: USDC pays fees on Arc, while ETH pays gas on Ethereum.",
+    "time": "10-15 min setup"
+   },
+   {
+    "cost": "Free",
+    "text": "Understand that keyrock.com itself is institutional, with market-making and asset-management services and a 'speak to our experts' route, and no retail deposit button.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free to browse",
+    "text": "Open app.morpho.org and find the Keyrock Prime USDC vault on Arc or the Keyrock USDC vault on Ethereum.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Compare live APY, TVL and fees; the Arc vault recently showed about 2.25% APY with a 1% annual management fee, while the Ethereum vault showed about 7.1% APY.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas $2-8 on Ethereum (estimate)",
+    "text": "Approve USDC and deposit into the chosen Morpho vault to receive ERC-4626 vault shares.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Management fee up to 1% a year on the Arc vault",
+    "text": "Hold the shares while Keyrock allocates the USDC across overcollateralized Morpho markets; yield accrues to the share price.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Gas $2-8 on Ethereum (estimate)",
+    "text": "To exit, withdraw from the Morpho vault back to USDC; withdrawals are on demand but depend on available market liquidity.",
+    "time": "5 min, subject to liquidity"
+   }
+  ],
+  "name": "Keyrock",
+  "notes": "Keyrock itself is B2B/institutional: keyrock.com offers market making, OTC and asset management to institutions and has no retail deposit path, which contradicts any generic 'deposit on Keyrock' step. The real retail path is its Morpho vaults: Keyrock Prime USDC (krUSDC) on Arc holds about $75.25m and Keyrock USDC (kUSDC) on Ethereum about $8m. No Keyrock points program or token was found.",
+  "official_site": "https://keyrock.com/",
+  "slug": "keyrock",
+  "sources": [
+   "https://defillama.com/protocol/keyrock",
+   "https://keyrock.com/",
+   "https://app.morpho.org/vaults",
+   "https://TOKENTERMINAL.COM/explorer/projects/morpho/kusdcc145",
+   "https://blog.vaults.fyi/morpho-yields/"
+  ],
+  "status": "verified",
+  "what_it_does": "Keyrock is a global crypto investment group and market maker that curates onchain yield vaults through Morpho. Retail users reach its vaults through Morpho, not through keyrock.com, which is an institutional site."
+ },
+ {
+  "category": "Yield",
+  "chains": [
+   "Ethereum",
+   "Monad",
+   "Base"
+  ],
+  "defillama_url": "https://defillama.com/protocol/infinifi",
+  "farm_steps": [
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Set up an Ethereum wallet holding USDC plus ETH for gas.",
+    "time": "10-15 min setup"
+   },
+   {
+    "cost": "Free to browse",
+    "text": "Open app.infinifi.xyz and go to the Deposit or Mint section; the app may ask for an access code.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Deposit USDC to mint iUSD at a 1:1 rate; points start accruing for minting and holding iUSD.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "Stake iUSD for siUSD to earn liquid yield of up to about 8% APY with no lock, or lock iUSD for liUSD for up to about 12% APY.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Check the Points page in the app to track your Season 3 points, weekly Chapter progress and multipliers.",
+    "time": "5 min per check"
+   },
+   {
+    "cost": "Gas and trading fees vary (estimate)",
+    "text": "Optionally boost points through listed routes such as holding Pendle siUSD yield tokens, which carry the highest multiplier, and through referrals.",
+    "time": "10-15 min"
+   },
+   {
+    "cost": "Gas $2-8 (estimate)",
+    "text": "To exit, unstake siUSD or wait out your liUSD lock's exit timer, then redeem iUSD back to USDC in the app; locked liUSD is first-loss capital, so understand the tier before locking.",
+    "time": "5 min, plus lock exit timer for liUSD"
+   }
+  ],
+  "name": "infiniFi",
+  "notes": "Points program is Season 3 of 'Road to TGE': weekly Chapters split 336,000 points, computed every 6 hours, with multipliers up to 20x on Pendle siUSD YT. Registration for Season 1 and 2 airdrop closed 10 Nov 2026, so new activity only counts toward Season 3. TGE is targeted for Q4 2026 and INFI has 45% of supply earmarked for the ecosystem including the airdrop, per secondary sources; the exact points-to-token conversion is unannounced. The official homepage confirms the deposit/stake/lock model and the up to 8%/12% APYs.",
+  "official_site": "https://infinifi.xyz/",
+  "slug": "infinifi",
+  "sources": [
+   "https://defillama.com/protocol/infinifi",
+   "https://infinifi.xyz/",
+   "https://docs.infinifi.xyz",
+   "https://airdrops.io/infinifi/",
+   "https://www.swanbluechip.com/rewards/p/infinifi/"
+  ],
+  "status": "verified",
+  "what_it_does": "infiniFi rebuilds banking onchain for stablecoins: deposit stablecoins to mint iUSD, then keep it liquid, stake it as siUSD for yield, or lock it as liUSD for higher yield. It runs a live Road to TGE points program ahead of a planned Q4 2026 INFI token launch."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Stellar",
+   "Ethereum",
+   "Base"
+  ],
+  "defillama_url": "https://defillama.com/protocol/gami-labs",
+  "farm_steps": [
+   {
+    "cost": "Gas $2-8 on Ethereum, under $1 on Stellar or Base (estimate)",
+    "text": "Set up a wallet for the chain of the vault you want: an EVM wallet for Ethereum or Base vaults, or a Stellar wallet for the earnUSDC and earnXLM vaults.",
+    "time": "10-15 min setup"
+   },
+   {
+    "cost": "Free to browse",
+    "text": "Open gamilabs.io/vaults and browse the live vaults, noting each vault's asset, chain and strategy.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free to browse",
+    "text": "For Stellar, open the earnUSDC or earnXLM vault on app.upshift.finance; for EVM vaults, use the deposit route shown on the Gami vault page.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Gas $2-8 on Ethereum (estimate)",
+    "text": "Deposit USDC into earnUSDC, or XLM into earnXLM, or stablecoins into the flagship gamiUSDC vault, and receive a receipt token for your share.",
+    "time": "5 min"
+   },
+   {
+    "cost": "No extra cost",
+    "text": "Hold the receipt token while Gami routes the capital across lending and liquidity venues such as Blend, Aquarius, Aave or Morpho; yield accrues to the share price.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Free",
+    "text": "Track your position and any incentive campaigns in the vault app; Gami has no token and no official points program, so treat airdrop talk as unconfirmed.",
+    "time": "5 min per check"
+   },
+   {
+    "cost": "Gas $2-8 on Ethereum (estimate)",
+    "text": "To exit, redeem your receipt tokens for the underlying asset in the vault app; large Stellar withdrawals can take longer because liquidity there is thinner.",
+    "time": "5 min, longer for large Stellar exits"
+   }
+  ],
+  "name": "Gami Labs",
+  "notes": "Gami's own site says 'Discover and deposit into Gami Vaults', so a retail deposit path exists despite the institutional positioning. No token and no official points program exist; a Medium post speculating about a future vault airdrop is third-party speculation, not an official program. The Stellar vaults run on Upshift infrastructure and are co-curated with Stake Capital. DeFiLlama shows most TVL on Stellar ($34.73m), then Ethereum ($21.01m) and Base ($2.63m).",
+  "official_site": "https://gamilabs.io/",
+  "slug": "gami-labs",
+  "sources": [
+   "https://defillama.com/protocol/gami-labs",
+   "https://gamilabs.io/",
+   "https://www.upshift.finance/blog/upshift-on-stellar-earnusdc-earnxlm",
+   "https://web.fordefi.com/customer-stories/how-gami-labs-curates-institutional-vaults-with-fordefis-policy-engine"
+  ],
+  "status": "verified",
+  "what_it_does": "Gami Labs provides onchain asset-management infrastructure with active curation and dynamic risk management. It runs public vaults such as gamiUSDC on EVM chains and earnUSDC/earnXLM on Stellar, allocating across lending, liquidity and structured-yield venues."
+ },
+ {
+  "category": "Staking Pool",
+  "chains": [
+   "Algorand"
+  ],
+  "defillama_url": "https://defillama.com/protocol/reti-pooling",
+  "farm_steps": [
+   {
+    "cost": "Algorand fees under $1 (estimate)",
+    "text": "Set up an Algorand wallet such as Pera and fund it with ALGO plus a little extra for transaction fees.",
+    "time": "10-15 min setup"
+   },
+   {
+    "cost": "Free to browse",
+    "text": "Open the Reti Pooling staking dashboard at reti.nodely.io and browse the list of validators.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Compare validators on performance, commission, payout frequency and restrictions before choosing one, since validators vary greatly.",
+    "time": "10 min"
+   },
+   {
+    "cost": "Algorand fees under $1 (estimate)",
+    "text": "Select Stake on your chosen validator, enter at least the minimum entry amount of ALGO, and sign the transaction.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Free",
+    "text": "Check the My Stakes section to confirm your staked amount and the validator's epoch rewards.",
+    "time": "5 min"
+   },
+   {
+    "cost": "Validator commission, set per validator",
+    "text": "Hold the stake while the validator participates in Algorand consensus; rewards are distributed proportionally minus the validator's commission each epoch.",
+    "time": "Hold 30 days (estimate)"
+   },
+   {
+    "cost": "Algorand fees under $1 (estimate)",
+    "text": "To exit, select Unstake on your validator in the Staked section; there is no lockup, so your ALGO is released without a fixed waiting period.",
+    "time": "5 min"
+   }
+  ],
+  "name": "Reti Pooling",
+  "notes": "The official app reti.nodely.io timed out when fetched, so the staking flow was verified against the official Reti docs (TxnLab gitbook) instead; that is why this is partial rather than verified. No points program or token exists for Reti; the reward is ALGO consensus rewards. Creating a validator costs 10.4449 ALGO, but ordinary users only stake with existing validators and do not pay that.",
+  "official_site": "https://reti.nodely.io",
+  "slug": "reti-pooling",
+  "sources": [
+   "https://defillama.com/protocol/reti-pooling",
+   "https://reti.nodely.io",
+   "https://txnlab.gitbook.io/reti-open-pooling/~gitbook/pdf?limit=100"
+  ],
+  "status": "partial",
+  "what_it_does": "Reti Pooling is a decentralized, non-custodial protocol that lets users pool ALGO together so small holders can collectively meet Algorand's 30,000 ALGO solo-staking threshold, stake with a validator of their choice, and earn consensus rewards proportionally."
+ },
+ {
+  "category": "Lending",
+  "chains": [
+   "Ink"
+  ],
+  "defillama_url": "https://defillama.com/protocol/tydro",
+  "farm_steps": [
+   {
+    "cost": "$0",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. You need a wallet that supports the Ink network to interact with Tydro at all.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Fund that wallet with the asset you want to supply plus a little ETH on Ink for gas. Tydro's own FAQ says using the protocol requires on-chain transactions and gas fees, which are lower on Ink than on Ethereum.",
+    "time": "10-15 minutes"
+   },
+   {
+    "cost": "$0",
+    "text": "Open tydr.com, connect your wallet, and go to the Markets section to check the current supply rate for each supported token before you commit any funds.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Supply the asset and amount of your choice through the Tydro interface, approving the token spend first and then confirming the supply transaction in your wallet.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "$2-8 of gas if you borrow (estimate)",
+    "text": "Optionally borrow against your supplied collateral if you want a second position, keeping the loan well over-collateralized. Tydro only supports over-collateralized borrowing, so never borrow close to the maximum.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "capital locked in the protocol",
+    "text": "Hold the supplied position for at least 30 days and check the Markets page weekly to confirm the supply rate has not collapsed. Supplied tokens sit in audited smart contracts and keep earning while deposited.",
+    "time": "30 days"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Exit by withdrawing your supplied tokens through the Tydro interface, repaying any open borrow first, and moving the funds back to your main wallet. Only claim anything from a link published on tydr.com itself, never from a DM or ad.",
+    "time": "10 minutes to exit"
+   }
+  ],
+  "name": "Tydro",
+  "notes": "PARTIAL: the DeFiLlama tydr page failed to load and the tydr.com homepage hit a rate limit, so this rests on the official tydr.com FAQ as returned by search (crawled 1 hour before this check). No points or rewards program was found on the site, and no specific supported-asset list was confirmed, so no asset names are given in the steps. The snapshot chain (Ink) matches the FAQ and DeFiLlama Ink rankings, which list Tydro as the largest Ink lending protocol. [CORRECTED by merger 2026-11-17: the real slug is tydr (snapshot/board/DefiLlama all agree); the draft used the typo tydr, so its DefiLlama fetch failed. The DefiLlama page for tydr was then opened directly and confirms: non-custodial lending protocol on Ink, powered by Aave, TVL $232m, $57.5m active loans, official site tydr.com. The what_it_does and steps were already correct for the real protocol.]",
+  "official_site": "https://tydro.com",
+  "slug": "tydro",
+  "sources": [
+   "https://defillama.com/protocol/tydro",
+   "https://tydro.com/faq"
+  ],
+  "status": "partial",
+  "what_it_does": "Tydro is a decentralized, non-custodial lending protocol on Ink where anyone can supply assets to earn interest or borrow against over-collateralized positions, with no central entity able to freeze or change positions."
+ },
+ {
+  "category": "Risk Curators",
+  "chains": [
+   "Ethereum",
+   "Base",
+   "Berachain"
+  ],
+  "defillama_url": "https://defillama.com/protocol/tulipa-capital",
+  "farm_steps": [
+   {
+    "cost": "$0",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. You will not deposit on tulipa.capital itself, so this wallet is for the vault app you use instead.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "$0",
+    "text": "Read tulipa.capital first and accept what it actually is: a curator for institutional clients, not a retail app. Its site has no deposit button, no app, and no points program; its clients are protocols and institutions that hire it to curate vaults.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "$0",
+    "text": "Find a vault curated by Tulipa Capital inside the Morpho or Euler app, on Ethereum or Base. Tulipa's revenue comes from Euler and Morpho vault yields, and third-party vault lists show Tulipa-curated vaults on both platforms.",
+    "time": "15 minutes"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Deposit USDC or the vault's underlying asset into that Tulipa-curated Morpho or Euler vault, approving the token and confirming the deposit. You receive ERC-4626 vault shares that earn the borrower interest.",
+    "time": "15 minutes to set up"
+   },
+   {
+    "cost": "capital locked in the vault",
+    "text": "Hold the vault position for at least 30 days so the activity shows up in more than one snapshot. Tulipa's own pitch is long-term, risk-first curation, so a one-afternoon deposit does not match how these vaults are meant to be used.",
+    "time": "30 days"
+   },
+   {
+    "cost": "$0",
+    "text": "Check the vault once a week on Morpho or Euler for its APY and TVL, and check tulipa.capital for any token or program announcement. No points or rewards program was found on Tulipa's site, so do not expect points for this position.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Exit by redeeming your vault shares in the Morpho or Euler app and withdrawing the underlying asset. Only claim anything from a link published on tulipa.capital, Morpho, or Euler itself, never from a DM, reply, or ad.",
+    "time": "10 minutes to exit"
+   }
+  ],
+  "name": "Tulipa Capital",
+  "notes": "CONTRADICTION: a generic category step like 'deposit into Tulipa Capital' is wrong — tulipa.capital takes no deposits at all. Retail exposure is only indirect, through Morpho/Euler vaults Tulipa curates. No points program found on the official site. The specific Tulipa-curated vault names come from a third-party vault analysis, not from Tulipa's own site, so the steps name the platforms (Morpho/Euler) rather than a specific vault.",
+  "official_site": "https://www.tulipa.capital",
+  "slug": "tulipa-capital",
+  "sources": [
+   "https://defillama.com/protocol/tulipa-capital",
+   "https://www.tulipa.capital",
+   "https://getblock.io/marketplace/projects/tulipa-capital/"
+  ],
+  "status": "verified",
+  "what_it_does": "Tulipa Capital is a boutique DeFi risk-curation firm that manages lending-market vaults on Euler and Morpho for institutional investors, putting capital protection and risk assessment ahead of yield. It has no self-serve deposit app of its own."
+ },
+ {
+  "category": "Yield",
+  "chains": [
+   "Plasma",
+   "Monad",
+   "Ethereum"
+  ],
+  "defillama_url": "https://defillama.com/protocol/yuzu-money",
+  "farm_steps": [
+   {
+    "cost": "$0",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. You will interact with app.yuzu.money and secondary markets from this wallet only.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "$0",
+    "text": "Understand the access rule before spending anything: Yuzu's own docs say primary minting and redeeming of yzUSD and yzPP is restricted to accredited, qualified, institutional, or sophisticated investors after KYC and screening, and retail users are not eligible to mint or redeem.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "$2-8 of gas plus any swap fee (estimate)",
+    "text": "Get yzUSD on the secondary market instead, since Yuzu's docs say yzUSD may be traded by anyone on exchanges and DEXs that list it. Buy it on Plasma, where the yzUSD page lists the token, or use one of Yuzu's open Marketplace vaults that take deposits from anyone with no screening.",
+    "time": "15 minutes"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Stake your yzUSD in the Yuzu app to receive syzUSD, the yield-bearing ERC-4626 token. Yuzu's site says staking is open with no KYC, and syzUSD earns the weekly yield while yzUSD itself bears no yield.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Alternatively, deposit USDC into an open Marketplace vault such as yzSyrup or yzCash on Ethereum, which the app shows with live APYs and no screening. These vaults deploy into Aave, Morpho, Euler, and Fluid strategies.",
+    "time": "15 minutes"
+   },
+   {
+    "cost": "capital locked in the position",
+    "text": "Hold the syzUSD or vault position for at least 30 days and check the Yuzu dashboard weekly for yield and the live collateral ratio, which the site attests every 15 minutes. Do not buy yzPP unless you are an eligible investor: it takes first loss.",
+    "time": "30 days"
+   },
+   {
+    "cost": "$2-8 of gas plus any swap fee (estimate)",
+    "text": "Exit by unstaking syzUSD back to yzUSD, which Yuzu's FAQ says is basically instant, then selling yzUSD on the secondary market. Direct redemption of yzUSD takes up to 3 days and is gated, and yzPP has a 30-day redemption period with a 5,000 minimum, so plan the exit through the secondary market.",
+    "time": "10 minutes to exit"
+   }
+  ],
+  "name": "Yuzu Money",
+  "notes": "BIGGEST CONTRADICTION IN THIS BATCH: a generic 'deposit stablecoins into Yuzu and mint yzUSD' step is wrong for a retail farmer — Yuzu's own docs explicitly say retail users are not eligible to mint, subscribe, or redeem yzUSD or yzPP, and minting requires KYC/AML and source-of-funds checks. The real retail paths are staking freely (buy yzUSD second-hand, stake for syzUSD) and the open Marketplace vaults. No points program was found on the official site or docs; the Medium staking guide mentioning points is not an official Yuzu source and was not relied on.",
+  "official_site": "https://app.yuzu.money",
+  "slug": "yuzu-money",
+  "sources": [
+   "https://defillama.com/protocol/yuzu-money",
+   "https://app.yuzu.money/",
+   "https://app.yuzu.money/docs",
+   "https://www.yuzu.money/alpha",
+   "https://app.yuzu.money/alpha/yzusd"
+  ],
+  "status": "verified",
+  "what_it_does": "Yuzu Money issues yzUSD, an overcollateralized stablecoin backed by curated leveraged DeFi strategies. Users stake yzUSD to receive the yield-bearing syzUSD, while yzPP is a first-loss tranche that absorbs losses first in exchange for higher yield."
+ },
+ {
+  "category": "Insurance",
+  "chains": [
+   "Flare"
+  ],
+  "defillama_url": "https://defillama.com/protocol/firelight",
+  "farm_steps": [
+   {
+    "cost": "$0",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. You need a Flare-compatible wallet plus a little FLR for gas, or an XRPL wallet if you use the Flare Smart Accounts one-flow route.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "$2-8 of gas or minting fees (estimate)",
+    "text": "Get FXRP, the wrapped XRP on Flare created through Flare's FAssets system. You can mint it from XRP or buy it, and Flare's guidance says at least 13 XRP is needed to cover a minted lot and fees.",
+    "time": "15 minutes"
+   },
+   {
+    "cost": "$0",
+    "text": "Open the Firelight app at firelight.finance, connect your wallet, and accept the terms of use on your first visit. The app is where staking happens; the main firelight.finance site itself is informational and describes the cover product and the Risk Consortium.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Deposit your FXRP into the Staked XRP Vault and confirm the deposit. You receive stXRP 1:1 for the FXRP deposited, as a liquid token representing your share of the vault.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "capital at risk of slashing",
+    "text": "Hold the stXRP position and understand what it now does: since the full launch on 6 October 2026, staked FXRP backs live cover and cover premiums stream into the vault, while your capital can be slashed if a covered event pays out. Firelight Points track early participation but are not a claim on premiums.",
+    "time": "30 days"
+   },
+   {
+    "cost": "$0",
+    "text": "Check the Firelight dashboard weekly for your stXRP balance, Firelight Points, and the cover status of the vaults your capital backs. Keep some FLR in the wallet so you can always pay for the exit transaction.",
+    "time": "10 minutes a week"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Exit by starting an unstake in the app, which burns your stXRP, then waiting out the cooldown before claiming your FXRP. With 30-day cover periods now in force, the wait is 30 to 60 days depending on when you request the exit, so do not treat this as an instant withdrawal.",
+    "time": "30-60 days to fully exit"
+   }
+  ],
+  "name": "Firelight",
+  "notes": "PARTIAL: the DeFiLlama page and the firelight.finance homepage were opened directly, but the app and docs pages were not directly opened, so the staking flow, the 6 October 2026 launch, the Points rules, and the 30-60 day exit come from secondary sources that quote Firelight's docs and launch announcement. CONTRADICTION with a generic insurance step: this is not buying cover — a retail farmer is the capital provider (staking FXRP for stXRP), takes slashing risk, and cannot exit quickly once 30-day cover periods apply.",
+  "official_site": "https://firelight.finance",
+  "slug": "firelight",
+  "sources": [
+   "https://defillama.com/protocol/firelight",
+   "https://firelight.finance/",
+   "https://superapp.spendthebits.com/insights/earning-on-xrp-firelight-stxrp-points",
+   "https://www.tradingview.com/news/chainwire:ca766ea70094b:0-firelight-is-live-backed-by-staked-fxrp-on-flare/"
+  ],
+  "status": "partial",
+  "what_it_does": "Firelight is an on-chain cover protocol on Flare: users stake FXRP (wrapped XRP via Flare FAssets) and receive stXRP, and that staked capital backs cover for DeFi vaults against defined failures, with incidents validated by an independent Risk Consortium and staked capital subject to slashing."
+ },
+ {
+  "category": "Governance Incentives",
+  "chains": [
+   "Mezo"
+  ],
+  "defillama_url": "https://defillama.com/protocol/mezo-earn",
+  "farm_steps": [
+   {
+    "cost": "$0",
+    "text": "Use a fresh wallet that holds only the money you plan to farm, and keep its seed phrase offline. You will bridge BTC onto the Mezo network and interact with the Mezo app from this wallet only.",
+    "time": "5 minutes"
+   },
+   {
+    "cost": "bridge fee, varies (estimate $2-8)",
+    "text": "Bridge or deposit BTC onto Mezo and open the Mezo app at mezo.org. Mezo's own guide says you deposit Bitcoin into your personal on-chain vault, and deposited BTC starts earning through its incentive system with no active management required.",
+    "time": "15 minutes"
+   },
+   {
+    "cost": "$2-8 of gas (estimate)",
+    "text": "Lock your BTC in the app under Earn, then Lock, to receive veBTC. Mezo's docs say veBTC is your base position: it gives 1x voting weight on its own, directs where MEZO emissions flow, and earns real yield from network activity.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "$2-8 of gas if you lock MEZO (estimate)",
+    "text": "Optionally lock MEZO tokens to receive veMEZO, then pair it with your veBTC using the Pair and Boost button on the Lock page. Mezo's guide says veMEZO has no voting power alone but multiplies your veBTC weight up to 5x.",
+    "time": "10 minutes"
+   },
+   {
+    "cost": "$2-8 of gas per vote (estimate)",
+    "text": "Vote each week on the Vote page in the Mezo app, allocating your veBTC across gauges such as BTC/MUSD pools or the MUSD Savings Rate. Epochs run weekly, Thursday to Thursday at 00:00 UTC, and voters earn the trading fees of the pools they vote for plus incentives posted on those gauges.",
+    "time": "15 minutes a week"
+   },
+   {
+    "cost": "$2-8 of gas if you add liquidity (estimate)",
+    "text": "Optionally add a second position by providing liquidity to a Mezo pool, such as BTC/MUSD, to earn trading fees and mats rewards. Mezo's Earn page lists this as a separate path alongside locking and voting, and vaults are described as a future structured-yield option.",
+    "time": "15 minutes"
+   },
+   {
+    "cost": "$2-8 of gas to claim and exit (estimate)",
+    "text": "Claim your fees and incentives at the end of each epoch from the Mezo app, and when you want out, unlock through the Lock page and withdraw your BTC. Only claim from links on mezo.org itself, never from a DM, reply, or ad.",
+    "time": "10 minutes to exit"
+   }
+  ],
+  "name": "Mezo Earn",
+  "notes": "Mezo's own blog and docs (mezo.org) describe the lock, vote, and boost mechanics in detail, and the homepage confirms borrowing, the wallet view, and earning/voting/liquidity as the core actions. The exact lock duration and unlock waiting period were not confirmed on the pages checked, so the exit step does not state one. 'Mats' are Mezo's points-style rewards earned on deposits and pools; no separate public points-program page was found. The snapshot category is Governance Incentives, which fits: the farm is locking BTC/MEZO and voting, not a simple deposit-and-earn vault.",
+  "official_site": "https://mezo.org",
+  "slug": "mezo-earn",
+  "sources": [
+   "https://defillama.com/protocol/mezo-earn",
+   "https://mezo.org/",
+   "https://mezo.org/blog/getting-started-with-mezo-how-to-lock-vote-and-earn/",
+   "https://mezo.org/docs/users/mezo-earn/vote",
+   "https://anchorage.mezo.org/feature/earn"
+  ],
+  "status": "verified",
+  "what_it_does": "Mezo Earn is the economic engine of the Mezo Bitcoin network: bitcoin holders lock BTC to receive veBTC, which earns a share of protocol revenue and directs where MEZO emissions flow, and locking MEZO for veMEZO boosts that voting weight up to 5x."
+ }
+]
