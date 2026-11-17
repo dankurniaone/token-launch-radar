@@ -1,13 +1,17 @@
-/* Token Radar, radar-2 — TERMINAL-MONO, warm.
-   Warm near-monochrome ink canvas, monospace type everywhere (headings,
-   labels, numbers — one typeface does the work), ONE accent (gold) used
-   only on structural marks: brand dot, active tab, primary CTA, links,
-   rank-1 bars, the coverage gauge, the hero numbers. Green/red are
-   reserved exclusively for 7d change numbers and the heat strip that
-   encodes them. Bars are solid fills — rank 1 is gold, the rest a flat
-   warm grey. A dotted median line, a segmented coverage gauge and a
-   category heat grid carry the texture. 4px radius throughout. No
-   gradients, no glow, no external assets. */
+/* Token Radar, radar-2 — TERMINAL-MONO, executed seriously.
+   Reference rules (skillsui.app crypto-dashboard + Matrix/BTCK notes):
+   - Mono everywhere; hierarchy comes from SIZE, WEIGHT and SPACING alone —
+     brightness steps, never a second colour. Numbers align in columns.
+   - Accent is EARNED: links, active states, primary CTA, rank-1 marks only.
+     One or two accent elements per screen, never a wash of it.
+   - Texture over glow: solid bars, grayscale heat grid, dotted median rule,
+     hairline dividers. 4px radius throughout. No gradients, no glow.
+   - Green/red ONLY for 7d direction — never decorative.
+   - Monospace is wide: generous line-height and real gaps between sections,
+     or it collapses into a wall of text.
+   Type scale (mono, one face): display 46 / headline 30 / stat 22 /
+   data 15 / section label 13 caps / meta 11–12 caps.
+   Spacing scale: 4 · 8 · 12 · 16 · 20 · 24 · 32. One rhythm everywhere. */
 :root {
   --bg: #0d0c09;
   --bg2: #12100c;
@@ -18,10 +22,13 @@
   --ink: #ece7db;
   --muted: #a8a294;
   --faint: #6f6a5c;
-  --accent: #e8b93e;
-  --accent-ink: #241a02;
+  --accent: #c9a227;
+  --accent-ink: #1c1503;
   --green: #4ade80;
   --red: #f87171;
+  --green-soft: #86efac;
+  --red-soft: #fca5a5;
+  --bar: #a8a294;
   --radius-control: 4px;
   --radius-panel: 4px;
   --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
@@ -29,8 +36,9 @@
   --step-2: 8px;
   --step-3: 12px;
   --step-4: 16px;
-  --step-5: 24px;
-  --step-6: 32px;
+  --step-5: 20px;
+  --step-6: 24px;
+  --step-7: 32px;
 }
 
 * { box-sizing: border-box; }
@@ -39,17 +47,13 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 400 16px/1.55 var(--font-mono);
+  font: 400 15px/1.55 var(--font-mono);
   text-wrap: pretty;
 }
-body::before {
-  content: ""; display: block; height: 3px;
-  background: var(--accent);
-}
 h1, h2, h3 { margin: 0; font-family: var(--font-mono); text-wrap: balance; }
-h1 { font-size: 28px; line-height: 1.08; font-weight: 700; letter-spacing: -0.01em; }
-h2 { font-size: 19px; line-height: 1.25; font-weight: 700; }
-h3 { font-size: 15px; line-height: 1.3; font-weight: 700; }
+h1 { font-size: 30px; line-height: 1.1; font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 13px; line-height: 1.3; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+h3 { font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 p { margin: 0; }
 button, input, select { font: inherit; color: inherit; }
 button { cursor: pointer; }
@@ -61,9 +65,9 @@ a { color: var(--accent); }
 .skip:focus { left: var(--step-4); top: var(--step-4); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-.shell { max-width: 1320px; margin: 0 auto; padding: 10px var(--step-6) 48px; }
+.shell { max-width: 1320px; margin: 0 auto; padding: 12px var(--step-7) 48px; }
 .top {
-  display: flex; align-items: center; justify-content: space-between; gap: var(--step-5);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--step-6);
   padding-bottom: 14px; border-bottom: 1px solid var(--line);
 }
 .brand { display: flex; align-items: center; gap: 10px; }
@@ -73,84 +77,82 @@ a { color: var(--accent); }
 .top-meta span { white-space: nowrap; }
 .top-meta span b { color: var(--ink); }
 
-/* HERO — editorial header, flat panel, no gradient. The rank-1 number is the
-   biggest type on the page; the gold block after the headline is the terminal
-   cursor. */
-.hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr); gap: 24px; padding: 8px 0 6px; align-items: stretch; }
-.kicker { font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+/* HERO — the headline is the only 30px text on the board; the rank-1 number
+   is the only 46px text. That gap is the hierarchy. The gold block after the
+   headline is the terminal cursor. */
+.hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr); gap: var(--step-6); padding: 16px 0 8px; align-items: stretch; }
+.kicker { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 .hero h1 .cursor { color: var(--accent); }
 .hero-copy p { color: var(--muted); max-width: 58ch; margin-top: 12px; font-size: 15px; }
 .hero-copy p b { color: var(--ink); }
 .hero-card {
   position: relative; border: 1px solid var(--line); border-left: 3px solid var(--accent);
-  border-radius: var(--radius-panel); padding: 14px 20px 12px; cursor: pointer; background: var(--panel);
+  border-radius: var(--radius-panel); padding: 16px 20px 14px; cursor: pointer; background: var(--panel);
 }
-.hero-card .label { font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+.hero-card .label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
 .hero-value {
-  font-family: var(--font-mono); font-size: 36px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em;
-  color: var(--accent); margin: 4px 0 2px;
+  font-family: var(--font-mono); font-size: 46px; line-height: 1.02; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--accent); margin: 6px 0 4px;
 }
 .hero-name { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
-.hero-why { color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 6px; }
+.hero-why { color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 8px; }
 .hero-why b { color: var(--ink); }
 .hero-next { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; font-family: var(--font-mono); }
 .hero-next b { color: var(--ink); }
 
-/* STATS STRIP — six cells, one line each: the numbers that frame the radar.
-   The watchlist cell carries a 40-segment gauge; gainer/loser are the only
-   green/red text outside the 7d column. */
+/* STATS STRIP — six cells. The numbers are 22px bold; the labels are 11px
+   caps. Nothing else competes with them. */
 .ticker {
   display: grid; grid-template-columns: repeat(6, 1fr);
   background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-panel); overflow: hidden;
 }
-.tick { padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.tick { padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .tick + .tick { border-left: 1px solid var(--line); }
-.tick b { font-family: var(--font-mono); font-size: 19px; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tick span { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tick b { font-family: var(--font-mono); font-size: 22px; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tick span { color: var(--muted); font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tick b.pos { color: var(--green); }
 .tick b.neg { color: var(--red); }
-.gauge { display: flex; gap: 1px; margin-top: 5px; }
-.gauge i { display: block; width: 4px; height: 9px; background: var(--accent); }
-.gauge i.off { background: var(--line); }
 
-/* HEAT — median 7d change per category, top 12 by protocol count. The cell
-   tint is the signal: green up, red down, intensity by magnitude. */
-.heat-panel { margin: 10px 0 0; padding: 10px 14px 8px; }
+/* HEAT — median 7d change per category, top 10 by protocol count. Cells are
+   equal height with the name pinned to two lines and the value pinned to the
+   bottom, so values align across the row. The tint is faint (alpha <= 0.14);
+   the value is a LIGHT green/red so it reads on the tint instead of sinking
+   into it. Names are ink, not muted. */
+.heat-panel { margin: var(--step-5) 0 0; padding: 14px 20px; }
 .heat-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.heat-head h2 { font-size: 15px; letter-spacing: 0.04em; }
-.heat-head span { color: var(--muted); font-size: 12.5px; }
-.heat-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; margin-top: 8px; }
-.heat-cell { border: 1px solid var(--line-soft); border-radius: var(--radius-control); padding: 5px 6px; min-width: 0; }
-.heat-cell b { display: block; font-size: 11px; font-weight: 700; line-height: 1.25; }
-.heat-cell span { font-size: 12.5px; font-weight: 700; }
-.heat-cell span.pos { color: var(--green); }
-.heat-cell span.neg { color: var(--red); }
+.heat-head span { color: var(--muted); font-size: 12px; }
+.heat-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin-top: 12px; }
+.heat-cell { border: 1px solid var(--line-soft); border-radius: var(--radius-control); padding: 8px; min-width: 0; min-height: 64px; display: flex; flex-direction: column; justify-content: space-between; gap: 4px; }
+.heat-cell b { display: block; font-size: 10.5px; font-weight: 700; line-height: 1.3; min-height: 27px; color: var(--ink); }
+.heat-cell span { font-size: 13px; font-weight: 700; }
+.heat-cell span.pos { color: var(--green-soft); }
+.heat-cell span.neg { color: var(--red-soft); }
 
 /* CHART — two columns of five. Bars are solid fills: rank 1 is the gold
-   accent, the rest a flat warm grey on a darker track. The dotted rule
-   under the chart marks the median of the top 10 in view. Labels wrap to
-   two lines instead of truncating. */
-.chart-panel { margin: 18px 0 0; padding: 16px 20px 14px; }
+   accent, the rest a flat neutral warm grey on a darker track. The dotted
+   rule under the chart marks the median of the top 10 in view. */
+.chart-panel { margin: var(--step-5) 0 0; padding: 16px 20px 14px; }
 .chart-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.chart-head h2 { font-size: 19px; }
-.chart { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 28px; margin-top: 10px; }
+.chart-head span { color: var(--muted); font-size: 12px; }
+.chart { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 28px; margin-top: 12px; }
 .chart-col { display: grid; gap: 2px; align-content: start; }
-.chart-row { display: grid; grid-template-columns: 220px 1fr 92px; align-items: center; gap: 10px; padding: 2.5px 0; }
-.chart-label { font-size: 13px; font-weight: 700; line-height: 1.25; color: #e3ddcc; }
-.chart-track { height: 12px; border-radius: var(--radius-control); background: #1a1712; overflow: hidden; }
-.chart-fill { display: block; height: 100%; background: #c4bda9; }
+.chart-row { display: grid; grid-template-columns: 230px 1fr 92px; align-items: center; gap: 10px; padding: 3px 0; }
+.chart-label { font-size: 13px; font-weight: 700; line-height: 1.3; color: #e3ddcc; }
+.chart-track { height: 13px; border-radius: var(--radius-control); background: #1a1712; overflow: hidden; }
+.chart-fill { display: block; height: 100%; background: var(--bar); }
 .chart-row.r1 .chart-fill { background: var(--accent); }
-.chart-value { font-size: 13.5px; font-weight: 700; text-align: right; }
+.chart-value { font-size: 14px; font-weight: 700; text-align: right; }
 .chart-row.r1 .chart-value { color: var(--accent); }
 .chart-median { margin-top: 10px; padding-top: 7px; border-top: 1px dotted var(--faint); display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 12.5px; }
 .chart-median b { color: var(--ink); }
 
-.controls { display: flex; flex-wrap: wrap; align-items: end; gap: var(--step-3); padding: 6px 0; }
+.controls { display: flex; flex-wrap: wrap; align-items: end; gap: var(--step-3); padding: 12px 0; }
 .field { display: grid; gap: var(--step-1); }
-.field label { color: var(--muted); font-size: 13px; font-weight: 700; }
+.field label { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.field > span.sub { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .field input, .field select {
   min-height: 36px; padding: 0 var(--step-3); border: 1px solid var(--line); border-radius: var(--radius-control);
-  background: var(--panel); min-width: 180px; font-size: 15px; color: var(--ink);
+  background: var(--panel); min-width: 180px; font-size: 14px; color: var(--ink);
 }
 .field input { min-width: 280px; }
 .field input::placeholder { color: var(--faint); }
@@ -160,10 +162,11 @@ a { color: var(--accent); }
 .count { margin-left: auto; color: var(--muted); font-size: 14px; align-self: center; }
 
 .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-panel); overflow: hidden; }
+.controls + .panel { margin-top: var(--step-5); }
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-th, td { padding: 5px 14px; border-bottom: 1px solid var(--line-soft); text-align: left; vertical-align: middle; }
-th { color: var(--muted); font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+th, td { padding: 8px 14px; border-bottom: 1px solid var(--line-soft); text-align: left; vertical-align: middle; }
+th { color: var(--muted); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
 th button { display: inline-flex; align-items: center; gap: var(--step-1); border: 0; background: none; padding: 0; color: inherit; font: inherit; text-transform: inherit; letter-spacing: inherit; }
 th button:hover { color: var(--ink); }
 tbody tr { cursor: pointer; }
@@ -173,15 +176,15 @@ tbody tr[data-selected="true"] { background: #1e1a13; }
 .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 14.5px; }
 .rank { font-weight: 700; font-size: 16px; }
 .rank-1 { color: var(--accent); }
-.name { display: grid; gap: 1px; }
-.name b { font-weight: 700; font-size: 14.5px; }
-.row-sub { display: flex; align-items: center; gap: var(--step-2); margin-top: 1px; flex-wrap: wrap; }
+.name { display: grid; gap: 2px; }
+.name b { font-weight: 700; font-size: 15px; }
+.row-sub { display: flex; align-items: center; gap: var(--step-2); margin-top: 2px; flex-wrap: wrap; }
 .chip { display: inline-block; padding: 1px 8px; border-radius: var(--radius-control); font-size: 11.5px; font-weight: 700; line-height: 1.6; white-space: nowrap; border: 1px solid var(--line); color: var(--muted); background: var(--bg2); }
 .sub { color: var(--muted); font-size: 13px; }
 .pos { color: var(--green); font-weight: 700; }
 .neg { color: var(--red); font-weight: 700; }
-.bar { width: 110px; height: 8px; border-radius: var(--radius-control); background: #1a1712; overflow: hidden; }
-.bar i { display: block; height: 100%; background: #c4bda9; }
+.bar { width: 110px; height: 10px; border-radius: var(--radius-control); background: #1a1712; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--bar); }
 .bar.r1 i { background: var(--accent); }
 .implied { display: flex; align-items: center; gap: 10px; }
 .implied .num { font-weight: 700; }
@@ -189,75 +192,82 @@ tbody tr[data-selected="true"] { background: #1e1a13; }
 .status::before { content: ""; width: 7px; height: 7px; background: var(--faint); }
 
 /* WHAT THE MODEL REWARDS — five plain-language cards, numbered in mono. */
-.rewards { margin-top: 18px; padding: 18px 20px 16px; }
-.rewards h2 { font-size: 19px; }
+.rewards { margin-top: var(--step-5); padding: 16px 20px; }
 .rewards-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 12px; }
 .reward { border: 1px solid var(--line); border-radius: var(--radius-control); padding: 12px 14px; background: var(--bg2); }
-.reward b { display: block; color: var(--ink); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.reward b { display: block; color: var(--ink); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
 .reward b i { font-style: normal; color: var(--accent); margin-right: 6px; }
-.reward span { color: var(--muted); font-size: 13px; line-height: 1.45; display: block; }
+.reward span { color: var(--muted); font-size: 13px; line-height: 1.55; display: block; }
 .reward span em { font-style: normal; color: var(--ink); font-weight: 700; }
 
-.model { margin-top: 18px; padding: var(--step-5); display: grid; gap: var(--step-3); }
-.formula { font-family: var(--font-mono); font-size: 13.5px; line-height: 1.7; color: #e6edf9; overflow-wrap: anywhere; background: #0d0c09; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius-control); padding: var(--step-3); }
+.model { margin-top: var(--step-5); padding: var(--step-6); display: grid; gap: var(--step-3); }
+.formula { font-family: var(--font-mono); font-size: 13.5px; line-height: 1.7; color: var(--ink); overflow-wrap: anywhere; background: #0d0c09; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius-control); padding: var(--step-3); }
 .peers { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--step-2); }
 .peer-row { display: flex; justify-content: space-between; gap: var(--step-2); border: 1px solid var(--line); border-radius: var(--radius-control); padding: var(--step-2) var(--step-3); font-size: 14px; background: var(--bg2); }
 .peer-row .num { font-weight: 700; color: var(--ink); }
 .empty { padding: 48px 24px; text-align: center; display: grid; gap: 12px; justify-items: center; }
+.empty h2 { font-size: 19px; text-transform: none; letter-spacing: 0; }
 .empty p { color: var(--muted); }
 .button { min-height: 40px; padding: 0 var(--step-4); border: 1px solid var(--line); border-radius: var(--radius-control); background: var(--panel); font-weight: 700; color: var(--ink); }
 .button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 
-/* DETAIL DRAWER — flat warm panel, gold section labels, peer callout with a
-   gold left border. The drawer's hero is the implied value, big and gold,
-   at the top right of the head. */
+/* DETAIL DRAWER — flat warm panel. Hierarchy: the name is 26px, the hero
+   value is 40px gold, section labels are 12px caps with a hairline rule
+   under them, the equation is a compact block whose last row is the answer,
+   and the farm steps carry big gold step numbers in a fixed gutter with
+   real gaps between steps. Cost/time sit on their own muted line, small
+   enough to stay on one line and never compete with the action text. */
 .detail {
-  position: fixed; top: 0; right: 0; bottom: 0; width: min(960px, 96vw); z-index: 10;
-  background: var(--bg2); border-left: 1px solid var(--line); padding: 16px 28px 6px;
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(1040px, 96vw); z-index: 10;
+  background: var(--bg2); border-left: 1px solid var(--line); padding: 10px 28px 12px;
   overflow-y: auto; color: var(--ink);
 }
 .detail[hidden] { display: none; }
 .detail { margin: 0 0 0 auto; max-height: 100%; }
 .detail::backdrop { background: rgba(3, 6, 10, 0.7); }
-.detail-head { display: flex; align-items: start; justify-content: space-between; gap: var(--step-4); }
+.detail-head { display: flex; align-items: start; justify-content: space-between; gap: var(--step-4); padding-bottom: 10px; border-bottom: 1px solid var(--line); }
 .detail-head > div { min-width: 0; }
 .detail-head .sub { overflow-wrap: anywhere; }
 .detail-head .row-sub { margin-top: 6px; }
 .detail-head .row-sub .sub { margin-top: 0; }
 .detail-side { display: flex; align-items: flex-start; gap: 14px; flex: none; }
 .detail-hero { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; padding-top: 2px; }
-.detail-hero .label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
-.detail-hero .value { font-family: var(--font-mono); font-size: 32px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--accent); }
+.detail-hero .label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+.detail-hero .value { font-family: var(--font-mono); font-size: 38px; font-weight: 700; line-height: 1.02; letter-spacing: -0.02em; color: var(--accent); }
 .detail-grid { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 24px; margin-top: 10px; }
 .detail-grid > .detail-section { margin-top: 0; padding-top: 0; border-top: 0; }
 .detail-grid > .detail-section + .detail-section { border-left: 1px solid var(--line); padding-left: 24px; }
 .peer-note {
-  background: rgba(232, 185, 62, 0.08); border-left: 3px solid var(--accent);
-  border-radius: 0 4px 4px 0; padding: 8px 10px; font-size: 13px; line-height: 1.45; margin-top: 10px; color: #e6dfc9;
+  background: rgba(201, 162, 39, 0.10); border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0; padding: 7px 10px; font-size: 12.5px; line-height: 1.45; margin-top: 10px; color: #e6dfc9;
 }
 .close { flex: none; min-width: 36px; min-height: 36px; padding: 0 12px; white-space: nowrap; border: 1px solid var(--line); border-radius: var(--radius-control); background: var(--panel); font-weight: 700; color: var(--ink); }
-.detail h2 { margin-top: 4px; font-size: 23px; }
+.detail h2 { margin-top: 2px; font-size: 24px; line-height: 1.15; text-transform: none; letter-spacing: -0.01em; }
 .detail .sub { margin-top: 4px; font-size: 14px; }
-.detail-section { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
-.detail-section h3 { margin-bottom: 10px; color: var(--accent); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
-.equation { display: grid; gap: 2px; font-family: var(--font-mono); font-size: 13px; }
-.equation div { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 4px; border-bottom: 1px solid var(--line-soft); }
-.equation div:last-child { border-bottom: 0; padding-bottom: 0; }
+.detail-section { margin-top: 14px; padding-top: 0; border-top: 0; }
+.detail-section h3 { margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--line); color: var(--accent); }
+.equation { display: grid; gap: 0; font-family: var(--font-mono); font-size: 13.5px; }
+.equation div { display: flex; justify-content: space-between; gap: 12px; padding: 3px 0; border-bottom: 1px solid var(--line-soft); }
+.equation div:last-child { border-bottom: 0; border-top: 1px solid var(--line); margin-top: 4px; padding-top: 8px; padding-bottom: 0; }
 .equation span { color: var(--muted); }
 .equation b { font-weight: 700; }
-.equation div:last-child b { color: var(--accent); font-size: 15px; }
-.steps { margin: 0; padding-left: 20px; display: grid; gap: 9px; font-size: 13.5px; counter-reset: step; }
-.steps li { padding-left: 4px; line-height: 1.45; }
-.steps li::marker { color: var(--accent); font-weight: 700; font-family: var(--font-mono); }
+.equation div:last-child b { color: var(--accent); font-size: 16px; }
+.steps { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 12px; font-size: 14px; counter-reset: step; }
+.steps li { position: relative; padding-left: 38px; line-height: 1.55; }
+.steps li::before {
+  counter-increment: step; content: counter(step, decimal-leading-zero);
+  position: absolute; left: 0; top: 1px;
+  font-size: 17px; font-weight: 700; color: var(--accent); font-family: var(--font-mono);
+}
 .steps b { display: block; font-weight: 700; }
-.cost { color: var(--muted); font-size: 12.5px; font-family: var(--font-mono); }
+.cost { display: block; margin-top: 3px; color: var(--muted); font-size: 11.5px; line-height: 1.5; font-family: var(--font-mono); }
 
 /* OPEN PROTOCOL PAGE — the address as large selectable text plus a copy button.
    There is deliberately no web link here: the bounty rules refuse one in this
    dashboard, so the copy button is the one-click way to the page. */
-.link-box { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
+.link-box { margin-top: 10px; padding-top: 0; border-top: 0; }
 .link-box .sub { margin-top: 4px; }
-.link-row { display: flex; gap: 10px; align-items: stretch; margin-top: 6px; }
+.link-row { display: flex; gap: 10px; align-items: stretch; margin-top: 8px; }
 .link-addr {
   flex: 1; min-width: 0; user-select: all;
   font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--accent);

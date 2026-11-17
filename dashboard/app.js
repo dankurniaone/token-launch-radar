@@ -218,12 +218,9 @@
     var tick = function (big, label, bigClass) {
       return el('div', { class: 'tick' }, el('b', { class: bigClass || null, text: big }), el('span', { text: label }));
     };
-    var gauge = el('div', { class: 'gauge', 'aria-hidden': 'true' });
-    for (var i = 0; i < DATA.watchlist_size; i++) gauge.appendChild(el('i'));
     var watchTick = el('div', { class: 'tick' },
       el('b', { text: DATA.watchlist_size + ' / ' + DATA.watchlist_size }),
-      el('span', { text: 'watchlist covered' }),
-      gauge
+      el('span', { text: 'watchlist covered' })
     );
     return el('div', null,
       el('section', { class: 'hero' },
@@ -253,9 +250,8 @@
     );
   }
 
-  // 7D HEAT — median seven-day TVL change per category, top 12 by protocol
-  // count. The tint is the signal: green up, red down, stronger tint for a
-  // bigger move. All numbers come from the board; nothing is invented.
+  // 7D HEAT — median seven-day TVL change per category, top 10 by protocol
+  // count. The tint is faint; the value is a light green/red so it reads.
   function heatStrip() {
     var byCat = {};
     DATA.rows.forEach(function (r) {
@@ -264,10 +260,10 @@
     });
     var cats = Object.keys(byCat).map(function (c) {
       return { name: c, n: byCat[c].length, med: medianOf(byCat[c]) };
-    }).sort(function (a, b) { return b.n - a.n; }).slice(0, 12);
+    }).sort(function (a, b) { return b.n - a.n; }).slice(0, 10);
     if (!cats.length) return null;
     var cells = cats.map(function (c) {
-      var alpha = Math.min(0.5, 0.07 + Math.abs(c.med) / 18);
+      var alpha = Math.min(0.14, 0.04 + Math.abs(c.med) / 40);
       var bg = c.med >= 0 ? 'rgba(74,222,128,' + alpha.toFixed(2) + ')' : 'rgba(248,113,113,' + alpha.toFixed(2) + ')';
       var cls = c.med >= 0 ? 'pos' : 'neg';
       return el('div', { class: 'heat-cell', style: 'background:' + bg },
@@ -278,16 +274,15 @@
     return el('section', { class: 'panel heat-panel' },
       el('div', { class: 'heat-head' },
         el('h2', { text: '7D HEAT — MEDIAN CHANGE BY CATEGORY' }),
-        el('span', { text: 'Top 12 categories by protocol count · green up, red down' })
+        el('span', { text: 'Top 10 categories by protocol count · green up, red down' })
       ),
       el('div', { class: 'heat-grid' }, cells)
     );
   }
 
   // Top-10 chart: plain HTML bars, drawn from the same rows the table shows — the rows currently
-  // in view, so the chart always follows the active search, category and chain filters. Two
-  // columns of five keep it short, so the board stays in view. No image, no network, and no
-  // SVG namespace string in the source.
+  // in view, so the chart always follows the active search, category and chain filters. Bars are
+  // split evenly across two columns, so a filtered view with fewer rows stays balanced.
   function topChart() {
     var list = rows();
     if (list.length === 0) return null;
@@ -304,14 +299,15 @@
         el('span', { class: 'chart-value num', text: fmtUsd(r.implied_value_usd) })
       );
     };
+    var half = Math.ceil(top.length / 2);
     return el('section', { class: 'panel chart-panel' },
       el('div', { class: 'chart-head' },
         el('h2', { text: 'Top 10 by implied value' + (state.category !== 'all' ? ' · ' + state.category : '') }),
         el('span', { class: 'sub', text: filtered ? 'The top 10 of the ' + list.length + ' row' + (list.length === 1 ? '' : 's') + ' in view, drawn to scale.' : 'The same rows as the board below, drawn to scale. Rank 1 is the longest bar.' })
       ),
       el('div', { class: 'chart' },
-        el('div', { class: 'chart-col' }, top.slice(0, 5).map(bar)),
-        el('div', { class: 'chart-col' }, top.slice(5, 10).map(bar))
+        el('div', { class: 'chart-col' }, top.slice(0, half).map(bar)),
+        el('div', { class: 'chart-col' }, top.slice(half, 10).map(bar))
       ),
       el('div', { class: 'chart-median' },
         el('span', { text: '— — — MEDIAN TOP-10' }),
