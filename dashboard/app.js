@@ -251,7 +251,8 @@
   }
 
   // 7D HEAT — median seven-day TVL change per category, top 10 by protocol
-  // count. The tint is faint; the value is a light green/red so it reads.
+  // count. The tint is restrained (alpha 0.08–0.22) with a 2px direction
+  // edge, so the heat reads at a glance; the value is a light green/red.
   function heatStrip() {
     var byCat = {};
     DATA.rows.forEach(function (r) {
@@ -263,10 +264,11 @@
     }).sort(function (a, b) { return b.n - a.n; }).slice(0, 10);
     if (!cats.length) return null;
     var cells = cats.map(function (c) {
-      var alpha = Math.min(0.14, 0.04 + Math.abs(c.med) / 40);
+      var alpha = Math.min(0.22, 0.08 + Math.abs(c.med) / 25);
       var bg = c.med >= 0 ? 'rgba(74,222,128,' + alpha.toFixed(2) + ')' : 'rgba(248,113,113,' + alpha.toFixed(2) + ')';
+      var edge = c.med >= 0 ? '#4ade80' : '#f87171';
       var cls = c.med >= 0 ? 'pos' : 'neg';
-      return el('div', { class: 'heat-cell', style: 'background:' + bg },
+      return el('div', { class: 'heat-cell', style: 'background:' + bg + ';border-left:2px solid ' + edge },
         el('b', { text: c.name }),
         el('span', { class: cls, text: fmtPct(c.med) })
       );

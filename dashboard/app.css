@@ -80,7 +80,7 @@ a { color: var(--accent); }
 /* HERO — the headline is the only 30px text on the board; the rank-1 number
    is the only 46px text. That gap is the hierarchy. The gold block after the
    headline is the terminal cursor. */
-.hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr); gap: var(--step-6); padding: 16px 0 8px; align-items: stretch; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr); gap: var(--step-6); padding: 12px 0 8px; align-items: stretch; }
 .kicker { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 .hero h1 .cursor { color: var(--accent); }
 .hero-copy p { color: var(--muted); max-width: 58ch; margin-top: 12px; font-size: 15px; }
@@ -115,10 +115,11 @@ a { color: var(--accent); }
 
 /* HEAT — median 7d change per category, top 10 by protocol count. Cells are
    equal height with the name pinned to two lines and the value pinned to the
-   bottom, so values align across the row. The tint is faint (alpha <= 0.14);
-   the value is a LIGHT green/red so it reads on the tint instead of sinking
+   bottom, so values align across the row. The tint is restrained (alpha
+   0.08–0.22) with a 2px direction edge, so the heat reads at a glance; the
+   value is a LIGHT green/red so it reads on the tint instead of sinking
    into it. Names are ink, not muted. */
-.heat-panel { margin: var(--step-5) 0 0; padding: 14px 20px; }
+.heat-panel { margin: var(--step-5) 0 0; padding: 12px 20px; }
 .heat-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .heat-head span { color: var(--muted); font-size: 12px; }
 .heat-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin-top: 12px; }
@@ -146,7 +147,7 @@ a { color: var(--accent); }
 .chart-median { margin-top: 10px; padding-top: 7px; border-top: 1px dotted var(--faint); display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 12.5px; }
 .chart-median b { color: var(--ink); }
 
-.controls { display: flex; flex-wrap: wrap; align-items: end; gap: var(--step-3); padding: 12px 0; }
+.controls { display: flex; flex-wrap: wrap; align-items: end; gap: var(--step-3); padding: 10px 0; }
 .field { display: grid; gap: var(--step-1); }
 .field label { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .field > span.sub { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
