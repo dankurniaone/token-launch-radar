@@ -1,24 +1,25 @@
-/* Token Radar, radar-2 — TERMINAL-MONO.
-   Near-monochrome ink canvas, monospace type everywhere (headings, labels,
-   numbers — one typeface does the work), ONE accent (teal) used only on
-   structural marks: brand dot, active tab, primary CTA, links, rank-1 bars,
-   the coverage gauge. Green/red are reserved exclusively for 7d change
-   numbers and the heat strip that encodes them. Personality comes from
-   hand-built data textures: hatch-fill bars, a dotted median line, a
-   segmented coverage gauge, a category heat grid. 4px radius throughout.
-   No gradients, no glow, no external assets. */
+/* Token Radar, radar-2 — TERMINAL-MONO, warm.
+   Warm near-monochrome ink canvas, monospace type everywhere (headings,
+   labels, numbers — one typeface does the work), ONE accent (gold) used
+   only on structural marks: brand dot, active tab, primary CTA, links,
+   rank-1 bars, the coverage gauge, the hero numbers. Green/red are
+   reserved exclusively for 7d change numbers and the heat strip that
+   encodes them. Bars are solid fills — rank 1 is gold, the rest a flat
+   warm grey. A dotted median line, a segmented coverage gauge and a
+   category heat grid carry the texture. 4px radius throughout. No
+   gradients, no glow, no external assets. */
 :root {
-  --bg: #0a0d10;
-  --bg2: #0e1216;
-  --panel: #11161b;
-  --panel2: #151b21;
-  --line: #262e37;
-  --line-soft: #1b2129;
-  --ink: #e9edf1;
-  --muted: #9aa7b4;
-  --faint: #66727f;
-  --accent: #2dd4bf;
-  --accent-ink: #04211c;
+  --bg: #0d0c09;
+  --bg2: #12100c;
+  --panel: #171510;
+  --panel2: #1d1a14;
+  --line: #2e2a20;
+  --line-soft: #221f18;
+  --ink: #ece7db;
+  --muted: #a8a294;
+  --faint: #6f6a5c;
+  --accent: #e8b93e;
+  --accent-ink: #241a02;
   --green: #4ade80;
   --red: #f87171;
   --radius-control: 4px;
@@ -73,7 +74,7 @@ a { color: var(--accent); }
 .top-meta span b { color: var(--ink); }
 
 /* HERO — editorial header, flat panel, no gradient. The rank-1 number is the
-   biggest type on the page; the teal block after the headline is the terminal
+   biggest type on the page; the gold block after the headline is the terminal
    cursor. */
 .hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr); gap: 24px; padding: 8px 0 6px; align-items: stretch; }
 .kicker { font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
@@ -87,7 +88,7 @@ a { color: var(--accent); }
 .hero-card .label { font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
 .hero-value {
   font-family: var(--font-mono); font-size: 36px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em;
-  color: var(--ink); margin: 4px 0 2px;
+  color: var(--accent); margin: 4px 0 2px;
 }
 .hero-name { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
 .hero-why { color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 6px; }
@@ -119,25 +120,26 @@ a { color: var(--accent); }
 .heat-head h2 { font-size: 15px; letter-spacing: 0.04em; }
 .heat-head span { color: var(--muted); font-size: 12.5px; }
 .heat-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; margin-top: 8px; }
-.heat-cell { border: 1px solid var(--line-soft); border-radius: var(--radius-control); padding: 5px 8px; min-width: 0; }
-.heat-cell b { display: block; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.heat-cell { border: 1px solid var(--line-soft); border-radius: var(--radius-control); padding: 5px 6px; min-width: 0; }
+.heat-cell b { display: block; font-size: 11px; font-weight: 700; line-height: 1.25; }
 .heat-cell span { font-size: 12.5px; font-weight: 700; }
 .heat-cell span.pos { color: var(--green); }
 .heat-cell span.neg { color: var(--red); }
 
-/* CHART — two columns of five. Bars are hatch-filled (diagonal stripes);
-   rank 1 is the teal hatch. The dotted rule under the chart marks the
-   median of the top 10 in view. */
+/* CHART — two columns of five. Bars are solid fills: rank 1 is the gold
+   accent, the rest a flat warm grey on a darker track. The dotted rule
+   under the chart marks the median of the top 10 in view. Labels wrap to
+   two lines instead of truncating. */
 .chart-panel { margin: 18px 0 0; padding: 16px 20px 14px; }
 .chart-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .chart-head h2 { font-size: 19px; }
 .chart { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 28px; margin-top: 10px; }
 .chart-col { display: grid; gap: 2px; align-content: start; }
-.chart-row { display: grid; grid-template-columns: 195px 1fr 92px; align-items: center; gap: 10px; padding: 2.5px 0; }
-.chart-label { font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #dbe4f3; }
-.chart-track { height: 12px; border-radius: var(--radius-control); background: #141a21; overflow: hidden; }
-.chart-fill { display: block; height: 100%; background: repeating-linear-gradient(-45deg, #c7d0da 0 2px, transparent 2px 7px); }
-.chart-row.r1 .chart-fill { background: repeating-linear-gradient(-45deg, var(--accent) 0 2px, transparent 2px 7px); }
+.chart-row { display: grid; grid-template-columns: 220px 1fr 92px; align-items: center; gap: 10px; padding: 2.5px 0; }
+.chart-label { font-size: 13px; font-weight: 700; line-height: 1.25; color: #e3ddcc; }
+.chart-track { height: 12px; border-radius: var(--radius-control); background: #1a1712; overflow: hidden; }
+.chart-fill { display: block; height: 100%; background: #c4bda9; }
+.chart-row.r1 .chart-fill { background: var(--accent); }
 .chart-value { font-size: 13.5px; font-weight: 700; text-align: right; }
 .chart-row.r1 .chart-value { color: var(--accent); }
 .chart-median { margin-top: 10px; padding-top: 7px; border-top: 1px dotted var(--faint); display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 12.5px; }
@@ -165,9 +167,9 @@ th { color: var(--muted); font-size: 12.5px; font-weight: 700; text-transform: u
 th button { display: inline-flex; align-items: center; gap: var(--step-1); border: 0; background: none; padding: 0; color: inherit; font: inherit; text-transform: inherit; letter-spacing: inherit; }
 th button:hover { color: var(--ink); }
 tbody tr { cursor: pointer; }
-tbody tr:nth-child(even) { background: #0d1116; }
-tbody tr:hover { background: #182029; }
-tbody tr[data-selected="true"] { background: #182029; }
+tbody tr:nth-child(even) { background: #100e0b; }
+tbody tr:hover { background: #1e1a13; }
+tbody tr[data-selected="true"] { background: #1e1a13; }
 .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 14.5px; }
 .rank { font-weight: 700; font-size: 16px; }
 .rank-1 { color: var(--accent); }
@@ -178,9 +180,9 @@ tbody tr[data-selected="true"] { background: #182029; }
 .sub { color: var(--muted); font-size: 13px; }
 .pos { color: var(--green); font-weight: 700; }
 .neg { color: var(--red); font-weight: 700; }
-.bar { width: 110px; height: 8px; border-radius: var(--radius-control); background: #141a21; overflow: hidden; }
-.bar i { display: block; height: 100%; background: repeating-linear-gradient(-45deg, #c7d0da 0 2px, transparent 2px 6px); }
-.bar.r1 i { background: repeating-linear-gradient(-45deg, var(--accent) 0 2px, transparent 2px 6px); }
+.bar { width: 110px; height: 8px; border-radius: var(--radius-control); background: #1a1712; overflow: hidden; }
+.bar i { display: block; height: 100%; background: #c4bda9; }
+.bar.r1 i { background: var(--accent); }
 .implied { display: flex; align-items: center; gap: 10px; }
 .implied .num { font-weight: 700; }
 .status { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; white-space: nowrap; }
@@ -197,7 +199,7 @@ tbody tr[data-selected="true"] { background: #182029; }
 .reward span em { font-style: normal; color: var(--ink); font-weight: 700; }
 
 .model { margin-top: 18px; padding: var(--step-5); display: grid; gap: var(--step-3); }
-.formula { font-family: var(--font-mono); font-size: 13.5px; line-height: 1.7; color: #e6edf9; overflow-wrap: anywhere; background: #0a0d10; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius-control); padding: var(--step-3); }
+.formula { font-family: var(--font-mono); font-size: 13.5px; line-height: 1.7; color: #e6edf9; overflow-wrap: anywhere; background: #0d0c09; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius-control); padding: var(--step-3); }
 .peers { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--step-2); }
 .peer-row { display: flex; justify-content: space-between; gap: var(--step-2); border: 1px solid var(--line); border-radius: var(--radius-control); padding: var(--step-2) var(--step-3); font-size: 14px; background: var(--bg2); }
 .peer-row .num { font-weight: 700; color: var(--ink); }
@@ -206,8 +208,9 @@ tbody tr[data-selected="true"] { background: #182029; }
 .button { min-height: 40px; padding: 0 var(--step-4); border: 1px solid var(--line); border-radius: var(--radius-control); background: var(--panel); font-weight: 700; color: var(--ink); }
 .button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 
-/* DETAIL DRAWER — flat ink panel, teal section labels, peer callout with a
-   teal left border. */
+/* DETAIL DRAWER — flat warm panel, gold section labels, peer callout with a
+   gold left border. The drawer's hero is the implied value, big and gold,
+   at the top right of the head. */
 .detail {
   position: fixed; top: 0; right: 0; bottom: 0; width: min(960px, 96vw); z-index: 10;
   background: var(--bg2); border-left: 1px solid var(--line); padding: 16px 28px 6px;
@@ -221,12 +224,16 @@ tbody tr[data-selected="true"] { background: #182029; }
 .detail-head .sub { overflow-wrap: anywhere; }
 .detail-head .row-sub { margin-top: 6px; }
 .detail-head .row-sub .sub { margin-top: 0; }
+.detail-side { display: flex; align-items: flex-start; gap: 14px; flex: none; }
+.detail-hero { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; padding-top: 2px; }
+.detail-hero .label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+.detail-hero .value { font-family: var(--font-mono); font-size: 32px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--accent); }
 .detail-grid { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 24px; margin-top: 10px; }
 .detail-grid > .detail-section { margin-top: 0; padding-top: 0; border-top: 0; }
 .detail-grid > .detail-section + .detail-section { border-left: 1px solid var(--line); padding-left: 24px; }
 .peer-note {
-  background: rgba(45, 212, 191, 0.07); border-left: 3px solid var(--accent);
-  border-radius: 0 4px 4px 0; padding: 8px 10px; font-size: 13px; line-height: 1.45; margin-top: 10px; color: #d6e2de;
+  background: rgba(232, 185, 62, 0.08); border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0; padding: 8px 10px; font-size: 13px; line-height: 1.45; margin-top: 10px; color: #e6dfc9;
 }
 .close { flex: none; min-width: 36px; min-height: 36px; padding: 0 12px; white-space: nowrap; border: 1px solid var(--line); border-radius: var(--radius-control); background: var(--panel); font-weight: 700; color: var(--ink); }
 .detail h2 { margin-top: 4px; font-size: 23px; }
@@ -254,11 +261,11 @@ tbody tr[data-selected="true"] { background: #182029; }
 .link-addr {
   flex: 1; min-width: 0; user-select: all;
   font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--accent);
-  background: #0a0d10; border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  background: #0d0c09; border: 1px solid var(--line); border-left: 3px solid var(--accent);
   border-radius: var(--radius-control); padding: 6px 10px; line-height: 1.5;
 }
 .copy-btn { flex: none; min-height: 42px; background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-.copy-btn.copied { background: var(--ink); border-color: var(--ink); color: #0a0d10; }
+.copy-btn.copied { background: var(--ink); border-color: var(--ink); color: #0d0c09; }
 
 @media (max-width: 900px) {
   .shell { padding: 16px; }

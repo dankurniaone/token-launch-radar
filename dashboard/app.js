@@ -3,7 +3,7 @@
 // own inputs and the protocol's farm plan. No network: every byte it shows is in data.js.
 //
 // Readability first: monospace type everywhere, 16px base, 14.5px table type,
-// near-monochrome ink with one teal accent and green/red reserved for 7d
+// near-monochrome ink with one gold accent and green/red reserved for 7d
 // change numbers. Screenshots are taken at 1440x900, 100% zoom, so the hero,
 // the stats strip, the board's top rows, the detail drawer and the filtered
 // view all read clearly at full size.
@@ -417,8 +417,7 @@
         el('td', null, el('div', { class: 'implied' },
           el('div', { class: 'bar' + (r.rank === 1 ? ' r1' : ''), 'aria-hidden': 'true' }, el('i', { style: 'width:' + Math.max(3, Math.round((r.implied_value_usd / max) * 100)) + '%' })),
           el('span', { class: 'num', text: fmtUsd(r.implied_value_usd) })
-        )),
-        el('td', null, el('span', { class: 'status', text: 'no token' }))
+        ))
       );
       tbody.appendChild(tr);
     });
@@ -432,8 +431,7 @@
             sortHeader('tvl', 'TVL'),
             sortHeader('growth', '7d'),
             sortHeader('age', 'Age'),
-            sortHeader('implied', 'Implied value'),
-            el('th', { scope: 'col', text: 'Token' })
+            sortHeader('implied', 'Implied value')
           )),
           tbody
         )
@@ -557,7 +555,7 @@
     var pageAddr = 'defillama.com/protocol/' + row.slug;
     var geckoLine = row.gecko_id
       ? 'CoinGecko id: ' + row.gecko_id
-      : 'No CoinGecko id recorded for this protocol.';
+      : 'CoinGecko: not listed — pre-token';
     var copyBtn = el('button', { class: 'button copy-btn', type: 'button', text: 'Copy link' });
     copyBtn.addEventListener('click', function () { copyText(pageAddr, copyBtn); });
     var linkBox = el('div', { class: 'link-box' },
@@ -576,11 +574,18 @@
         el('span', { class: 'brand-name', text: 'Rank ' + row.rank + ' of ' + DATA.board_size }),
         el('h2', { id: 'detail-title', text: row.name }),
         el('div', { class: 'row-sub' },
+          chip('Pre-token'),
           chip(row.category),
           el('span', { class: 'sub', text: 'on ' + (row.chains && row.chains.length ? row.chains.join(', ') : 'an unnamed chain') })
         )
       ),
-      el('button', { class: 'close', type: 'button', 'aria-label': 'Close details', text: 'Close', onclick: function () { dialog.close(); } })
+      el('div', { class: 'detail-side' },
+        el('div', { class: 'detail-hero' },
+          el('span', { class: 'label', text: 'Implied value' }),
+          el('span', { class: 'value num', text: fmtUsd(row.implied_value_usd) })
+        ),
+        el('button', { class: 'close', type: 'button', 'aria-label': 'Close details', text: 'Close', onclick: function () { dialog.close(); } })
+      )
     ));
     // Two columns, so the model and the whole farm plan fit in one 900px viewport: the implied
     // value and its peer check on the left, all seven farm steps on the right.
